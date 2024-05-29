@@ -9,7 +9,7 @@ Library     SeleniumLibrary
 
 *** Test cases ***
 
-LoginwithValidData
+Check_Login_with_ValidData TestCase
     [tags]              Login_Valid
     Set Selenium Implicit Wait    5
     Open Browser        https://dgdadevnew.eastus.cloudapp.azure.com/DGDAAdminFront/#/login      Chrome
