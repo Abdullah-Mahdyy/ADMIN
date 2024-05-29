@@ -19,6 +19,6 @@ LoginwithValidData
     Click Button    //*[@id="login_btn_login"]
 
   #  Page Should Contain    //*[@id="cdk-overlay-11"]/snack-bar-container/simple-snack-bar/span
-    Page Should Contain Element    //*[@id="cdk-overlay-12"]/snack-bar-container/simple-snack-bar/span.
+    Page Should Contain Element    //*[@id="cdk-overlay-12"]/snack-bar-container/simple-snack-bar/span
  #  Page Should Contain    DIRIYAH GATE ‍DEVELOPMENT AUTHORITY (DGDA)
     Close Browser
