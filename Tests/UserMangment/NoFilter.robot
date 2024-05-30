@@ -28,12 +28,7 @@ ${Recheck_CHECKBOX1}         //*[@id="users_btn_Retired"]/label
 
 User Test Case
     [tags]         Login
-    Set Selenium Implicit Wait    5
-    Open Browser         ${URL}     ${BROWSER}
-    Maximize Browser Window
-    Input Text         ${USERNAME_FIELD}    ${USERNAME}
-    Input Password     ${PASSWORD_FIELD}    ${PASSWORD}
-    Click Button       ${LOGIN_BUTTON}
+
 #check Functionality of Retired Checkbox
     Click Element    ${Users_Mangment_Button}
     Sleep    5
