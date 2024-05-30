@@ -3,7 +3,7 @@
 *** Settings ***
 Library     SeleniumLibrary
 Library     String
-Resource    Resources/Common.robot
+Resource    ../Resources/Common.robot
 Suite Setup    Run Keywords   Open_Chrome  Login_Successfully
 Test Teardown   Close_Chrome
 *** Variables ***
@@ -27,6 +27,7 @@ Check Functionality of Edit User
     Click Button                //*[@id="users_btn_save"]
     Page Should Contain         Are you sure you want to save changes ?
     Click Element               //*[@id="id_btn_msg_ok"]
+    Page Should Contain         User saved successfully
     Sleep    3
 Check Functionality of Reset
     [tags]                      User_Management_Reset

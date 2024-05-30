@@ -1,44 +1,192 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.3 (Python 3.10.6 on win32)" generated="20240530 14:09:33.860" rpa="false" schemaversion="2">
+<robot generator="Robot 4.1.3 (Python 3.10.6 on win32)" generated="20240530 14:20:56.642" rpa="false" schemaversion="2">
 <suite id="s1" name="Tests" source="D:\Work\Intellij\Admin Mahmoud\Tests">
-<suite id="s1-s1" name="UserMangment" source="D:\Work\Intellij\Admin Mahmoud\Tests\UserMangment">
-<suite id="s1-s1-s1" name="User Management" source="D:\Work\Intellij\Admin Mahmoud\Tests\UserMangment\User Management.robot">
+<suite id="s1-s1" name="User Management" source="D:\Work\Intellij\Admin Mahmoud\Tests\User Management.robot">
 <kw name="Run Keywords" library="BuiltIn" type="SETUP">
 <arg>Open_Chrome</arg>
 <arg>Login_Successfully</arg>
 <doc>Executes all the given keywords in a sequence.</doc>
-<kw name="Open_Chrome">
-<msg timestamp="20240530 14:09:34.095" level="FAIL">No keyword with name 'Open_Chrome' found.</msg>
-<status status="FAIL" starttime="20240530 14:09:34.095" endtime="20240530 14:09:34.095"/>
+<kw name="Open_Chrome" library="Common">
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>5</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20240530 14:20:56.879" endtime="20240530 14:20:56.879"/>
 </kw>
-<status status="FAIL" starttime="20240530 14:09:34.093" endtime="20240530 14:09:34.095"/>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://dgdadevnew.eastus.cloudapp.azure.com/DGDAAdminFront/#/login</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240530 14:20:56.879" level="INFO">Opening browser 'chrome' to base url 'https://dgdadevnew.eastus.cloudapp.azure.com/DGDAAdminFront/#/login'.</msg>
+<status status="PASS" starttime="20240530 14:20:56.879" endtime="20240530 14:21:06.889"/>
 </kw>
-<test id="s1-s1-s1-t1" name="Check Functionality of Edit User">
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20240530 14:21:06.889" endtime="20240530 14:21:06.926"/>
+</kw>
+<status status="PASS" starttime="20240530 14:20:56.879" endtime="20240530 14:21:06.926"/>
+</kw>
+<kw name="Login_Successfully" library="Common">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Username_Text}</arg>
+<arg>Admin</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240530 14:21:06.927" level="INFO">Typing text 'Admin' into text field '//*[@id="login_input_username"]'.</msg>
+<status status="PASS" starttime="20240530 14:21:06.926" endtime="20240530 14:21:07.180"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${Password_Text}</arg>
+<arg>123456</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20240530 14:21:07.180" level="INFO">Typing password into text field '//*[@id="login_input_password"]'.</msg>
+<msg timestamp="20240530 14:21:07.214" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20240530 14:21:07.266" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20240530 14:21:07.180" endtime="20240530 14:21:07.266"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Login_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240530 14:21:07.267" level="INFO">Clicking element '//*[@id="login_btn_login"]'.</msg>
+<status status="PASS" starttime="20240530 14:21:07.267" endtime="20240530 14:21:07.315"/>
+</kw>
+<status status="PASS" starttime="20240530 14:21:06.926" endtime="20240530 14:21:07.316"/>
+</kw>
+<status status="PASS" starttime="20240530 14:20:56.878" endtime="20240530 14:21:07.316"/>
+</kw>
+<test id="s1-s1-t1" name="Check Functionality of Edit User">
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>5</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20240530 14:21:07.317" endtime="20240530 14:21:07.318"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//*[@id="1"]/i</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240530 14:21:07.319" level="INFO">Clicking element '//*[@id="1"]/i'.</msg>
+<status status="PASS" starttime="20240530 14:21:07.319" endtime="20240530 14:21:08.336"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@id="users_input_filterUsers"]</arg>
+<arg>weaam</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240530 14:21:08.337" level="INFO">Typing text 'weaam' into text field '//*[@id="users_input_filterUsers"]'.</msg>
+<status status="PASS" starttime="20240530 14:21:08.337" endtime="20240530 14:21:08.408"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//*[@id="users_ddl_usersList_0"]/button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240530 14:21:08.408" level="INFO">Clicking element '//*[@id="users_ddl_usersList_0"]/button'.</msg>
+<status status="PASS" starttime="20240530 14:21:08.408" endtime="20240530 14:21:10.052"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Requester</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240530 14:21:10.460" level="INFO">Current page contains text 'Requester'.</msg>
+<status status="PASS" starttime="20240530 14:21:10.052" endtime="20240530 14:21:10.460"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//*[@id="users_btn_edit"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240530 14:21:10.461" level="INFO">Clicking element '//*[@id="users_btn_edit"]'.</msg>
+<status status="PASS" starttime="20240530 14:21:10.460" endtime="20240530 14:21:10.513"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>5</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20240530 14:21:10.514" endtime="20240530 14:21:10.515"/>
+</kw>
+<kw name="Generate Random String" library="String">
+<var>${Dynamic_Email}</var>
+<arg>15</arg>
+<arg>[LETTERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20240530 14:21:10.515" level="INFO">${Dynamic_Email} = LmpIMMjCZyyfBID</msg>
+<status status="PASS" starttime="20240530 14:21:10.515" endtime="20240530 14:21:10.515"/>
+</kw>
+<kw name="Generate Random String" library="String">
+<var>${Dynamic_Phone_Number}</var>
+<arg>8</arg>
+<arg>0123456789</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20240530 14:21:10.515" level="INFO">${Dynamic_Phone_Number} = 88626160</msg>
+<status status="PASS" starttime="20240530 14:21:10.515" endtime="20240530 14:21:10.515"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Random_Phone_Number}</var>
+<arg>${Dynamic_Phone_Number}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240530 14:21:10.516" level="INFO">${Random_Phone_Number} = 88626160</msg>
+<status status="PASS" starttime="20240530 14:21:10.516" endtime="20240530 14:21:10.516"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Email}</arg>
+<arg>${Dynamic_Email}@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240530 14:21:10.516" level="INFO">Typing text 'LmpIMMjCZyyfBID@gmail.com' into text field '//*[@id="users_input_email"]'.</msg>
+<status status="PASS" starttime="20240530 14:21:10.516" endtime="20240530 14:21:10.726"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Phone_Number}</arg>
+<arg>010${Random_Phone_Number}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240530 14:21:10.726" level="INFO">Typing text '01088626160' into text field '//*[@id="users_input_phoneNumber"]'.</msg>
+<status status="PASS" starttime="20240530 14:21:10.726" endtime="20240530 14:21:10.848"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>//*[@id="users_btn_save"]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20240530 14:21:10.849" level="INFO">Clicking button '//*[@id="users_btn_save"]'.</msg>
+<status status="PASS" starttime="20240530 14:21:10.849" endtime="20240530 14:21:10.909"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Are you sure you want to save changes ?</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240530 14:21:10.987" level="INFO">Current page contains text 'Are you sure you want to save changes ?'.</msg>
+<status status="PASS" starttime="20240530 14:21:10.909" endtime="20240530 14:21:10.987"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//*[@id="id_btn_msg_ok"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240530 14:21:10.987" level="INFO">Clicking element '//*[@id="id_btn_msg_ok"]'.</msg>
+<status status="PASS" starttime="20240530 14:21:10.987" endtime="20240530 14:21:11.037"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>User saved successfully</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240530 14:21:11.403" level="INFO">Current page contains text 'User saved successfully'.</msg>
+<status status="PASS" starttime="20240530 14:21:11.038" endtime="20240530 14:21:11.403"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240530 14:21:14.403" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20240530 14:21:11.403" endtime="20240530 14:21:14.403"/>
+</kw>
+<kw name="Close_Chrome" library="Common" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240530 14:21:14.404" endtime="20240530 14:21:16.631"/>
+</kw>
+<status status="PASS" starttime="20240530 14:21:14.403" endtime="20240530 14:21:16.631"/>
+</kw>
 <tag>User_Management_Edit</tag>
-<status status="FAIL" starttime="20240530 14:09:34.096" endtime="20240530 14:09:34.096">Parent suite setup failed:
-No keyword with name 'Open_Chrome' found.</status>
+<status status="PASS" starttime="20240530 14:21:07.316" endtime="20240530 14:21:16.632"/>
 </test>
-<status status="FAIL" starttime="20240530 14:09:33.882" endtime="20240530 14:09:34.097">Suite setup failed:
-No keyword with name 'Open_Chrome' found.</status>
+<status status="PASS" starttime="20240530 14:20:56.664" endtime="20240530 14:21:16.632"/>
 </suite>
-<status status="FAIL" starttime="20240530 14:09:33.880" endtime="20240530 14:09:34.098"/>
-</suite>
-<status status="FAIL" starttime="20240530 14:09:33.861" endtime="20240530 14:09:34.099"/>
+<status status="PASS" starttime="20240530 14:20:56.643" endtime="20240530 14:21:16.633"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="0" fail="1" skip="0">User_Management_Edit</stat>
+<stat pass="1" fail="0" skip="0">User_Management_Edit</stat>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="Tests">Tests</stat>
-<stat pass="0" fail="1" skip="0" id="s1-s1" name="UserMangment">Tests.UserMangment</stat>
-<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="User Management">Tests.UserMangment.User Management</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="User Management">Tests.User Management</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20240530 14:09:34.090" level="ERROR">Error in file 'D:\Work\Intellij\Admin Mahmoud\Tests\UserMangment\User Management.robot' on line 6: Resource file 'D:WorkIntellijAdmin MahmoudResourcesCommon.robot' does not exist.</msg>
 </errors>
 </robot>
