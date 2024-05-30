@@ -15,6 +15,9 @@ ${Users_Mangment_Button}     //*[@id="1"]
 ${Users_btn_menu}           //*[@id="users_btn_menu"]
 ${UnCheck_CHECKBOX}         //*[@id="users_btn_Unretired"]
 ${Recheck_CHECKBOX}         //*[@id="users_btn_Unretired"]/label/div
+${UnCheck_CHECKBOX1}         //*[@id="users_btn_Retired"]/label
+${Recheck_CHECKBOX1}         //*[@id="users_btn_Retired"]/label
+
 
 
 
@@ -33,9 +36,26 @@ User Test Case
     Sleep    5
     Click Element           ${Users_btn_menu}
 #Check Retired Checkbox Is Present
+    Element Should Be Visible        ${UnCheck_CHECKBOX1}
+
+
+#Get the initial state of the checkbox
+   ${is_checked1}=    Get Element Attribute    ${UnCheck_CHECKBOX1}     checked
+    Run Keyword If    ${is_checked1} == None    Log    "Checkbox is initially checked"    ELSE    Log    "Checkbox is initially unchecked"
+
+# If initially checked, uncheck it and verify
+   Run Keyword If    ${is_checked1} == None    Click Element    ${UnCheck_CHECKBOX1}
+   Click Element    ${Users_btn_menu}
+   ${is_checked1}=    Get Element Attribute    ${Recheck_CHECKBOX1}    checked
+   Run Keyword If    ${is_checked1} == None    Log    "Checkbox is now unchecked"    ELSE    Fail    "Checkbox should be unchecked"
+    Sleep    1s
+
+
+
+#retired
+    Click Element           ${Users_btn_menu}
+#Check Retired Checkbox Is Present
     Element Should Be Visible        ${UnCheck_CHECKBOX}
-
-
 #Get the initial state of the checkbox
    ${is_checked}=    Get Element Attribute    ${UnCheck_CHECKBOX}     checked
     Run Keyword If    ${is_checked} == None    Log    "Checkbox is initially checked"    ELSE    Log    "Checkbox is initially unchecked"
@@ -48,19 +68,10 @@ User Test Case
    Run Keyword If    ${is_checked} == None    Log    "Checkbox is now unchecked"    ELSE    Fail    "Checkbox should be unchecked"
     Sleep    1s
 
-#Verify the checkbox is now checked
-    Click Element    ${Recheck_CHECKBOX}
-    ${is_checked}=    Get Element Attribute    ${Recheck_CHECKBOX}   checked
-    Run Keyword If    ${is_checked} == None    Log    "Checkbox is now checked "    ELSE    Fail    "Checkbox should be checked "
-    Sleep    1s
-#  check the checkbox for the final state
-   # Sleep    3s
-   Click Element           ${Users_btn_menu}
-   Click Element           ${UnCheck_CHECKBOX}
 
-# Verify the checkbox is now unchecked again
-    ${is_checked}=    Get Element Attribute    ${UnCheck_CHECKBOX}     checked
-    Run Keyword If    ${is_checked} == None    Log    "Checkbox is now unchecked"    ELSE    Fail    "Checkbox should be unchecked"
+
+
+
 
 
 

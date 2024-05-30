@@ -13,8 +13,9 @@ ${USERNAME_FIELD}     //*[@id="login_input_username"]
 ${PASSWORD_FIELD}     //*[@id="login_input_password"]
 ${Users_Mangment_Button}     //*[@id="1"]
 ${Users_btn_menu}           //*[@id="users_btn_menu"]
-${UnCheck_CHECKBOX}         //*[@id="users_btn_Unretired"]
-${Recheck_CHECKBOX}         //*[@id="users_btn_Unretired"]/label/div
+${UnCheck_CHECKBOX}         //*[@id="users_btn_Retired"]/label
+${Recheck_CHECKBOX}         //*[@id="users_btn_Retired"]/label
+
 
 
 
