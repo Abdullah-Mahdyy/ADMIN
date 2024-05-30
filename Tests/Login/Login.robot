@@ -1,13 +1,14 @@
 *** Settings ***
 Library     SeleniumLibrary
-Resource    ../Resources/Common.robot
+Resource    ../../Resources/Common.robot
 Suite Setup    Run Keywords   Open_Chrome
 Test Teardown   Close_Chrome
 
 *** Variables ***
 
+${ExpectedName}                  "Administration"
 
-
+${Title}
 *** Test cases ***
 
 Check_Login_with_ValidData TestCase
@@ -22,4 +23,13 @@ Check_Login_with_ValidData TestCase
   # Page Should Contain    //*[@id="cdk-overlay-11"]/snack-bar-container/simple-snack-bar/span
    # Page Should Contain Element    //*[@id="cdk-overlay-12"]/snack-bar-container/simple-snack-bar/span
   Page Should Contain    DIRIYAH GATE ‍DEVELOPMENT AUTHORITY (DGDA)
-    Close Browser
+
+
+Check View of LoginPage TestCase
+  ${Title}      Get Title
+   Run Keyword If    '${Title}' == '${ExpectedName }'    Log    "Title is Shown Succesffuly"    ELSE  Fail     "Title is Shown UnSuccesffuly"
+
+
+       
+
+    

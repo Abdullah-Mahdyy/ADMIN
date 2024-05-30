@@ -44,7 +44,7 @@ User Test Case
 
 #Get the initial state of the checkbox
    ${is_checked1}=    Get Element Attribute    ${UnCheck_CHECKBOX1}     checked
-    Run Keyword If    ${is_checked1} == None    Log    "Checkbox is initially checked"    ELSE    Log    "Checkbox is initially unchecked"
+    Run Keyword If    ${is_checked1} == None    Log    "Checkbox is initially checked"    ELSE    Fail     "Checkbox is initially unchecked"
 
 # If initially checked, uncheck it and verify
    Run Keyword If    ${is_checked1} == None    Click Element    ${UnCheck_CHECKBOX1}
