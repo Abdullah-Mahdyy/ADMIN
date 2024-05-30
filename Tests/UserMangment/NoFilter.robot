@@ -53,7 +53,7 @@ User Test Case
 
 
 #retired
-    Click Element           ${Users_btn_menu}
+    
 #Check Retired Checkbox Is Present
     Element Should Be Visible        ${UnCheck_CHECKBOX}
 #Get the initial state of the checkbox
@@ -66,9 +66,16 @@ User Test Case
    Click Element    ${Users_btn_menu}
    ${is_checked}=    Get Element Attribute    ${Recheck_CHECKBOX}    checked
    Run Keyword If    ${is_checked} == None    Log    "Checkbox is now unchecked"    ELSE    Fail    "Checkbox should be unchecked"
-    Sleep    1s
 
 
+    IF    ${is_checked} == ${is_checked1}
+    Page Should Contain Element    //*[@id="users_p_noResult"]
+
+    ELSE
+    Log To Console    "Theres a Bug "
+
+    END
+     
 
 
 

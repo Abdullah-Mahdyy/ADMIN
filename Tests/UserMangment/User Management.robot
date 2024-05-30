@@ -3,7 +3,7 @@
 *** Settings ***
 Library     SeleniumLibrary
 Library     String
-Resource    ../Resources/Common.robot
+Resource    ../../Resources/Common.robot
 Suite Setup    Run Keywords   Open_Chrome  Login_Successfully
 Test Teardown   Close_Chrome
 *** Variables ***
