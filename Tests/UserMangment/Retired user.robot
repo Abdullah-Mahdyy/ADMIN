@@ -4,8 +4,20 @@ Library    Process
 
 
 *** Variables ***
-
-
+${URL}                https://dgdadevnew.eastus.cloudapp.azure.com/DGDAAdminFront/#/login
+${BROWSER}            Chrome
+${USERNAME}           admin
+${PASSWORD}           123456
+${LOGIN_BUTTON}       //*[@id="login_btn_login"]
+${USERNAME_FIELD}     //*[@id="login_input_username"]
+${PASSWORD_FIELD}     //*[@id="login_input_password"]
+${Users_Mangment_Button}     //*[@id="1"]
+${Users_btn_menu}           //*[@id="users_btn_menu"]
+${RETIRE_CHECKBOX}         //*[@id="users_btn_Unretired"]
+${Recheck_CHECKBOX}         //*[@id="users_btn_Unretired"]/label/div
+${SUBMIT_BUTTON}
+${USER_PROFILE_URL}   http://example.com/user-profile
+${Results}
 
 
 *** Test cases ***
@@ -13,28 +25,45 @@ Library    Process
 User Test Case
     [tags]         Login
     Set Selenium Implicit Wait    5
-    Open Browser        https://dgdadevnew.eastus.cloudapp.azure.com/DGDAAdminFront/#/login      Chrome
+    Open Browser         ${URL}     ${BROWSER}
     Maximize Browser Window
-    Input Text         //*[@id="login_input_username"]    admin
-    Input Password    //*[@id="login_input_password"]    123456
-    Click Button     //*[@id="login_btn_login"]
+    Input Text         ${USERNAME_FIELD}    ${USERNAME}
+    Input Password     ${PASSWORD_FIELD}    ${PASSWORD}
+    Click Button       ${LOGIN_BUTTON}
 #check Functionality of Retired Checkbox
-    Click Element    //*[@id="1"]
+    Click Element    ${Users_Mangment_Button}
     Sleep    5
-    Click Element    //*[@id="users_btn_menu"]
-    Click Element    //*[@id="users_btn_Unretired"]
-    #//*[@id="users_btn_Unretired"]/label/div
-    ${CheckBoxValue}    Get Value    //*[@id="users_btn_Unretired"]
-    IF    $CheckBoxValue 
-        Log            "None"
+    Click Element           ${Users_btn_menu}
+#Check Retired Checkbox Is Present
+    Element Should Be Visible        ${RETIRE_CHECKBOX}
 
-        Click Element    //*[@id="users_btn_menu"]
-        Unselect Checkbox    //*[@id="users_btn_Unretired"]
-        Get Value    ${CheckBoxValue}
-        Sleep    5
-    END
 
-    
+#Get the initial state of the checkbox
+   ${is_checked}=    Get Element Attribute    ${RETIRE_CHECKBOX}    checked
+    Run Keyword If    ${is_checked} == None    Log    "Checkbox is initially checked"    ELSE    Log    "Checkbox is initially unchecked"
+
+# If initially checked, uncheck it and verify
+   Run Keyword If    ${is_checked} == None    Click Element    ${RETIRE_CHECKBOX}
+   Sleep    3s
+   Click Element    ${Users_btn_menu}
+   ${is_checked}=    Get Element Attribute    ${Recheck_CHECKBOX}    checked
+   Run Keyword If    ${is_checked} == None    Log    "Checkbox is now unchecked"    ELSE    Fail    "Checkbox should be unchecked"
+    Sleep    1s
+
+#Verify the checkbox is now checked
+    Click Element    ${Recheck_CHECKBOX}
+    ${is_checked}=    Get Element Attribute    ${Recheck_CHECKBOX}   checked
+    Run Keyword If    ${is_checked} == None    Log    "Checkbox is now checked "    ELSE    Fail    "Checkbox should be checked "
+    Sleep    1s
+#  check the checkbox for the final state
+   # Sleep    3s
+   Click Element           ${Users_btn_menu}
+   Click Element    ${RETIRE_CHECKBOX}
+
+# Verify the checkbox is now unchecked again
+    ${is_checked}=    Get Element Attribute    ${RETIRE_CHECKBOX}    checked
+    Run Keyword If    ${is_checked} == None    Log    "Checkbox is now unchecked"    ELSE    Fail    "Checkbox should be unchecked"
+
 
 
        Close Browser
