@@ -1,0 +1,18 @@
+*** Settings ***
+Library  SeleniumLibrary
+Library  String
+*** Variables ***
+${Username_Text}    //*[@id="login_input_username"]
+${Password_Text}    //*[@id="login_input_password"]
+${Login_btn}        //*[@id="login_btn_login"]
+*** Keywords ***
+Open_Chrome
+    Set Selenium Implicit Wait  5
+    Open Browser    https://dgdadevnew.eastus.cloudapp.azure.com/DGDAAdminFront/#/login  chrome
+    Maximize Browser Window
+Close_Chrome
+    Close Browser
+Login_Successfully
+    Input Text      ${Username_Text}    Admin
+    Input Password  ${Password_Text}    123456
+    Click Element   ${Login_btn}

@@ -1,75 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.3 (Python 3.10.6 on win32)" generated="20240528 14:52:30.629" rpa="false" schemaversion="2">
-<suite id="s1" name="Tests" source="C:\Users\abdullah.ahmed\IdeaProjects\Admin QSIT\Tests">
-<suite id="s1-s1" name="Login" source="C:\Users\abdullah.ahmed\IdeaProjects\Admin QSIT\Tests\Login.robot">
-<test id="s1-s1-t1" name="LoginwithValidData">
-<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
-<arg>5</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20240528 14:52:30.895" endtime="20240528 14:52:30.895"/>
+<robot generator="Robot 4.1.3 (Python 3.10.6 on win32)" generated="20240530 14:09:33.860" rpa="false" schemaversion="2">
+<suite id="s1" name="Tests" source="D:\Work\Intellij\Admin Mahmoud\Tests">
+<suite id="s1-s1" name="UserMangment" source="D:\Work\Intellij\Admin Mahmoud\Tests\UserMangment">
+<suite id="s1-s1-s1" name="User Management" source="D:\Work\Intellij\Admin Mahmoud\Tests\UserMangment\User Management.robot">
+<kw name="Run Keywords" library="BuiltIn" type="SETUP">
+<arg>Open_Chrome</arg>
+<arg>Login_Successfully</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Open_Chrome">
+<msg timestamp="20240530 14:09:34.095" level="FAIL">No keyword with name 'Open_Chrome' found.</msg>
+<status status="FAIL" starttime="20240530 14:09:34.095" endtime="20240530 14:09:34.095"/>
 </kw>
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>https://dgdadevnew.eastus.cloudapp.azure.com/DGDAAdminFront/#/login</arg>
-<arg>Chrome</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20240528 14:52:30.896" level="INFO">Opening browser 'Chrome' to base url 'https://dgdadevnew.eastus.cloudapp.azure.com/DGDAAdminFront/#/login'.</msg>
-<status status="PASS" starttime="20240528 14:52:30.896" endtime="20240528 14:52:57.180"/>
+<status status="FAIL" starttime="20240530 14:09:34.093" endtime="20240530 14:09:34.095"/>
 </kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20240528 14:52:57.181" endtime="20240528 14:52:57.222"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>//*[@id="login_input_username"]</arg>
-<arg>admin</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240528 14:52:57.229" level="INFO">Typing text 'admin' into text field '//*[@id="login_input_username"]'.</msg>
-<status status="PASS" starttime="20240528 14:52:57.223" endtime="20240528 14:52:57.793"/>
-</kw>
-<kw name="Input Password" library="SeleniumLibrary">
-<arg>//*[@id="login_input_password"]</arg>
-<arg>123456</arg>
-<doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20240528 14:52:57.795" level="INFO">Typing password into text field '//*[@id="login_input_password"]'.</msg>
-<msg timestamp="20240528 14:52:57.890" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20240528 14:52:58.043" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20240528 14:52:57.795" endtime="20240528 14:52:58.043"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>//*[@id="login_btn_login"]</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20240528 14:52:58.045" level="INFO">Clicking button '//*[@id="login_btn_login"]'.</msg>
-<status status="PASS" starttime="20240528 14:52:58.044" endtime="20240528 14:52:58.190"/>
-</kw>
-<kw name="Page Should Contain" library="SeleniumLibrary">
-<arg>DIRIYAH GATE ‍DEVELOPMENT AUTHORITY (DGDA)</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<msg timestamp="20240528 14:52:58.371" level="INFO">Current page contains text 'DIRIYAH GATE ‍DEVELOPMENT AUTHORITY (DGDA)'.</msg>
-<status status="PASS" starttime="20240528 14:52:58.190" endtime="20240528 14:52:58.372"/>
-</kw>
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20240528 14:52:58.373" endtime="20240528 14:53:00.775"/>
-</kw>
-<tag>Login_Valid</tag>
-<status status="PASS" starttime="20240528 14:52:30.894" endtime="20240528 14:53:00.776"/>
+<test id="s1-s1-s1-t1" name="Check Functionality of Edit User">
+<tag>User_Management_Edit</tag>
+<status status="FAIL" starttime="20240530 14:09:34.096" endtime="20240530 14:09:34.096">Parent suite setup failed:
+No keyword with name 'Open_Chrome' found.</status>
 </test>
-<status status="PASS" starttime="20240528 14:52:30.651" endtime="20240528 14:53:00.778"/>
+<status status="FAIL" starttime="20240530 14:09:33.882" endtime="20240530 14:09:34.097">Suite setup failed:
+No keyword with name 'Open_Chrome' found.</status>
 </suite>
-<status status="PASS" starttime="20240528 14:52:30.630" endtime="20240528 14:53:00.782"/>
+<status status="FAIL" starttime="20240530 14:09:33.880" endtime="20240530 14:09:34.098"/>
+</suite>
+<status status="FAIL" starttime="20240530 14:09:33.861" endtime="20240530 14:09:34.099"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">Login_Valid</stat>
+<stat pass="0" fail="1" skip="0">User_Management_Edit</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1" name="Login">Tests.Login</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="UserMangment">Tests.UserMangment</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="User Management">Tests.UserMangment.User Management</stat>
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20240530 14:09:34.090" level="ERROR">Error in file 'D:\Work\Intellij\Admin Mahmoud\Tests\UserMangment\User Management.robot' on line 6: Resource file 'D:WorkIntellijAdmin MahmoudResourcesCommon.robot' does not exist.</msg>
 </errors>
 </robot>
