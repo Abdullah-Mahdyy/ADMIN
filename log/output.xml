@@ -1,93 +1,130 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.3 (Python 3.10.6 on win32)" generated="20240530 15:33:46.643" rpa="false" schemaversion="2">
-<suite id="s1" name="Login" source="C:\Users\abdullah.ahmed\IdeaProjects\Admin QSIT\Tests\Login.robot">
+<robot generator="Robot 4.1.3 (Python 3.10.6 on win32)" generated="20240530 17:30:34.853" rpa="false" schemaversion="2">
+<suite id="s1" name="SearchAndFilter" source="C:\Users\abdullah.ahmed\IdeaProjects\Admin QSIT\Tests\UserMangment\SearchAndFilter.robot">
 <kw name="Run Keywords" library="BuiltIn" type="SETUP">
 <arg>Open_Chrome</arg>
+<arg>Login_Successfully</arg>
 <doc>Executes all the given keywords in a sequence.</doc>
 <kw name="Open_Chrome" library="Common">
 <kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
 <arg>5</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20240530 15:33:46.852" endtime="20240530 15:33:46.852"/>
+<status status="PASS" starttime="20240530 17:30:35.161" endtime="20240530 17:30:35.161"/>
 </kw>
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>https://dgdadevnew.eastus.cloudapp.azure.com/DGDAAdminFront/#/login</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20240530 15:33:46.853" level="INFO">Opening browser 'chrome' to base url 'https://dgdadevnew.eastus.cloudapp.azure.com/DGDAAdminFront/#/login'.</msg>
-<status status="PASS" starttime="20240530 15:33:46.853" endtime="20240530 15:34:03.828"/>
+<msg timestamp="20240530 17:30:35.162" level="INFO">Opening browser 'chrome' to base url 'https://dgdadevnew.eastus.cloudapp.azure.com/DGDAAdminFront/#/login'.</msg>
+<status status="PASS" starttime="20240530 17:30:35.161" endtime="20240530 17:30:42.841"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20240530 15:34:03.829" endtime="20240530 15:34:03.855"/>
+<status status="PASS" starttime="20240530 17:30:42.842" endtime="20240530 17:30:42.877"/>
 </kw>
-<status status="PASS" starttime="20240530 15:33:46.852" endtime="20240530 15:34:03.855"/>
+<status status="PASS" starttime="20240530 17:30:35.160" endtime="20240530 17:30:42.878"/>
 </kw>
-<status status="PASS" starttime="20240530 15:33:46.851" endtime="20240530 15:34:03.855"/>
-</kw>
-<test id="s1-t1" name="Check_Login_with_ValidData TestCase">
-<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
-<arg>5</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20240530 15:34:03.856" endtime="20240530 15:34:03.860"/>
-</kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20240530 15:34:03.860" endtime="20240530 15:34:03.864"/>
-</kw>
+<kw name="Login_Successfully" library="Common">
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${Username_Text}</arg>
-<arg>admin</arg>
+<arg>Admin</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240530 15:34:03.865" level="INFO">Typing text 'admin' into text field '//*[@id="login_input_username"]'.</msg>
-<status status="PASS" starttime="20240530 15:34:03.864" endtime="20240530 15:34:04.229"/>
+<msg timestamp="20240530 17:30:42.880" level="INFO">Typing text 'Admin' into text field '//*[@id="login_input_username"]'.</msg>
+<status status="PASS" starttime="20240530 17:30:42.878" endtime="20240530 17:30:43.261"/>
 </kw>
 <kw name="Input Password" library="SeleniumLibrary">
 <arg>${Password_Text}</arg>
 <arg>123456</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20240530 15:34:04.229" level="INFO">Typing password into text field '//*[@id="login_input_password"]'.</msg>
-<msg timestamp="20240530 15:34:04.279" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20240530 15:34:04.353" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20240530 15:34:04.229" endtime="20240530 15:34:04.354"/>
+<msg timestamp="20240530 17:30:43.262" level="INFO">Typing password into text field '//*[@id="login_input_password"]'.</msg>
+<msg timestamp="20240530 17:30:43.319" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20240530 17:30:43.409" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20240530 17:30:43.261" endtime="20240530 17:30:43.409"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Login_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240530 17:30:43.410" level="INFO">Clicking element '//*[@id="login_btn_login"]'.</msg>
+<status status="PASS" starttime="20240530 17:30:43.410" endtime="20240530 17:30:43.475"/>
+</kw>
+<status status="PASS" starttime="20240530 17:30:42.878" endtime="20240530 17:30:43.476"/>
+</kw>
+<status status="PASS" starttime="20240530 17:30:35.160" endtime="20240530 17:30:43.476"/>
+</kw>
+<test id="s1-t1" name="Check Functionality of search with existing Name">
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>5</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20240530 17:30:43.478" endtime="20240530 17:30:43.482"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
-<arg>//*[@id="login_btn_login"]</arg>
+<arg>${Users_Mangment_Button}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20240530 15:34:04.354" level="INFO">Clicking button '//*[@id="login_btn_login"]'.</msg>
-<status status="PASS" starttime="20240530 15:34:04.354" endtime="20240530 15:34:04.457"/>
+<msg timestamp="20240530 17:30:43.483" level="INFO">Clicking button '//*[@id="1"]'.</msg>
+<status status="PASS" starttime="20240530 17:30:43.482" endtime="20240530 17:30:44.676"/>
 </kw>
-<kw name="Page Should Contain" library="SeleniumLibrary">
-<arg>DIRIYAH GATE ‍DEVELOPMENT AUTHORITY (DGDA)</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<msg timestamp="20240530 15:34:04.563" level="INFO">Current page contains text 'DIRIYAH GATE ‍DEVELOPMENT AUTHORITY (DGDA)'.</msg>
-<status status="PASS" starttime="20240530 15:34:04.458" endtime="20240530 15:34:04.564"/>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SearchBar}</arg>
+<arg>${Name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240530 17:30:44.677" level="INFO">Typing text 'Weaam.Ahmed' into text field '//*[@id="users_input_filterUsers"]'.</msg>
+<status status="PASS" starttime="20240530 17:30:44.677" endtime="20240530 17:30:44.800"/>
 </kw>
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20240530 15:34:04.564" endtime="20240530 15:34:06.753"/>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240530 17:30:49.816" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20240530 17:30:44.800" endtime="20240530 17:30:49.816"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${firstelemnt}</var>
+<arg>//*[@id="users_ddl_usersList_0"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240530 17:30:49.883" level="INFO">${firstelemnt} = W
+Weaam.Ahmed</msg>
+<status status="PASS" starttime="20240530 17:30:49.818" endtime="20240530 17:30:49.883"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${sliced_value}</var>
+<arg>${firstelemnt}[2:]</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240530 17:30:49.886" level="INFO">${sliced_value} = Weaam.Ahmed</msg>
+<status status="PASS" starttime="20240530 17:30:49.884" endtime="20240530 17:30:49.887"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${Name1}</var>
+<arg>${Name}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240530 17:30:49.889" level="INFO">${Name1} = Weaam.Ahmed</msg>
+<status status="PASS" starttime="20240530 17:30:49.887" endtime="20240530 17:30:49.889"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${sliced_value}</arg>
+<arg>${Name1}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20240530 17:30:49.891" endtime="20240530 17:30:49.893"/>
 </kw>
 <kw name="Close_Chrome" library="Common" type="TEARDOWN">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20240530 15:34:06.756" endtime="20240530 15:34:06.757"/>
+<status status="PASS" starttime="20240530 17:30:49.897" endtime="20240530 17:30:52.187"/>
 </kw>
-<status status="PASS" starttime="20240530 15:34:06.755" endtime="20240530 15:34:06.758"/>
+<status status="PASS" starttime="20240530 17:30:49.895" endtime="20240530 17:30:52.190"/>
 </kw>
-<tag>Login_Valid</tag>
-<status status="PASS" starttime="20240530 15:34:03.855" endtime="20240530 15:34:06.758"/>
+<tag>Search_with_filter</tag>
+<status status="PASS" starttime="20240530 17:30:43.476" endtime="20240530 17:30:52.190"/>
 </test>
-<status status="PASS" starttime="20240530 15:33:46.645" endtime="20240530 15:34:06.761"/>
+<status status="PASS" starttime="20240530 17:30:34.858" endtime="20240530 17:30:52.195"/>
 </suite>
 <statistics>
 <total>
 <stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">Login_Valid</stat>
+<stat pass="1" fail="0" skip="0">Search_with_filter</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Login">Login</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="SearchAndFilter">SearchAndFilter</stat>
 </suite>
 </statistics>
 <errors>

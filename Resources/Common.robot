@@ -5,6 +5,7 @@ Library  String
 ${Username_Text}    //*[@id="login_input_username"]
 ${Password_Text}    //*[@id="login_input_password"]
 ${Login_btn}        //*[@id="login_btn_login"]
+${Users_Mangment_Button}     //*[@id="1"]
 *** Keywords ***
 Open_Chrome
     Set Selenium Implicit Wait  5
