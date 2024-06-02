@@ -1,4 +1,4 @@
-# robot  -d   Results   -i   Add_Grouop   Tests
+# robot  -d   Results   -i   Add_Group   Tests
 ###################### Command ############################
 *** Settings ***
 Library     SeleniumLibrary
@@ -10,7 +10,7 @@ Test Teardown   Close_Chrome
 ${Group_Name}                    //*[@id="group_input_groupName"]
 *** Test Cases ***
 Check Functionality of Edit User
-    [tags]                      Add_Grouop
+    [tags]                      Add_Group
     Set Selenium Implicit Wait  5
     Click Element           //*[@id="4"]
     Click Element           //*[@id="application_ddl_applications8"]/label
