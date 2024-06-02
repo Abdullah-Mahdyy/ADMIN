@@ -19,7 +19,7 @@ ${Toggle_Button}                //*[@id="role_toggle_mapServicesList_0"]/label/d
 ${Reset_Button}                 //*[@id="role_btn_resetFunctions"]
 ${StoryMap-CheckBox}            //*[@id="mat-checkbox-2"]/label
 ${Dashboard_CheckBox}           //*[@id="mat-checkbox-4"]/label
-${Yes_Button}                   //*[@id="id_btn_resetFunctions_ok"]
+${Cancel_Button}                   //*[@id="id_btn_resetFunctions_cancel"]
 *** Test cases ***
 Check functionality of Reset Button
     [Tags]          Rsest_button
@@ -30,7 +30,7 @@ Check functionality of Reset Button
     Click Button    ${Inspection_Button}
     Sleep    4s
     Click Button    ${Inspection1_button}
-    Sleep    5s
+    Sleep    4s
      Click Button    ${Inspection1_button1}
     Sleep    4s
     Click Element    ${role_btn_editRole}
@@ -38,20 +38,15 @@ Check functionality of Reset Button
     Click Element    ${Geo_button}
     Sleep    3s
 
-
-     ${status1}=    Get Element Attribute    ${Reset_Button}    disabled
-        Run Keyword If    "${status1}" == "true"    Log    "Reset button is disabled"    ELSE    Log    "Reset button is not disabled"    AND    Fail    "Reset button should be disabled"
-
-
     Click Element    ${Select_all_CheckBox}
     Sleep    3s
     Click Element    ${StoryMap-CheckBox}
 
 
     Click Element    ${Reset_Button}
-    Click Element    ${Yes_Button}
-
-    ${status}=    Get Element Attribute     ${Dashboard_CheckBox}      checked
+    Click Element    ${Cancel_Button}
+    Sleep    2s
+    ${status}=    Get Element Attribute     ${Dashboard_CheckBox}    checked
           Log      ${status}
 
 

@@ -19,10 +19,12 @@ ${Toggle_Button}                //*[@id="role_toggle_mapServicesList_0"]/label/d
 ${Reset_Button}                 //*[@id="role_btn_resetFunctions"]
 ${StoryMap-CheckBox}            //*[@id="mat-checkbox-2"]/label
 ${Dashboard_CheckBox}           //*[@id="mat-checkbox-4"]/label
-${Yes_Button}                   //*[@id="id_btn_resetFunctions_ok"]
+${CancelEdit_Button}            //*[@id="role_btn_cancel"]
+${Confirm_cancel}               //*[@id="id_btn_cancelEditRole_ok"]
 *** Test cases ***
 Check functionality of Reset Button
-    [Tags]          Rsest_button
+    [Tags]          CancelEdit_button
+    Set Selenium Implicit Wait  5
     Click Button    ${Assginment_Button}
     Sleep    4s
     Click Element    ${Requester_Button}
@@ -30,35 +32,30 @@ Check functionality of Reset Button
     Click Button    ${Inspection_Button}
     Sleep    4s
     Click Button    ${Inspection1_button}
-    Sleep    5s
-     Click Button    ${Inspection1_button1}
+    Sleep    10s
+    Click Button    ${Inspection1_button1}
     Sleep    4s
     Click Element    ${role_btn_editRole}
     Sleep    3s
     Click Element    ${Geo_button}
     Sleep    3s
 
-
+    #Check Functionality of Reset Button is Enabled
      ${status1}=    Get Element Attribute    ${Reset_Button}    disabled
         Run Keyword If    "${status1}" == "true"    Log    "Reset button is disabled"    ELSE    Log    "Reset button is not disabled"    AND    Fail    "Reset button should be disabled"
 
+     Click Element    ${Select_all_CheckBox}
+     Sleep    3s
+     Click Element    ${StoryMap-CheckBox}
 
-    Click Element    ${Select_all_CheckBox}
-    Sleep    3s
-    Click Element    ${StoryMap-CheckBox}
-
-
-    Click Element    ${Reset_Button}
-    Click Element    ${Yes_Button}
-
-    ${status}=    Get Element Attribute     ${Dashboard_CheckBox}      checked
-          Log      ${status}
-
-
-#if Status = True its checked
+    #if Status = True its checked
+     ${status}=    Get Element Attribute     ${Dashboard_CheckBox}      checked
+              Log      ${status}
     Run Keyword If    "${status}" != "true"     Log    "ResetButton Working successfully "    ELSE    Fail    "Reset Button Not working""
 
-
+    #Check Functionality of Cancel Edit Button
+    Click Button    ${CancelEdit_Button}
+    Click Element    ${Confirm_cancel}
 
 
 
