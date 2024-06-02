@@ -1,5 +1,5 @@
 # robot  -d   Results   -i   Add_User   Tests
-###################### Command ############################
+###################### Command #############################
 *** Settings ***
 Library     SeleniumLibrary
 Library     String
