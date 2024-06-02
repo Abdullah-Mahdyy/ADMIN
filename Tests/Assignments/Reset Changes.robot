@@ -37,17 +37,27 @@ Check functionality of Reset Button
     Sleep    3s
     Click Element    ${Geo_button}
     Sleep    3s
+
+
+     ${status}=    Get Element Attribute    ${Reset_Button}    disabled
+        Run Keyword If    "${status}" == "true"    Log    "Reset button is disabled"    ELSE    Log    "Reset button is not disabled"    AND    Fail    "Reset button should be disabled"
+
+
     Click Element    ${Select_all_CheckBox}
-    ${StoryMap-CheckBox_Value}       Get Value    //*[@id="mat-checkbox-2-input"]
     Sleep    3s
+    Click Element    //*[@id="mat-checkbox-2"]/label
+
+
     Click Element    ${Reset_Button}
     Click Element    ${Yes_Button}
 
- ${status}=    Get Element Attribute    ${Dashboard_CheckBox}    checked
-    Log      ${status}
+    ${status}=    Get Element Attribute     //*[@id="mat-checkbox-4"]/label     checked
+          Log      ${status}
 
-    Run Keyword If    ${Dashboard_CheckBox} != "on"     Log    "ResetButton Working successfully "    ELSE    Fail    "Reset Button Not working""
-  ###  Run Keyword And Expect Error    ${Dashboard_CheckBox} != on   ${Dashboard_CheckBox} == on
+
+#if Status = True its checked
+    Run Keyword If    "${status}" != "true"     Log    "ResetButton Working successfully "    ELSE    Fail    "Reset Button Not working""
+
 
 
 
