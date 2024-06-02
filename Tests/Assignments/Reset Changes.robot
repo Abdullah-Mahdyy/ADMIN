@@ -39,8 +39,8 @@ Check functionality of Reset Button
     Sleep    3s
 
 
-     ${status}=    Get Element Attribute    ${Reset_Button}    disabled
-        Run Keyword If    "${status}" == "true"    Log    "Reset button is disabled"    ELSE    Log    "Reset button is not disabled"    AND    Fail    "Reset button should be disabled"
+     ${status1}=    Get Element Attribute    ${Reset_Button}    disabled
+        Run Keyword If    "${status1}" == "true"    Log    "Reset button is disabled"    ELSE    Log    "Reset button is not disabled"    AND    Fail    "Reset button should be disabled"
 
 
     Click Element    ${Select_all_CheckBox}
