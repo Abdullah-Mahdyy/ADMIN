@@ -65,7 +65,6 @@ Check functionality of Toggle_button
     Sleep    3s
     Click Element    ${Geo_button}
     Sleep    3s
-#    Click Element    ${Toggle1_Checked}
 
 
 
