@@ -57,7 +57,6 @@ Check functionality of Toggle_button
     Sleep    4
     Check Toggle Button Status              ${Toggle1_Input}
     Sleep    4
-    Check If UnChecked                      ${Toggle1_Input}
-    Verify that All Toggles is Checked      ${Toggle1_Input1}
-    Run Keyword If                          "${status}" == "${status1}"
-#    ${Result}  Should Be Equal    ${status}    ${status1}
+    ${status}=          Check If UnChecked                      ${Toggle1_Input}
+    ${status1} =        Verify that All Toggles is Checked      ${Toggle1_Input1}
+    ${Result}  Should Be Equal    ${status}    ${status1}
