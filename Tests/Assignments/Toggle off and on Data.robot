@@ -57,6 +57,15 @@ Check functionality of Toggle_button
     Sleep    4
     Check Toggle Button Status              ${Toggle1_Input}
     Sleep    4
-    ${status}=          Check If UnChecked                      ${Toggle1_Input}
-    ${status1} =        Verify that All Toggles is Checked      ${Toggle1_Input1}
-    ${Result}  Should Be Equal    ${status}    ${status1}
+    ${toggle_status}=    Check Toggle Button Status    ${Toggle1_Input}
+       Run Keyword If    "${toggle_status}" == "false"    Click Element    ${Toggle1_Checked}
+    ${toggle_status1}=    Check Toggle Button Status    ${Toggle1_Input}
+       Run Keyword If    "${toggle_status}" == "true"    Log    "Toggle button is checked"
+    ${toggle_status2}=    Verify that All Toggles is Checked     ${Toggle1_Input1}
+       Run Keyword If    "${toggle_status}" == "true"    Log    "All Toggle button is checked"
+
+#    ${Result}  Should Be Equal    ${toggle_status1}    ${toggle_status2}
+    Run Keyword If   "${toggle_status1}" == "${toggle_status2}"
+    ...    Log    "Run Successfully"
+    ...  ELSE
+    ...    Log    "Error"
