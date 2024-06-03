@@ -39,7 +39,7 @@ Check Toggle Button Status
 
 
 check If UnChecked
- [Arguments]    ${Toggle1_Input}
+  [Arguments]    ${Toggle1_Input}
     ${status}=    Check Toggle Button Status    ${Toggle1_Input}
     Run Keyword If    "${status}" == "false"    Click Element    ${Toggle1_Checked}
 
@@ -59,7 +59,7 @@ Check functionality of Toggle_button
     Sleep    4s
     Click Button    ${Inspection1_button}
     Sleep    5s
-     Click Button    ${Inspection1_button1}
+    Click Button    ${Inspection1_button1}
     Sleep    4s
     Click Element    ${role_btn_editRole}
     Sleep    3s
