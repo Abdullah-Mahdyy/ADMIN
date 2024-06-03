@@ -66,12 +66,6 @@ Check functionality of Toggle_button
     Click Element    ${Geo_button}
     Sleep    3s
 
-
-
-
-
-
-
 #    # Check and toggle it
 
     ${toggle_status}=    Check Toggle Button Status    ${Toggle1_Input}
