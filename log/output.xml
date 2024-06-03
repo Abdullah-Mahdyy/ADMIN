@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.3 (Python 3.10.6 on win32)" generated="20240602 13:34:02.131" rpa="false" schemaversion="2">
-<suite id="s1" name="CancelEdit" source="C:\Users\abdullah.ahmed\IdeaProjects\Admin QSIT\Tests\Assignments\CancelEdit.robot">
+<robot generator="Robot 4.1.3 (Python 3.10.6 on win32)" generated="20240603 13:50:37.957" rpa="false" schemaversion="2">
+<suite id="s1" name="Toggle off and on module" source="C:\Users\abdullah.ahmed\IdeaProjects\Admin QSIT\Tests\Assignments\Toggle off and on module.robot">
 <kw name="Run Keywords" library="BuiltIn" type="SETUP">
 <arg>Open_Chrome</arg>
 <arg>Login_Successfully</arg>
@@ -9,246 +9,260 @@
 <kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
 <arg>5</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20240602 13:34:02.448" endtime="20240602 13:34:02.449"/>
+<status status="PASS" starttime="20240603 13:50:38.260" endtime="20240603 13:50:38.260"/>
 </kw>
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>https://dgdadevnew.eastus.cloudapp.azure.com/DGDAAdminFront/#/login</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20240602 13:34:02.449" level="INFO">Opening browser 'chrome' to base url 'https://dgdadevnew.eastus.cloudapp.azure.com/DGDAAdminFront/#/login'.</msg>
-<status status="PASS" starttime="20240602 13:34:02.449" endtime="20240602 13:35:14.663"/>
+<msg timestamp="20240603 13:50:38.261" level="INFO">Opening browser 'chrome' to base url 'https://dgdadevnew.eastus.cloudapp.azure.com/DGDAAdminFront/#/login'.</msg>
+<status status="PASS" starttime="20240603 13:50:38.260" endtime="20240603 13:50:56.114"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20240602 13:35:14.664" endtime="20240602 13:35:14.701"/>
+<status status="PASS" starttime="20240603 13:50:56.114" endtime="20240603 13:50:56.151"/>
 </kw>
-<status status="PASS" starttime="20240602 13:34:02.448" endtime="20240602 13:35:14.701"/>
+<status status="PASS" starttime="20240603 13:50:38.247" endtime="20240603 13:50:56.152"/>
 </kw>
 <kw name="Login_Successfully" library="Common">
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${Username_Text}</arg>
 <arg>Admin</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240602 13:35:14.702" level="INFO">Typing text 'Admin' into text field '//*[@id="login_input_username"]'.</msg>
-<status status="PASS" starttime="20240602 13:35:14.702" endtime="20240602 13:35:15.038"/>
+<msg timestamp="20240603 13:50:56.154" level="INFO">Typing text 'Admin' into text field '//*[@id="login_input_username"]'.</msg>
+<status status="PASS" starttime="20240603 13:50:56.153" endtime="20240603 13:50:56.465"/>
 </kw>
 <kw name="Input Password" library="SeleniumLibrary">
 <arg>${Password_Text}</arg>
 <arg>123456</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20240602 13:35:15.039" level="INFO">Typing password into text field '//*[@id="login_input_password"]'.</msg>
-<msg timestamp="20240602 13:35:15.077" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20240602 13:35:15.150" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20240602 13:35:15.039" endtime="20240602 13:35:15.151"/>
+<msg timestamp="20240603 13:50:56.466" level="INFO">Typing password into text field '//*[@id="login_input_password"]'.</msg>
+<msg timestamp="20240603 13:50:56.509" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20240603 13:50:56.581" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20240603 13:50:56.465" endtime="20240603 13:50:56.581"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${Login_btn}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240602 13:35:15.151" level="INFO">Clicking element '//*[@id="login_btn_login"]'.</msg>
-<status status="PASS" starttime="20240602 13:35:15.151" endtime="20240602 13:35:15.227"/>
+<msg timestamp="20240603 13:50:56.582" level="INFO">Clicking element '//*[@id="login_btn_login"]'.</msg>
+<status status="PASS" starttime="20240603 13:50:56.581" endtime="20240603 13:50:56.658"/>
 </kw>
-<status status="PASS" starttime="20240602 13:35:14.701" endtime="20240602 13:35:15.227"/>
+<status status="PASS" starttime="20240603 13:50:56.152" endtime="20240603 13:50:56.658"/>
 </kw>
-<status status="PASS" starttime="20240602 13:34:02.447" endtime="20240602 13:35:15.228"/>
+<status status="PASS" starttime="20240603 13:50:38.246" endtime="20240603 13:50:56.659"/>
 </kw>
-<test id="s1-t1" name="Check functionality of Reset Button">
-<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
-<arg>5</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20240602 13:35:15.229" endtime="20240602 13:35:15.230"/>
-</kw>
+<test id="s1-t1" name="Check functionality of Toggle_button">
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>${Assginment_Button}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20240602 13:35:15.231" level="INFO">Clicking button '//*[@id="4"]'.</msg>
-<status status="PASS" starttime="20240602 13:35:15.231" endtime="20240602 13:35:15.881"/>
+<msg timestamp="20240603 13:50:56.660" level="INFO">Clicking button '//*[@id="4"]'.</msg>
+<status status="PASS" starttime="20240603 13:50:56.659" endtime="20240603 13:50:57.896"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>4s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20240602 13:35:19.896" level="INFO">Slept 4 seconds</msg>
-<status status="PASS" starttime="20240602 13:35:15.881" endtime="20240602 13:35:19.896"/>
+<msg timestamp="20240603 13:51:01.900" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20240603 13:50:57.896" endtime="20240603 13:51:01.902"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${Requester_Button}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240602 13:35:19.899" level="INFO">Clicking element '//*[@id="application_ddl_applications8"]'.</msg>
-<status status="PASS" starttime="20240602 13:35:19.898" endtime="20240602 13:35:20.038"/>
+<msg timestamp="20240603 13:51:01.905" level="INFO">Clicking element '//*[@id="application_ddl_applications8"]'.</msg>
+<status status="PASS" starttime="20240603 13:51:01.903" endtime="20240603 13:51:02.055"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>4s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20240602 13:35:24.048" level="INFO">Slept 4 seconds</msg>
-<status status="PASS" starttime="20240602 13:35:20.038" endtime="20240602 13:35:24.048"/>
+<msg timestamp="20240603 13:51:06.065" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20240603 13:51:02.055" endtime="20240603 13:51:06.065"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>${Inspection_Button}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20240602 13:35:24.050" level="INFO">Clicking button '//*[@id="group_ddl_groups0"]/button'.</msg>
-<status status="PASS" starttime="20240602 13:35:24.050" endtime="20240602 13:35:24.174"/>
+<msg timestamp="20240603 13:51:06.066" level="INFO">Clicking button '//*[@id="group_ddl_groups0"]/button'.</msg>
+<status status="PASS" starttime="20240603 13:51:06.065" endtime="20240603 13:51:06.170"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>4s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20240602 13:35:28.188" level="INFO">Slept 4 seconds</msg>
-<status status="PASS" starttime="20240602 13:35:24.175" endtime="20240602 13:35:28.189"/>
+<msg timestamp="20240603 13:51:10.172" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20240603 13:51:06.171" endtime="20240603 13:51:10.173"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>${Inspection1_button}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20240602 13:35:28.189" level="INFO">Clicking button '//*[@id="role_ddl_roleroleList_0"]/button'.</msg>
-<status status="PASS" starttime="20240602 13:35:28.189" endtime="20240602 13:35:28.322"/>
+<msg timestamp="20240603 13:51:10.177" level="INFO">Clicking button '//*[@id="role_ddl_roleroleList_0"]/button'.</msg>
+<status status="PASS" starttime="20240603 13:51:10.175" endtime="20240603 13:51:10.286"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
-<arg>10s</arg>
+<arg>5s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20240602 13:35:38.329" level="INFO">Slept 10 seconds</msg>
-<status status="PASS" starttime="20240602 13:35:28.322" endtime="20240602 13:35:38.329"/>
+<msg timestamp="20240603 13:51:15.289" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20240603 13:51:10.287" endtime="20240603 13:51:15.290"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>${Inspection1_button1}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20240602 13:35:38.329" level="INFO">Clicking button '//*[@id="role_ddl_roleroleList_0"]/button'.</msg>
-<status status="PASS" starttime="20240602 13:35:38.329" endtime="20240602 13:35:38.474"/>
+<msg timestamp="20240603 13:51:15.292" level="INFO">Clicking button '//*[@id="role_ddl_roleroleList_0"]/button'.</msg>
+<status status="PASS" starttime="20240603 13:51:15.291" endtime="20240603 13:51:15.408"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>4s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20240602 13:35:42.488" level="INFO">Slept 4 seconds</msg>
-<status status="PASS" starttime="20240602 13:35:38.474" endtime="20240602 13:35:42.489"/>
+<msg timestamp="20240603 13:51:19.424" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20240603 13:51:15.408" endtime="20240603 13:51:19.425"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${role_btn_editRole}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240602 13:35:42.489" level="INFO">Clicking element '//*[@id="role_btn_editRole"]'.</msg>
-<status status="PASS" starttime="20240602 13:35:42.489" endtime="20240602 13:35:42.680"/>
+<msg timestamp="20240603 13:51:19.427" level="INFO">Clicking element '//*[@id="role_btn_editRole"]'.</msg>
+<status status="PASS" starttime="20240603 13:51:19.426" endtime="20240603 13:51:19.522"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20240602 13:35:45.687" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20240602 13:35:42.680" endtime="20240602 13:35:45.689"/>
+<msg timestamp="20240603 13:51:22.530" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20240603 13:51:19.522" endtime="20240603 13:51:22.530"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${Geo_button}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240602 13:35:45.689" level="INFO">Clicking element '//*[@id="role_ddl_mapServicesList_0"]/button'.</msg>
-<status status="PASS" starttime="20240602 13:35:45.689" endtime="20240602 13:35:46.126"/>
+<msg timestamp="20240603 13:51:22.532" level="INFO">Clicking element '//*[@id="role_ddl_mapServicesList_0"]/button'.</msg>
+<status status="PASS" starttime="20240603 13:51:22.531" endtime="20240603 13:51:22.893"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20240602 13:35:49.138" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20240602 13:35:46.126" endtime="20240602 13:35:49.138"/>
+<msg timestamp="20240603 13:51:25.903" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20240603 13:51:22.893" endtime="20240603 13:51:25.904"/>
 </kw>
-<kw name="Get Element Attribute" library="SeleniumLibrary">
-<var>${status1}</var>
-<arg>${Reset_Button}</arg>
-<arg>disabled</arg>
-<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<msg timestamp="20240602 13:35:49.200" level="INFO">${status1} = true</msg>
-<status status="PASS" starttime="20240602 13:35:49.138" endtime="20240602 13:35:49.200"/>
-</kw>
-<kw name="Run Keyword If" library="BuiltIn">
-<arg>"${status1}" == "true"</arg>
-<arg>Log</arg>
-<arg>"Reset button is disabled"</arg>
-<arg>ELSE</arg>
-<arg>Log</arg>
-<arg>"Reset button is not disabled"</arg>
-<arg>AND</arg>
-<arg>Fail</arg>
-<arg>"Reset button should be disabled"</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<kw name="Log" library="BuiltIn">
-<arg>"Reset button is disabled"</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20240602 13:35:49.200" level="INFO">"Reset button is disabled"</msg>
-<status status="PASS" starttime="20240602 13:35:49.200" endtime="20240602 13:35:49.200"/>
-</kw>
-<status status="PASS" starttime="20240602 13:35:49.200" endtime="20240602 13:35:49.200"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${Select_all_CheckBox}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240602 13:35:49.200" level="INFO">Clicking element '//*[@id="role_checkbox_selectAllFunctions"]/label/div'.</msg>
-<status status="PASS" starttime="20240602 13:35:49.200" endtime="20240602 13:35:49.287"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>3s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20240602 13:35:52.289" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20240602 13:35:49.287" endtime="20240602 13:35:52.289"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${StoryMap-CheckBox}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240602 13:35:52.289" level="INFO">Clicking element '//*[@id="mat-checkbox-2"]/label'.</msg>
-<status status="PASS" starttime="20240602 13:35:52.289" endtime="20240602 13:35:52.405"/>
-</kw>
+<kw name="Check Toggle Button Status">
+<var>${toggle_status}</var>
+<arg>${Toggle1_Input}</arg>
 <kw name="Get Element Attribute" library="SeleniumLibrary">
 <var>${status}</var>
-<arg>${Dashboard_CheckBox}</arg>
-<arg>checked</arg>
+<arg>${Toggle1_Input}</arg>
+<arg>aria-checked</arg>
 <doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<msg timestamp="20240602 13:35:52.422" level="INFO">${status} = None</msg>
-<status status="PASS" starttime="20240602 13:35:52.405" endtime="20240602 13:35:52.422"/>
+<msg timestamp="20240603 13:51:25.968" level="INFO">${status} = true</msg>
+<status status="PASS" starttime="20240603 13:51:25.907" endtime="20240603 13:51:25.968"/>
 </kw>
 <kw name="Log" library="BuiltIn">
 <arg>${status}</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20240602 13:35:52.422" level="INFO">None</msg>
-<status status="PASS" starttime="20240602 13:35:52.422" endtime="20240602 13:35:52.422"/>
+<msg timestamp="20240603 13:51:25.969" level="INFO">true</msg>
+<status status="PASS" starttime="20240603 13:51:25.968" endtime="20240603 13:51:25.969"/>
+</kw>
+<msg timestamp="20240603 13:51:25.969" level="INFO">${toggle_status} = true</msg>
+<status status="PASS" starttime="20240603 13:51:25.905" endtime="20240603 13:51:25.970"/>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
-<arg>"${status}" != "true"</arg>
+<arg>"${toggle_status}" == "false"</arg>
+<arg>Click Element</arg>
+<arg>${Toggle1_Checked}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20240603 13:51:25.970" endtime="20240603 13:51:25.970"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240603 13:51:26.975" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240603 13:51:25.970" endtime="20240603 13:51:26.976"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240603 13:51:27.983" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240603 13:51:26.977" endtime="20240603 13:51:27.984"/>
+</kw>
+<kw name="Check Toggle Button Status">
+<var>${toggle_status}</var>
+<arg>${Toggle1_Input}</arg>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${status}</var>
+<arg>${Toggle1_Input}</arg>
+<arg>aria-checked</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20240603 13:51:28.045" level="INFO">${status} = true</msg>
+<status status="PASS" starttime="20240603 13:51:27.987" endtime="20240603 13:51:28.046"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${status}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240603 13:51:28.047" level="INFO">true</msg>
+<status status="PASS" starttime="20240603 13:51:28.046" endtime="20240603 13:51:28.047"/>
+</kw>
+<msg timestamp="20240603 13:51:28.048" level="INFO">${toggle_status} = true</msg>
+<status status="PASS" starttime="20240603 13:51:27.985" endtime="20240603 13:51:28.048"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${toggle_status}" == "true"</arg>
 <arg>Log</arg>
-<arg>"ResetButton Working successfully "</arg>
-<arg>ELSE</arg>
-<arg>Fail</arg>
-<arg>"Reset Button Not working""</arg>
+<arg>"Toggle button is checked"</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
 <kw name="Log" library="BuiltIn">
-<arg>"ResetButton Working successfully "</arg>
+<arg>"Toggle button is checked"</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20240602 13:35:52.422" level="INFO">"ResetButton Working successfully "</msg>
-<status status="PASS" starttime="20240602 13:35:52.422" endtime="20240602 13:35:52.422"/>
+<msg timestamp="20240603 13:51:28.050" level="INFO">"Toggle button is checked"</msg>
+<status status="PASS" starttime="20240603 13:51:28.050" endtime="20240603 13:51:28.050"/>
 </kw>
-<status status="PASS" starttime="20240602 13:35:52.422" endtime="20240602 13:35:52.422"/>
+<status status="PASS" starttime="20240603 13:51:28.048" endtime="20240603 13:51:28.051"/>
 </kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${CancelEdit_Button}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20240602 13:35:52.422" level="INFO">Clicking button '//*[@id="role_btn_cancel"]'.</msg>
-<status status="PASS" starttime="20240602 13:35:52.422" endtime="20240602 13:35:52.487"/>
+<kw name="Verify Select All Checkbox Status">
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<var>${status}</var>
+<arg>Get Element Attribute</arg>
+<arg>${Select_all_CheckBox}</arg>
+<arg>checked</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<arg>${Select_all_CheckBox}</arg>
+<arg>checked</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" starttime="20240603 13:51:28.052" endtime="20240603 13:51:28.073"/>
 </kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${Confirm_cancel}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240602 13:35:52.487" level="INFO">Clicking element '//*[@id="id_btn_cancelEditRole_ok"]'.</msg>
-<status status="PASS" starttime="20240602 13:35:52.487" endtime="20240602 13:35:52.584"/>
+<msg timestamp="20240603 13:51:28.073" level="INFO">${status} = ('PASS', None)</msg>
+<status status="PASS" starttime="20240603 13:51:28.051" endtime="20240603 13:51:28.073"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${status}" != "None"</arg>
+<arg>Log</arg>
+<arg>"Select All checkbox is checked"</arg>
+<arg>ELSE</arg>
+<arg>Fail</arg>
+<arg>"Select All checkbox is not checked"</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Log" library="BuiltIn">
+<arg>"Select All checkbox is checked"</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240603 13:51:28.074" level="INFO">"Select All checkbox is checked"</msg>
+<status status="PASS" starttime="20240603 13:51:28.074" endtime="20240603 13:51:28.074"/>
+</kw>
+<status status="PASS" starttime="20240603 13:51:28.073" endtime="20240603 13:51:28.074"/>
+</kw>
+<status status="PASS" starttime="20240603 13:51:28.051" endtime="20240603 13:51:28.074"/>
 </kw>
 <kw name="Close_Chrome" library="Common" type="TEARDOWN">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20240602 13:35:52.584" endtime="20240602 13:35:54.794"/>
+<status status="PASS" starttime="20240603 13:51:28.075" endtime="20240603 13:51:30.531"/>
 </kw>
-<status status="PASS" starttime="20240602 13:35:52.584" endtime="20240602 13:35:54.794"/>
+<status status="PASS" starttime="20240603 13:51:28.074" endtime="20240603 13:51:30.532"/>
 </kw>
-<tag>CancelEdit_button</tag>
-<status status="PASS" starttime="20240602 13:35:15.228" endtime="20240602 13:35:54.794"/>
+<tag>Toggle_button</tag>
+<status status="PASS" starttime="20240603 13:50:56.659" endtime="20240603 13:51:30.533"/>
 </test>
-<status status="PASS" starttime="20240602 13:34:02.134" endtime="20240602 13:35:54.794"/>
+<status status="PASS" starttime="20240603 13:50:37.959" endtime="20240603 13:51:30.536"/>
 </suite>
 <statistics>
 <total>
 <stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">CancelEdit_button</stat>
+<stat pass="1" fail="0" skip="0">Toggle_button</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="CancelEdit">CancelEdit</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Toggle off and on module">Toggle off and on module</stat>
 </suite>
 </statistics>
 <errors>
