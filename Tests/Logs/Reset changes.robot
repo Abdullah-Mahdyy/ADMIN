@@ -60,6 +60,7 @@ Check functionality of Reset_Changes
     Should Be Empty    ${LogFrom}
     ${LogTo}=    Get Value      id=logs_input_LogTo
     Should Be Empty    ${LogTo}
+    #
 
 
 
