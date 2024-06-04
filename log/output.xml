@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.3 (Python 3.10.6 on win32)" generated="20240603 16:40:17.147" rpa="false" schemaversion="2">
+<robot generator="Robot 4.1.3 (Python 3.10.6 on win32)" generated="20240604 11:13:21.170" rpa="false" schemaversion="2">
 <suite id="s1" name="Reset changes" source="C:\Users\abdullah.ahmed\IdeaProjects\Admin QSIT\Tests\Logs\Reset changes.robot">
 <kw name="Run Keywords" library="BuiltIn" type="SETUP">
 <arg>Open_Chrome</arg>
@@ -9,96 +9,153 @@
 <kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
 <arg>5</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20240603 16:40:17.440" endtime="20240603 16:40:17.441"/>
+<status status="PASS" starttime="20240604 11:13:21.703" endtime="20240604 11:13:21.704"/>
 </kw>
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>https://dgdadevnew.eastus.cloudapp.azure.com/DGDAAdminFront/#/login</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20240603 16:40:17.449" level="INFO">Opening browser 'chrome' to base url 'https://dgdadevnew.eastus.cloudapp.azure.com/DGDAAdminFront/#/login'.</msg>
-<status status="PASS" starttime="20240603 16:40:17.441" endtime="20240603 16:40:35.211"/>
+<msg timestamp="20240604 11:13:21.705" level="INFO">Opening browser 'chrome' to base url 'https://dgdadevnew.eastus.cloudapp.azure.com/DGDAAdminFront/#/login'.</msg>
+<status status="PASS" starttime="20240604 11:13:21.704" endtime="20240604 11:13:38.969"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20240603 16:40:35.212" endtime="20240603 16:40:35.244"/>
+<status status="PASS" starttime="20240604 11:13:38.970" endtime="20240604 11:13:39.011"/>
 </kw>
-<status status="PASS" starttime="20240603 16:40:17.440" endtime="20240603 16:40:35.244"/>
+<status status="PASS" starttime="20240604 11:13:21.686" endtime="20240604 11:13:39.012"/>
 </kw>
 <kw name="Login_Successfully" library="Common">
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${Username_Text}</arg>
 <arg>Admin</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240603 16:40:35.246" level="INFO">Typing text 'Admin' into text field '//*[@id="login_input_username"]'.</msg>
-<status status="PASS" starttime="20240603 16:40:35.245" endtime="20240603 16:40:35.580"/>
+<msg timestamp="20240604 11:13:39.016" level="INFO">Typing text 'Admin' into text field '//*[@id="login_input_username"]'.</msg>
+<status status="PASS" starttime="20240604 11:13:39.015" endtime="20240604 11:13:39.547"/>
 </kw>
 <kw name="Input Password" library="SeleniumLibrary">
 <arg>${Password_Text}</arg>
 <arg>123456</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20240603 16:40:35.581" level="INFO">Typing password into text field '//*[@id="login_input_password"]'.</msg>
-<msg timestamp="20240603 16:40:35.625" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20240603 16:40:35.728" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20240603 16:40:35.581" endtime="20240603 16:40:35.728"/>
+<msg timestamp="20240604 11:13:39.548" level="INFO">Typing password into text field '//*[@id="login_input_password"]'.</msg>
+<msg timestamp="20240604 11:13:39.693" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20240604 11:13:39.822" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20240604 11:13:39.547" endtime="20240604 11:13:39.822"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${Login_btn}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240603 16:40:35.729" level="INFO">Clicking element '//*[@id="login_btn_login"]'.</msg>
-<status status="PASS" starttime="20240603 16:40:35.729" endtime="20240603 16:40:35.789"/>
+<msg timestamp="20240604 11:13:39.823" level="INFO">Clicking element '//*[@id="login_btn_login"]'.</msg>
+<status status="PASS" starttime="20240604 11:13:39.823" endtime="20240604 11:13:39.918"/>
 </kw>
-<status status="PASS" starttime="20240603 16:40:35.244" endtime="20240603 16:40:35.789"/>
+<status status="PASS" starttime="20240604 11:13:39.013" endtime="20240604 11:13:39.919"/>
 </kw>
-<status status="PASS" starttime="20240603 16:40:17.439" endtime="20240603 16:40:35.789"/>
+<status status="PASS" starttime="20240604 11:13:21.685" endtime="20240604 11:13:39.919"/>
 </kw>
 <test id="s1-t1" name="Check functionality of Reset_Changes">
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>${logs_Button}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20240603 16:40:35.791" level="INFO">Clicking button 'xpath=/html/body/app-root/div/div/div[1]/app-side-navigation/div/ul/li[6]/button'.</msg>
-<status status="PASS" starttime="20240603 16:40:35.790" endtime="20240603 16:40:37.086"/>
+<msg timestamp="20240604 11:13:39.922" level="INFO">Clicking button 'xpath=/html/body/app-root/div/div/div[1]/app-side-navigation/div/ul/li[6]/button'.</msg>
+<status status="PASS" starttime="20240604 11:13:39.921" endtime="20240604 11:13:41.501"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>5s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20240603 16:40:42.095" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20240603 16:40:37.086" endtime="20240603 16:40:42.095"/>
+<msg timestamp="20240604 11:13:46.508" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20240604 11:13:41.501" endtime="20240604 11:13:46.508"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>${Open_calender}</arg>
+<arg>${Open_calender_From}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240603 16:40:42.096" level="INFO">Clicking element '//*[@id="logs_toggle_LogFrom"]/button'.</msg>
-<status status="PASS" starttime="20240603 16:40:42.096" endtime="20240603 16:40:42.251"/>
+<msg timestamp="20240604 11:13:46.509" level="INFO">Clicking element '//*[@id="logs_toggle_LogFrom"]/button'.</msg>
+<status status="PASS" starttime="20240604 11:13:46.508" endtime="20240604 11:13:46.761"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>5s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20240603 16:40:47.265" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20240603 16:40:42.251" endtime="20240603 16:40:47.267"/>
+<msg timestamp="20240604 11:13:51.766" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20240604 11:13:46.761" endtime="20240604 11:13:51.767"/>
 </kw>
-<kw name="Select From List By Index" library="SeleniumLibrary">
-<arg>${From_date}</arg>
-<doc>Selects options from selection list ``locator`` by ``indexes``.</doc>
-<msg timestamp="20240603 16:40:47.523" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-133.png"&gt;&lt;img src="selenium-screenshot-133.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg timestamp="20240603 16:40:47.530" level="FAIL">ValueError: No indexes given.</msg>
-<status status="FAIL" starttime="20240603 16:40:47.267" endtime="20240603 16:40:47.530"/>
+<kw name="Select From_Date">
+<arg>${From_Date}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://*[@aria-label='${Date_from}']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240604 11:13:51.767" level="INFO">Clicking element 'xpath://*[@aria-label='June 1, 2024']'.</msg>
+<status status="PASS" starttime="20240604 11:13:51.767" endtime="20240604 11:13:51.899"/>
+</kw>
+<status status="PASS" starttime="20240604 11:13:51.767" endtime="20240604 11:13:51.899"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
+<arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" starttime="20240603 16:40:47.530" endtime="20240603 16:40:47.530"/>
+<msg timestamp="20240604 11:13:54.899" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20240604 11:13:51.899" endtime="20240604 11:13:54.899"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Open_calender_To}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240604 11:13:54.901" level="INFO">Clicking element '//*[@id="logs_toggle_LogTo"]/button'.</msg>
+<status status="PASS" starttime="20240604 11:13:54.900" endtime="20240604 11:13:55.067"/>
+</kw>
+<kw name="Select To_Date">
+<arg>${To_Date}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://*[@aria-label='${Date_to}']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240604 11:13:55.067" level="INFO">Clicking element 'xpath://*[@aria-label='June 3, 2024']'.</msg>
+<status status="PASS" starttime="20240604 11:13:55.067" endtime="20240604 11:13:55.270"/>
+</kw>
+<status status="PASS" starttime="20240604 11:13:55.067" endtime="20240604 11:13:55.270"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240604 11:13:59.273" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20240604 11:13:55.270" endtime="20240604 11:13:59.273"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${From_Date}' &gt; '${To_Date}'</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${Validate_Date}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20240604 11:13:59.273" endtime="20240604 11:13:59.273"/>
+</kw>
+<kw name="Get Value" library="SeleniumLibrary">
+<var>${Status}</var>
+<arg>'${From_Date}'</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<msg timestamp="20240604 11:14:04.493" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-148.png"&gt;&lt;img src="selenium-screenshot-148.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20240604 11:14:04.508" level="FAIL">Element with locator ''June 1, 2024'' not found.</msg>
+<status status="FAIL" starttime="20240604 11:13:59.273" endtime="20240604 11:14:04.508"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${Clear_Button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240604 11:14:04.508" endtime="20240604 11:14:04.508"/>
+</kw>
+<kw name="Get Value" library="SeleniumLibrary">
+<var>${Status1}</var>
+<arg>'${From_Date}'</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240604 11:14:04.508" endtime="20240604 11:14:04.508"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20240604 11:14:04.508" endtime="20240604 11:14:04.508"/>
 </kw>
 <kw name="Close_Chrome" library="Common" type="TEARDOWN">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20240603 16:40:47.530" endtime="20240603 16:40:49.721"/>
+<status status="PASS" starttime="20240604 11:14:04.508" endtime="20240604 11:14:06.799"/>
 </kw>
-<status status="PASS" starttime="20240603 16:40:47.530" endtime="20240603 16:40:49.721"/>
+<status status="PASS" starttime="20240604 11:14:04.508" endtime="20240604 11:14:06.799"/>
 </kw>
 <tag>Reset Changes</tag>
-<status status="FAIL" starttime="20240603 16:40:35.790" endtime="20240603 16:40:49.721">ValueError: No indexes given.</status>
+<status status="FAIL" starttime="20240604 11:13:39.920" endtime="20240604 11:14:06.799">Element with locator ''June 1, 2024'' not found.</status>
 </test>
-<status status="FAIL" starttime="20240603 16:40:17.150" endtime="20240603 16:40:49.721"/>
+<status status="FAIL" starttime="20240604 11:13:21.173" endtime="20240604 11:14:06.799"/>
 </suite>
 <statistics>
 <total>
