@@ -64,7 +64,6 @@ Check functionality of Toggle_button
     ${toggle_status2}=    Verify that All Toggles is Checked     ${Toggle1_Input1}
        Run Keyword If    "${toggle_status}" == "true"    Log    "All Toggle button is checked"
 
-#    ${Result}  Should Be Equal    ${toggle_status1}    ${toggle_status2}
     Run Keyword If   "${toggle_status1}" == "${toggle_status2}"
     ...    Log    "Run Successfully"
     ...  ELSE
