@@ -34,7 +34,7 @@ Check Functionality of Retired Test Case
    Click Element    ${Users_btn_menu}
    ${is_checked}=    Get Element Attribute    ${Recheck_btn_Unretired}    checked
    Run Keyword If    ${is_checked} == None    Log    "Checkbox is now unchecked"    ELSE    Fail    "Checkbox should be unchecked"
-    Sleep    1s
+   Sleep    1s
 
 #Verify the checkbox is now unchecked
     Click Element    ${Recheck_btn_Unretired}
@@ -42,9 +42,8 @@ Check Functionality of Retired Test Case
     Run Keyword If    ${is_checked} == None    Log    "Checkbox is now unchecked "    ELSE    Fail    "Checkbox should be unchecked "
     Sleep    1s
 #  check the checkbox for the final state
-   # Sleep    3s
-   Click Element           ${Users_btn_menu}
-   Click Element           ${UnCheck_btn_Unretired}
+    Click Element           ${Users_btn_menu}
+    Click Element           ${UnCheck_btn_Unretired}
 
 # Verify the checkbox is now checked again
     ${is_checked}=    Get Element Attribute    ${UnCheck_btn_Unretired}     checked
