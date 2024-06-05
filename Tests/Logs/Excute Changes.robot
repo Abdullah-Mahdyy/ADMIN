@@ -58,7 +58,7 @@ Select_To_Date
 
 *** Test cases ***
 Check functionality of Reset_Changes
-    [Tags]              Reset_Changes
+    [Tags]              Excecute_Changes
     Click Button        ${logs_Button}
     Click Element       ${Open_calender_From}
     ${date}     Select_From_Date       $Date_from

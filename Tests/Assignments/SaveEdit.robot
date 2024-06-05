@@ -23,8 +23,8 @@ ${saveUpdateRole_Button}              //*[@id="role_btn_save"]
 ${saveUpdateRole_ok}               //*[@id="id_btn_saveUpdateRole_ok"]
 ${SaveConfirmationMsg}              //*[@id="toast-container"]/div
 *** Test cases ***
-Check functionality of Reset Button
-    [Tags]          CancelEdit_button
+Check functionality of Cancel_Edit_button
+    [Tags]          Cancel_Edit_button
     Set Selenium Implicit Wait  5
     Click Button    ${Assginment_Button}
     Sleep    4s

@@ -9,8 +9,8 @@ Test Teardown   Close_Chrome
 *** Variables ***
 ${Group_Name}                    //*[@id="group_input_groupName"]
 *** Test Cases ***
-Check Functionality of Edit User
-    [tags]                      Add_Group
+Check Functionality of Add_Group
+    [tags]                      Add_Group_on_EditUser
     Set Selenium Implicit Wait  5
     Click Element           //*[@id="4"]
     Click Element           //*[@id="application_ddl_applications8"]/label

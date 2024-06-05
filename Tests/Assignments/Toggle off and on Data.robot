@@ -25,6 +25,8 @@ ${Toggle1_Input1}               //*[@id="role_toggle_mapServicesList_0-input"]
 
 *** Keywords ***
 Check Toggle Button Status
+    [tags]                      Toggle_off_and_on_Data
+
   [Arguments]    ${Toggle1_Input}
      ${status}=    Get Element Attribute    ${Toggle1_Input}   aria-checked
      Log    ${status}

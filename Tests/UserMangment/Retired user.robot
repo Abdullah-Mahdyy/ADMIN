@@ -13,7 +13,8 @@ ${Recheck_btn_Unretired}         //*[@id="users_btn_Unretired"]/label/div
 
 *** Test cases ***
 
-User Test Case
+Check Functionality of Retired Test Case
+    [tags]              Retired_user
 
 #check Functionality of Retired Checkbox
     Click Element    ${Users_Mangment_Button}

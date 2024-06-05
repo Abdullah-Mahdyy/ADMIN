@@ -9,8 +9,8 @@ Test Teardown   Close_Chrome
 *** Variables ***
 ${Role_Name}                    //*[@id="role_input_roleName"]
 *** Test Cases ***
-Check Functionality of Edit User
-    [tags]                      Add_Role
+Check Functionality of Add_Role
+    [tags]                      Add_Role_on_EditUser
     Set Selenium Implicit Wait  5
     Click Element           //*[@id="4"]
     Click Element           //*[@id="application_ddl_applications8"]/label

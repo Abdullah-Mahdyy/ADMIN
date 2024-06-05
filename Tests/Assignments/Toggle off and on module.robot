@@ -50,7 +50,7 @@ Verify Select All Checkbox Status
 *** Test cases ***
 
 Check functionality of Toggle_button
-    [Tags]          Toggle_button
+    [Tags]          Toggle_off_and_on_Module
     Click Button    ${Assginment_Button}
     Sleep    4s
     Click Element    ${Requester_Button}

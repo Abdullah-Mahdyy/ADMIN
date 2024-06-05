@@ -24,8 +24,8 @@ ${Recheck_btn_Retired}         //*[@id="users_btn_Retired"]/label
 
 *** Test cases ***
 
-User Test Case
-    [tags]         Login
+Check Functionality of UnRetired Test Case
+    [tags]         UnRetired
     Set Selenium Implicit Wait    5
     Open Browser         ${URL}     ${BROWSER}
     Maximize Browser Window

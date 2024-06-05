@@ -23,7 +23,7 @@ ${CancelEdit_Button}            //*[@id="role_btn_cancel"]
 ${Confirm_cancel}               //*[@id="id_btn_cancelEditRole_ok"]
 *** Test cases ***
 Check functionality of Reset Button
-    [Tags]          CancelEdit_button
+    [Tags]          Cancel_Edit_button
     Set Selenium Implicit Wait  5
     Click Button    ${Assginment_Button}
     Sleep    4s

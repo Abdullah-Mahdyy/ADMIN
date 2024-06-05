@@ -21,8 +21,8 @@ ${StoryMap-CheckBox}            //*[@id="mat-checkbox-2"]/label
 ${Dashboard_CheckBox}           //*[@id="mat-checkbox-4"]/label
 ${Cancel_Button}                   //*[@id="id_btn_resetFunctions_cancel"]
 *** Test cases ***
-Check functionality of Reset Button
-    [Tags]          Rsest_button
+Check functionality of Cancel_Reset_Button
+    [Tags]          Cancel_Reset_Button
     Click Button    ${Assginment_Button}
     Sleep    4s
     Click Element    ${Requester_Button}

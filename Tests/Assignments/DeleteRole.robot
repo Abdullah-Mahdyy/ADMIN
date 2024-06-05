@@ -9,7 +9,7 @@ Test Teardown   Close_Chrome
 *** Variables ***
 ${Role_Name}                    //*[@id="role_input_roleName"]
 *** Test Cases ***
-Check Functionality of Edit User
+Check Functionality of Delete_Role
     [tags]                      Delete_Role
     Set Selenium Implicit Wait  5
     Click Element           //*[@id="4"]

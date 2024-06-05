@@ -29,7 +29,7 @@ ${Assignments_Link}             //*[@id="group_div_breadcrumb"]/nav/ol/li[1]/a
 *** Test cases ***
 
 Check functionality of Bread_Crumbs
-    [Tags]            Bread crumbs
+    [Tags]            Bread_crumbs
     Click Button    ${Assginment_Button}
     Sleep    4s
     Click Element    ${Requester_Button}

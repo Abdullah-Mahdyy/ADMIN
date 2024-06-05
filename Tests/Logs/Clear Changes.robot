@@ -26,7 +26,7 @@ Select From_Date
     Click Element    xpath://*[@aria-label='${Date_from}']
 *** Test cases ***
 Check functionality of Reset_Changes
-    [Tags]            Reset Changes
+    [Tags]            Clear_Changes
     Click Button    ${logs_Button}
     Sleep    2s
     Click Element    ${Open_calender_From}
