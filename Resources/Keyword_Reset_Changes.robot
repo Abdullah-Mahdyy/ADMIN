@@ -1,7 +1,6 @@
 *** Settings ***
 Library     SeleniumLibrary
 Library     Screenshot
-Library     RequestsLibrary
 Library     String
 Library     DateTime
 Resource    ../Resources/Common.robot

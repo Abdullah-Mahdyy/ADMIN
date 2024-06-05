@@ -12,7 +12,6 @@ Test Teardown   Close_Chrome
 
 ${SearchBar}           //*[@id="users_input_filterUsers"]
 ${Name}                  Weaam.Ahmed
-${firstelemnt}              #  //*[@id="users_ddl_usersList_0"]
 ${FakeName}                John.Jack
 
 *** Test cases ***

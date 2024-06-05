@@ -12,11 +12,8 @@ ${logs_Button}                       xpath=/html/body/app-root/div/div/div[1]/ap
 ${Open_calender_From}                //*[@id="logs_toggle_LogFrom"]/button
 ${Open_calender_To}                  //*[@id="logs_toggle_LogTo"]/button
 ${From_Date}                         June 1, 2024
-#${Today_date_inToDate}
-${To_Date}                              # June 3, 2024
 ${Validate_Date}                     //*[@id="log_div_dateRangeValidator"]
 ${Clear_Button}                      //*[@id="logs_btn_Reset"]
-${From_Log}                          //*[@id="logs_input_LogFrom"]
 *** Keywords ***
 Select To_Date
    [Arguments]    ${Today_date_inToDate1}
