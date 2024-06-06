@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.3 (Python 3.10.6 on win32)" generated="20240606 15:24:21.070" rpa="false" schemaversion="2">
-<suite id="s1" name="UnRetired user" source="C:\Users\abdullah.ahmed\IdeaProjects\Admin QSIT\Tests\UserMangment\UnRetired user.robot">
+<robot generator="Robot 4.1.3 (Python 3.10.6 on win32)" generated="20240606 16:08:57.166" rpa="false" schemaversion="2">
+<suite id="s1" name="SearchAndFilter" source="C:\Users\abdullah.ahmed\IdeaProjects\Admin QSIT\Tests\UserMangment\SearchAndFilter.robot">
 <kw name="Run Keywords" library="BuiltIn" type="SETUP">
 <arg>Open_Chrome</arg>
 <arg>Login_Successfully</arg>
@@ -9,266 +9,198 @@
 <kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
 <arg>5</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20240606 15:24:21.304" endtime="20240606 15:24:21.305"/>
+<status status="PASS" starttime="20240606 16:08:57.453" endtime="20240606 16:08:57.453"/>
 </kw>
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>https://dgdadevnew.eastus.cloudapp.azure.com/DGDAAdminFront/#/login</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20240606 15:24:21.305" level="INFO">Opening browser 'chrome' to base url 'https://dgdadevnew.eastus.cloudapp.azure.com/DGDAAdminFront/#/login'.</msg>
-<status status="PASS" starttime="20240606 15:24:21.305" endtime="20240606 15:24:52.392"/>
+<msg timestamp="20240606 16:08:57.454" level="INFO">Opening browser 'chrome' to base url 'https://dgdadevnew.eastus.cloudapp.azure.com/DGDAAdminFront/#/login'.</msg>
+<status status="PASS" starttime="20240606 16:08:57.454" endtime="20240606 16:09:16.620"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20240606 15:24:52.393" endtime="20240606 15:24:52.418"/>
+<status status="PASS" starttime="20240606 16:09:16.620" endtime="20240606 16:09:16.648"/>
 </kw>
-<status status="PASS" starttime="20240606 15:24:21.304" endtime="20240606 15:24:52.418"/>
+<status status="PASS" starttime="20240606 16:08:57.453" endtime="20240606 16:09:16.649"/>
 </kw>
 <kw name="Login_Successfully" library="Common">
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${Username_Text}</arg>
 <arg>Admin</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240606 15:24:52.420" level="INFO">Typing text 'Admin' into text field '//*[@id="login_input_username"]'.</msg>
-<status status="PASS" starttime="20240606 15:24:52.419" endtime="20240606 15:24:52.980"/>
+<msg timestamp="20240606 16:09:16.650" level="INFO">Typing text 'Admin' into text field '//*[@id="login_input_username"]'.</msg>
+<status status="PASS" starttime="20240606 16:09:16.650" endtime="20240606 16:09:17.038"/>
 </kw>
 <kw name="Input Password" library="SeleniumLibrary">
 <arg>${Password_Text}</arg>
 <arg>123456</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20240606 15:24:52.981" level="INFO">Typing password into text field '//*[@id="login_input_password"]'.</msg>
-<msg timestamp="20240606 15:24:53.022" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20240606 15:24:53.134" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20240606 15:24:52.980" endtime="20240606 15:24:53.135"/>
+<msg timestamp="20240606 16:09:17.039" level="INFO">Typing password into text field '//*[@id="login_input_password"]'.</msg>
+<msg timestamp="20240606 16:09:17.070" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20240606 16:09:17.126" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20240606 16:09:17.038" endtime="20240606 16:09:17.126"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${Login_btn}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240606 15:24:53.137" level="INFO">Clicking element '//*[@id="login_btn_login"]'.</msg>
-<status status="PASS" starttime="20240606 15:24:53.136" endtime="20240606 15:24:53.212"/>
+<msg timestamp="20240606 16:09:17.127" level="INFO">Clicking element '//*[@id="login_btn_login"]'.</msg>
+<status status="PASS" starttime="20240606 16:09:17.127" endtime="20240606 16:09:17.184"/>
 </kw>
-<status status="PASS" starttime="20240606 15:24:52.418" endtime="20240606 15:24:53.213"/>
+<status status="PASS" starttime="20240606 16:09:16.649" endtime="20240606 16:09:17.184"/>
 </kw>
-<status status="PASS" starttime="20240606 15:24:21.304" endtime="20240606 15:24:53.213"/>
+<status status="PASS" starttime="20240606 16:08:57.440" endtime="20240606 16:09:17.184"/>
 </kw>
-<test id="s1-t1" name="Check Functionality of UnRetired Test Case">
-<kw name="Click on the User Managment Button" library="Keyword_UnRetired">
-<kw name="Click Element" library="SeleniumLibrary">
+<test id="s1-t1" name="Check Functionality of search with existing Name">
+<kw name="Click on the User Managment Button" library="Keyword_SearchAndFilter">
+<kw name="Click Button" library="SeleniumLibrary">
 <arg>${Users_Mangment_Button}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240606 15:24:53.216" level="INFO">Clicking element '//*[@id="1"]'.</msg>
-<status status="PASS" starttime="20240606 15:24:53.215" endtime="20240606 15:24:54.418"/>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20240606 16:09:17.187" level="INFO">Clicking button '//*[@id="1"]'.</msg>
+<status status="PASS" starttime="20240606 16:09:17.186" endtime="20240606 16:09:18.848"/>
+</kw>
+<status status="PASS" starttime="20240606 16:09:17.186" endtime="20240606 16:09:18.849"/>
+</kw>
+<kw name="Check Functionality Of input Name" library="Keyword_SearchAndFilter">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SearchBar}</arg>
+<arg>${Name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240606 16:09:18.850" level="INFO">Typing text 'Weaam.Ahmed' into text field '//*[@id="users_input_filterUsers"]'.</msg>
+<status status="PASS" starttime="20240606 16:09:18.849" endtime="20240606 16:09:18.975"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
-<arg>5</arg>
+<arg>10s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20240606 15:24:59.434" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20240606 15:24:54.418" endtime="20240606 15:24:59.435"/>
+<msg timestamp="20240606 16:09:28.992" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20240606 16:09:18.978" endtime="20240606 16:09:28.992"/>
 </kw>
-<status status="PASS" starttime="20240606 15:24:53.215" endtime="20240606 15:24:59.436"/>
+<status status="PASS" starttime="20240606 16:09:18.849" endtime="20240606 16:09:28.993"/>
 </kw>
-<kw name="Click on the User Menu Button" library="Keyword_UnRetired">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${Users_btn_menu}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240606 15:24:59.438" level="INFO">Clicking element '//*[@id="users_btn_menu"]'.</msg>
-<status status="PASS" starttime="20240606 15:24:59.437" endtime="20240606 15:25:00.704"/>
+<kw name="Check Functionality of Search with Existing Name" library="Keyword_SearchAndFilter">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${firstelemnt}</var>
+<arg>//*[@id="users_ddl_usersList_0"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240606 16:09:29.020" level="INFO">${firstelemnt} = W
+Weaam.Ahmed</msg>
+<status status="PASS" starttime="20240606 16:09:28.994" endtime="20240606 16:09:29.021"/>
 </kw>
-<status status="PASS" starttime="20240606 15:24:59.436" endtime="20240606 15:25:00.705"/>
+<kw name="Convert To String" library="BuiltIn">
+<var>${sliced_value}</var>
+<arg>${firstelemnt}[2:]</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240606 16:09:29.021" level="INFO">${sliced_value} = Weaam.Ahmed</msg>
+<status status="PASS" starttime="20240606 16:09:29.021" endtime="20240606 16:09:29.021"/>
 </kw>
-<kw name="Check View Of UnRetired Checkbox Is Present" library="Keyword_UnRetired">
-<kw name="Element Should Be Visible" library="SeleniumLibrary">
-<arg>${UnCheck_btn_Unretired}</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<msg timestamp="20240606 15:25:00.740" level="INFO">Element '//*[@id="users_btn_Unretired"]' is displayed.</msg>
-<status status="PASS" starttime="20240606 15:25:00.706" endtime="20240606 15:25:00.740"/>
+<kw name="Convert To String" library="BuiltIn">
+<var>${Name1}</var>
+<arg>${Name}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240606 16:09:29.022" level="INFO">${Name1} = Weaam.Ahmed</msg>
+<status status="PASS" starttime="20240606 16:09:29.021" endtime="20240606 16:09:29.022"/>
 </kw>
-<status status="PASS" starttime="20240606 15:25:00.705" endtime="20240606 15:25:00.740"/>
-</kw>
-<kw name="Check initial state of the UnRetired_checkbox" library="Keyword_UnRetired">
-<kw name="Get Element Attribute" library="SeleniumLibrary">
-<var>${is_checked}</var>
-<arg>${UnCheck_btn_Unretired}</arg>
-<arg>checked</arg>
-<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<msg timestamp="20240606 15:25:00.765" level="INFO">${is_checked} = None</msg>
-<status status="PASS" starttime="20240606 15:25:00.741" endtime="20240606 15:25:00.765"/>
-</kw>
-<kw name="Run Keyword If" library="BuiltIn">
-<arg>${is_checked} == None</arg>
-<arg>Log</arg>
-<arg>"Checkbox is initially checked"</arg>
-<arg>ELSE</arg>
-<arg>Log</arg>
-<arg>"Checkbox is initially unchecked"</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<kw name="Log" library="BuiltIn">
-<arg>"Checkbox is initially checked"</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20240606 15:25:00.766" level="INFO">"Checkbox is initially checked"</msg>
-<status status="PASS" starttime="20240606 15:25:00.766" endtime="20240606 15:25:00.766"/>
-</kw>
-<status status="PASS" starttime="20240606 15:25:00.765" endtime="20240606 15:25:00.766"/>
-</kw>
-<kw name="Run Keyword If" library="BuiltIn">
-<arg>${is_checked} == None</arg>
-<arg>Click Element</arg>
-<arg>${UnCheck_btn_Unretired}</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${UnCheck_btn_Unretired}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240606 15:25:00.767" level="INFO">Clicking element '//*[@id="users_btn_Unretired"]'.</msg>
-<status status="PASS" starttime="20240606 15:25:00.767" endtime="20240606 15:25:01.117"/>
-</kw>
-<status status="PASS" starttime="20240606 15:25:00.766" endtime="20240606 15:25:01.118"/>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${sliced_value}</arg>
+<arg>${Name1}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20240606 16:09:29.022" endtime="20240606 16:09:29.022"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
-<arg>3s</arg>
+<arg>4</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20240606 15:25:04.125" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20240606 15:25:01.118" endtime="20240606 15:25:04.126"/>
+<msg timestamp="20240606 16:09:33.029" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20240606 16:09:29.022" endtime="20240606 16:09:33.029"/>
 </kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${Users_btn_menu}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240606 15:25:04.127" level="INFO">Clicking element '//*[@id="users_btn_menu"]'.</msg>
-<status status="PASS" starttime="20240606 15:25:04.126" endtime="20240606 15:25:04.168"/>
+<status status="PASS" starttime="20240606 16:09:28.993" endtime="20240606 16:09:33.029"/>
 </kw>
-<kw name="Get Element Attribute" library="SeleniumLibrary">
-<var>${is_checked}</var>
-<arg>${Recheck_btn_Unretired}</arg>
-<arg>checked</arg>
-<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<msg timestamp="20240606 15:25:04.177" level="INFO">${is_checked} = None</msg>
-<status status="PASS" starttime="20240606 15:25:04.168" endtime="20240606 15:25:04.191"/>
+<tag>Search_with_filter</tag>
+<status status="PASS" starttime="20240606 16:09:17.185" endtime="20240606 16:09:33.029"/>
+</test>
+<test id="s1-t2" name="Check Functionality of Search with Non-Existing Name">
+<kw name="Clear InputField" library="Keyword_SearchAndFilter">
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${SearchBar}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20240606 16:09:33.029" endtime="20240606 16:09:33.069"/>
 </kw>
-<kw name="Run Keyword If" library="BuiltIn">
-<arg>${is_checked} == None</arg>
-<arg>Log</arg>
-<arg>"Checkbox is now unchecked"</arg>
-<arg>ELSE</arg>
-<arg>Fail</arg>
-<arg>"Checkbox should be unchecked"</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<kw name="Log" library="BuiltIn">
-<arg>"Checkbox is now unchecked"</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20240606 15:25:04.192" level="INFO">"Checkbox is now unchecked"</msg>
-<status status="PASS" starttime="20240606 15:25:04.192" endtime="20240606 15:25:04.192"/>
+<status status="PASS" starttime="20240606 16:09:33.029" endtime="20240606 16:09:33.069"/>
 </kw>
-<status status="PASS" starttime="20240606 15:25:04.191" endtime="20240606 15:25:04.194"/>
+<kw name="Check Functionality Of input FakeName" library="Keyword_SearchAndFilter">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SearchBar}</arg>
+<arg>${FakeName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240606 16:09:33.069" level="INFO">Typing text 'John.Jack' into text field '//*[@id="users_input_filterUsers"]'.</msg>
+<status status="PASS" starttime="20240606 16:09:33.069" endtime="20240606 16:09:33.304"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
-<arg>1s</arg>
+<arg>10s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20240606 15:25:05.198" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20240606 15:25:04.194" endtime="20240606 15:25:05.198"/>
+<msg timestamp="20240606 16:09:43.317" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20240606 16:09:33.304" endtime="20240606 16:09:43.317"/>
 </kw>
-<status status="PASS" starttime="20240606 15:25:00.741" endtime="20240606 15:25:05.198"/>
+<status status="PASS" starttime="20240606 16:09:33.069" endtime="20240606 16:09:43.317"/>
 </kw>
-<kw name="Verify the UnRetired_checkbox is now checked" library="Keyword_UnRetired">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${Recheck_btn_Unretired}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240606 15:25:05.198" level="INFO">Clicking element '//*[@id="users_btn_Unretired"]/label/div'.</msg>
-<status status="PASS" starttime="20240606 15:25:05.198" endtime="20240606 15:25:05.850"/>
+<kw name="Check Functionality of Search with NonExisting Name" library="Keyword_SearchAndFilter">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${firstelemnt}</var>
+<arg>//*[@id="users_ddl_usersList_0"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240606 16:09:48.573" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-184.png"&gt;&lt;img src="selenium-screenshot-184.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20240606 16:09:48.573" level="FAIL">Element with locator '//*[@id="users_ddl_usersList_0"]' not found.</msg>
+<status status="FAIL" starttime="20240606 16:09:43.317" endtime="20240606 16:09:48.573"/>
 </kw>
-<kw name="Get Element Attribute" library="SeleniumLibrary">
-<var>${is_checked}</var>
-<arg>${Recheck_btn_Unretired}</arg>
-<arg>checked</arg>
-<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<msg timestamp="20240606 15:25:05.894" level="INFO">${is_checked} = None</msg>
-<status status="PASS" starttime="20240606 15:25:05.850" endtime="20240606 15:25:05.894"/>
+<kw name="Convert To String" library="BuiltIn">
+<var>${sliced_value}</var>
+<arg>${firstelemnt}[2:]</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" starttime="20240606 16:09:48.573" endtime="20240606 16:09:48.573"/>
 </kw>
-<kw name="Run Keyword If" library="BuiltIn">
-<arg>${is_checked} == None</arg>
-<arg>Log</arg>
-<arg>"Checkbox is now unchecked "</arg>
-<arg>ELSE</arg>
-<arg>Fail</arg>
-<arg>"Checkbox should be unchecked "</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Convert To String" library="BuiltIn">
+<var>${Result}</var>
+<arg>${FakeName}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" starttime="20240606 16:09:48.573" endtime="20240606 16:09:48.573"/>
+</kw>
+<if>
+<branch type="IF" condition="${Result} == ${sliced_value}">
 <kw name="Log" library="BuiltIn">
-<arg>"Checkbox is now unchecked "</arg>
+<arg>" searching with existing name Successed"</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20240606 15:25:05.894" level="INFO">"Checkbox is now unchecked "</msg>
-<status status="PASS" starttime="20240606 15:25:05.894" endtime="20240606 15:25:05.894"/>
+<status status="NOT RUN" starttime="20240606 16:09:48.573" endtime="20240606 16:09:48.573"/>
 </kw>
-<status status="PASS" starttime="20240606 15:25:05.894" endtime="20240606 15:25:05.894"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20240606 15:25:06.909" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20240606 15:25:05.894" endtime="20240606 15:25:06.910"/>
-</kw>
-<status status="PASS" starttime="20240606 15:25:05.198" endtime="20240606 15:25:06.910"/>
-</kw>
-<kw name="Check the UnRetired_checkbox for the final state" library="Keyword_UnRetired">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${Users_btn_menu}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240606 15:25:06.910" level="INFO">Clicking element '//*[@id="users_btn_menu"]'.</msg>
-<status status="PASS" starttime="20240606 15:25:06.910" endtime="20240606 15:25:07.067"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${UnCheck_btn_Unretired}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240606 15:25:07.067" level="INFO">Clicking element '//*[@id="users_btn_Unretired"]'.</msg>
-<status status="PASS" starttime="20240606 15:25:07.067" endtime="20240606 15:25:07.374"/>
-</kw>
-<status status="PASS" starttime="20240606 15:25:06.910" endtime="20240606 15:25:07.374"/>
-</kw>
-<kw name="Verify the UnRetired_checkbox is now unchecked again" library="Keyword_UnRetired">
-<kw name="Get Element Attribute" library="SeleniumLibrary">
-<var>${is_checked}</var>
-<arg>${UnCheck_btn_Unretired}</arg>
-<arg>checked</arg>
-<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<msg timestamp="20240606 15:25:07.392" level="INFO">${is_checked} = None</msg>
-<status status="PASS" starttime="20240606 15:25:07.376" endtime="20240606 15:25:07.392"/>
-</kw>
-<kw name="Run Keyword If" library="BuiltIn">
-<arg>${is_checked} == None</arg>
-<arg>Log</arg>
-<arg>"Checkbox is now checked"</arg>
-<arg>ELSE</arg>
-<arg>Fail</arg>
-<arg>"Checkbox should be checked"</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" starttime="20240606 16:09:48.573" endtime="20240606 16:09:48.573"/>
+</branch>
+<branch type="ELSE">
 <kw name="Log" library="BuiltIn">
-<arg>"Checkbox is now checked"</arg>
+<arg>"searching with existing name Failed"</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20240606 15:25:07.392" level="INFO">"Checkbox is now checked"</msg>
-<status status="PASS" starttime="20240606 15:25:07.392" endtime="20240606 15:25:07.392"/>
+<status status="NOT RUN" starttime="20240606 16:09:48.573" endtime="20240606 16:09:48.573"/>
 </kw>
-<status status="PASS" starttime="20240606 15:25:07.392" endtime="20240606 15:25:07.392"/>
+<status status="NOT RUN" starttime="20240606 16:09:48.573" endtime="20240606 16:09:48.573"/>
+</branch>
+<status status="NOT RUN" starttime="20240606 16:09:48.573" endtime="20240606 16:09:48.573"/>
+</if>
+<status status="FAIL" starttime="20240606 16:09:43.317" endtime="20240606 16:09:48.573"/>
 </kw>
-<status status="PASS" starttime="20240606 15:25:07.374" endtime="20240606 15:25:07.392"/>
-</kw>
-<kw name="Close_Chrome" library="Common" type="TEARDOWN">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20240606 15:25:07.392" endtime="20240606 15:25:09.597"/>
+<status status="NOT RUN" starttime="20240606 16:09:48.573" endtime="20240606 16:09:48.573"/>
 </kw>
-<status status="PASS" starttime="20240606 15:25:07.392" endtime="20240606 15:25:09.597"/>
-</kw>
-<tag>UnRetired_user</tag>
-<status status="PASS" starttime="20240606 15:24:53.214" endtime="20240606 15:25:09.597"/>
+<status status="FAIL" starttime="20240606 16:09:33.029" endtime="20240606 16:09:48.573">Element with locator '//*[@id="users_ddl_usersList_0"]' not found.</status>
 </test>
-<status status="PASS" starttime="20240606 15:24:21.071" endtime="20240606 15:25:09.597"/>
+<status status="FAIL" starttime="20240606 16:08:57.169" endtime="20240606 16:09:48.573"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="1" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">UnRetired_user</stat>
+<stat pass="1" fail="0" skip="0">Search_with_filter</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="UnRetired user">UnRetired user</stat>
+<stat pass="1" fail="1" skip="0" id="s1" name="SearchAndFilter">SearchAndFilter</stat>
 </suite>
 </statistics>
 <errors>
