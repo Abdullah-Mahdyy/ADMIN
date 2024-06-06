@@ -2,11 +2,11 @@
 
 Library     SeleniumLibrary
 Resource    ../../Resources/Common.robot
+Resource    ../../Resources/Assignments_Keywords/Keyword_SaveEdit.robot
 Suite Setup    Run Keywords   Open_Chrome   Login_Successfully
 Test Teardown   Close_Chrome
 
 *** Variables ***
-
 ${Assginment_Button}             //*[@id="4"]
 ${Requester_Button}             //*[@id="application_ddl_applications8"]
 ${Inspection_Button}            //*[@id="group_ddl_groups0"]/button
@@ -23,41 +23,29 @@ ${saveUpdateRole_Button}              //*[@id="role_btn_save"]
 ${saveUpdateRole_ok}               //*[@id="id_btn_saveUpdateRole_ok"]
 ${SaveConfirmationMsg}              //*[@id="toast-container"]/div
 *** Test cases ***
-Check functionality of Cancel_Edit_button
-    [Tags]          Cancel_Edit_button
-    Set Selenium Implicit Wait  5
-    Click Button    ${Assginment_Button}
-    Sleep    4s
-    Click Element    ${Requester_Button}
-    Sleep    4s
-    Click Button    ${Inspection_Button}
-    Sleep    4s
-    Click Button    ${Inspection1_button}
-    Sleep    10s
-    Click Button    ${Inspection1_button1}
-    Sleep    4s
-    Click Element    ${role_btn_editRole}
-    Sleep    3s
-    Click Element    ${Geo_button}
-    Sleep    3s
+Check functionality of Save_Edit_button
+    [Tags]          Save_Edit_button
 
-    #Check Functionality of Reset Button is Enabled
-     ${status1}=    Get Element Attribute    ${Reset_Button}    disabled
-        Run Keyword If    "${status1}" == "true"    Log    "Reset button is disabled"    ELSE    Log    "Reset button is not disabled"    AND    Fail    "Reset button should be disabled"
+       Click on Assignments Button
+       Click On Requester Button
+       Click On UMA-Inspection Button
+       Click on UMA_Inspetion1 Button
+       Click on Internal_UMA_Inspection1 Button
+       Click on Edit Role Button
+       Click on Geospatial_Model_Button
+       Check the Select all Checkbox
+       Check the StoryMap Checkbox
+       Check if CheckBox is Checked
+       Click on Save Button
+       Click on Ok
+       Verify if it saved
 
-     Click Element    ${Select_all_CheckBox}
-     Sleep    3s
-     Click Element    ${StoryMap-CheckBox}
 
-    #if Status = True its checked
-     ${status}=    Get Element Attribute     ${Dashboard_CheckBox}      checked
-              Log      ${status}
-    Run Keyword If    "${status}" != "true"     Log    "ResetButton Working successfully "    ELSE    Fail    "Reset Button Not working""
 
-    #Check Functionality of Cancel Edit Button
-    Click Button    ${saveUpdateRole_Button}
-    Click Element    ${saveUpdateRole_ok}
-    Page Should Contain Element    ${SaveConfirmationMsg}
+
+
+
+
 
 
 

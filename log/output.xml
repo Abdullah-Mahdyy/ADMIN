@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.3 (Python 3.10.6 on win32)" generated="20240606 16:30:37.633" rpa="false" schemaversion="2">
-<suite id="s1" name="Reset Changes" source="C:\Users\abdullah.ahmed\IdeaProjects\Admin QSIT\Tests\Assignments\Reset Changes.robot">
+<robot generator="Robot 4.1.3 (Python 3.10.6 on win32)" generated="20240606 17:00:47.595" rpa="false" schemaversion="2">
+<suite id="s1" name="SaveEdit" source="C:\Users\abdullah.ahmed\IdeaProjects\Admin QSIT\Tests\Assignments\SaveEdit.robot">
 <kw name="Run Keywords" library="BuiltIn" type="SETUP">
 <arg>Open_Chrome</arg>
 <arg>Login_Successfully</arg>
@@ -9,250 +9,259 @@
 <kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
 <arg>5</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20240606 16:30:37.893" endtime="20240606 16:30:37.893"/>
+<status status="PASS" starttime="20240606 17:00:47.855" endtime="20240606 17:00:47.855"/>
 </kw>
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>https://dgdadevnew.eastus.cloudapp.azure.com/DGDAAdminFront/#/login</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20240606 16:30:37.894" level="INFO">Opening browser 'chrome' to base url 'https://dgdadevnew.eastus.cloudapp.azure.com/DGDAAdminFront/#/login'.</msg>
-<status status="PASS" starttime="20240606 16:30:37.893" endtime="20240606 16:31:06.494"/>
+<msg timestamp="20240606 17:00:47.856" level="INFO">Opening browser 'chrome' to base url 'https://dgdadevnew.eastus.cloudapp.azure.com/DGDAAdminFront/#/login'.</msg>
+<status status="PASS" starttime="20240606 17:00:47.855" endtime="20240606 17:01:04.973"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20240606 16:31:06.495" endtime="20240606 16:31:06.535"/>
+<status status="PASS" starttime="20240606 17:01:04.973" endtime="20240606 17:01:05.007"/>
 </kw>
-<status status="PASS" starttime="20240606 16:30:37.893" endtime="20240606 16:31:06.536"/>
+<status status="PASS" starttime="20240606 17:00:47.855" endtime="20240606 17:01:05.008"/>
 </kw>
 <kw name="Login_Successfully" library="Common">
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${Username_Text}</arg>
 <arg>Admin</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240606 16:31:06.537" level="INFO">Typing text 'Admin' into text field '//*[@id="login_input_username"]'.</msg>
-<status status="PASS" starttime="20240606 16:31:06.536" endtime="20240606 16:31:08.477"/>
+<msg timestamp="20240606 17:01:05.009" level="INFO">Typing text 'Admin' into text field '//*[@id="login_input_username"]'.</msg>
+<status status="PASS" starttime="20240606 17:01:05.008" endtime="20240606 17:01:05.343"/>
 </kw>
 <kw name="Input Password" library="SeleniumLibrary">
 <arg>${Password_Text}</arg>
 <arg>123456</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20240606 16:31:08.478" level="INFO">Typing password into text field '//*[@id="login_input_password"]'.</msg>
-<msg timestamp="20240606 16:31:08.511" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20240606 16:31:08.578" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20240606 16:31:08.477" endtime="20240606 16:31:08.579"/>
+<msg timestamp="20240606 17:01:05.344" level="INFO">Typing password into text field '//*[@id="login_input_password"]'.</msg>
+<msg timestamp="20240606 17:01:05.378" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20240606 17:01:05.489" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20240606 17:01:05.343" endtime="20240606 17:01:05.490"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${Login_btn}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240606 16:31:08.579" level="INFO">Clicking element '//*[@id="login_btn_login"]'.</msg>
-<status status="PASS" starttime="20240606 16:31:08.579" endtime="20240606 16:31:08.628"/>
+<msg timestamp="20240606 17:01:05.490" level="INFO">Clicking element '//*[@id="login_btn_login"]'.</msg>
+<status status="PASS" starttime="20240606 17:01:05.490" endtime="20240606 17:01:05.548"/>
 </kw>
-<status status="PASS" starttime="20240606 16:31:06.536" endtime="20240606 16:31:08.629"/>
+<status status="PASS" starttime="20240606 17:01:05.008" endtime="20240606 17:01:05.549"/>
 </kw>
-<status status="PASS" starttime="20240606 16:30:37.892" endtime="20240606 16:31:08.629"/>
+<status status="PASS" starttime="20240606 17:00:47.854" endtime="20240606 17:01:05.549"/>
 </kw>
-<test id="s1-t1" name="Check functionality of Reset Button">
-<kw name="Click on Assignments Button" library="Keyword_ResetChanges">
+<test id="s1-t1" name="Check functionality of Save_Edit_button">
+<kw name="Click on Assignments Button" library="Keyword_SaveEdit">
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>${Assginment_Button}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20240606 16:31:08.630" level="INFO">Clicking button '//*[@id="4"]'.</msg>
-<status status="PASS" starttime="20240606 16:31:08.630" endtime="20240606 16:31:10.070"/>
+<msg timestamp="20240606 17:01:05.553" level="INFO">Clicking button '//*[@id="4"]'.</msg>
+<status status="PASS" starttime="20240606 17:01:05.552" endtime="20240606 17:01:06.492"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>4s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20240606 16:31:14.080" level="INFO">Slept 4 seconds</msg>
-<status status="PASS" starttime="20240606 16:31:10.071" endtime="20240606 16:31:14.080"/>
+<msg timestamp="20240606 17:01:10.495" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20240606 17:01:06.493" endtime="20240606 17:01:10.495"/>
 </kw>
-<status status="PASS" starttime="20240606 16:31:08.630" endtime="20240606 16:31:14.081"/>
+<status status="PASS" starttime="20240606 17:01:05.551" endtime="20240606 17:01:10.496"/>
 </kw>
-<kw name="Click On Requester Button" library="Keyword_ResetChanges">
+<kw name="Click On Requester Button" library="Keyword_SaveEdit">
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${Requester_Button}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240606 16:31:14.082" level="INFO">Clicking element '//*[@id="application_ddl_applications8"]'.</msg>
-<status status="PASS" starttime="20240606 16:31:14.082" endtime="20240606 16:31:14.153"/>
+<msg timestamp="20240606 17:01:10.497" level="INFO">Clicking element '//*[@id="application_ddl_applications8"]'.</msg>
+<status status="PASS" starttime="20240606 17:01:10.497" endtime="20240606 17:01:10.562"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>4s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20240606 16:31:18.167" level="INFO">Slept 4 seconds</msg>
-<status status="PASS" starttime="20240606 16:31:14.153" endtime="20240606 16:31:18.168"/>
+<msg timestamp="20240606 17:01:14.569" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20240606 17:01:10.564" endtime="20240606 17:01:14.570"/>
 </kw>
-<status status="PASS" starttime="20240606 16:31:14.081" endtime="20240606 16:31:18.169"/>
+<status status="PASS" starttime="20240606 17:01:10.496" endtime="20240606 17:01:14.570"/>
 </kw>
-<kw name="Click On UMA-Inspection Button" library="Keyword_ResetChanges">
+<kw name="Click On UMA-Inspection Button" library="Keyword_SaveEdit">
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>${Inspection_Button}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20240606 16:31:18.171" level="INFO">Clicking button '//*[@id="group_ddl_groups0"]/button'.</msg>
-<status status="PASS" starttime="20240606 16:31:18.171" endtime="20240606 16:31:18.306"/>
+<msg timestamp="20240606 17:01:14.572" level="INFO">Clicking button '//*[@id="group_ddl_groups0"]/button'.</msg>
+<status status="PASS" starttime="20240606 17:01:14.571" endtime="20240606 17:01:14.656"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>4s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20240606 16:31:22.316" level="INFO">Slept 4 seconds</msg>
-<status status="PASS" starttime="20240606 16:31:18.306" endtime="20240606 16:31:22.317"/>
+<msg timestamp="20240606 17:01:18.670" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20240606 17:01:14.656" endtime="20240606 17:01:18.670"/>
 </kw>
-<status status="PASS" starttime="20240606 16:31:18.170" endtime="20240606 16:31:22.317"/>
+<status status="PASS" starttime="20240606 17:01:14.570" endtime="20240606 17:01:18.670"/>
 </kw>
-<kw name="Click on UMA_Inspetion1 Button" library="Keyword_ResetChanges">
+<kw name="Click on UMA_Inspetion1 Button" library="Keyword_SaveEdit">
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>${Inspection1_button}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20240606 16:31:22.319" level="INFO">Clicking button '//*[@id="role_ddl_roleroleList_0"]/button'.</msg>
-<status status="PASS" starttime="20240606 16:31:22.319" endtime="20240606 16:31:22.469"/>
+<msg timestamp="20240606 17:01:18.670" level="INFO">Clicking button '//*[@id="role_ddl_roleroleList_0"]/button'.</msg>
+<status status="PASS" starttime="20240606 17:01:18.670" endtime="20240606 17:01:18.855"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>5s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20240606 16:31:27.475" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20240606 16:31:22.469" endtime="20240606 16:31:27.475"/>
+<msg timestamp="20240606 17:01:23.864" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20240606 17:01:18.855" endtime="20240606 17:01:23.864"/>
 </kw>
-<status status="PASS" starttime="20240606 16:31:22.318" endtime="20240606 16:31:27.475"/>
+<status status="PASS" starttime="20240606 17:01:18.670" endtime="20240606 17:01:23.864"/>
 </kw>
-<kw name="Click on Internal_UMA_Inspection1 Button" library="Keyword_ResetChanges">
+<kw name="Click on Internal_UMA_Inspection1 Button" library="Keyword_SaveEdit">
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>${Inspection1_button1}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20240606 16:31:27.475" level="INFO">Clicking button '//*[@id="role_ddl_roleroleList_0"]/button'.</msg>
-<status status="PASS" starttime="20240606 16:31:27.475" endtime="20240606 16:31:28.333"/>
+<msg timestamp="20240606 17:01:23.864" level="INFO">Clicking button '//*[@id="role_ddl_roleroleList_0"]/button'.</msg>
+<status status="PASS" starttime="20240606 17:01:23.864" endtime="20240606 17:01:23.926"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>4s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20240606 16:31:32.349" level="INFO">Slept 4 seconds</msg>
-<status status="PASS" starttime="20240606 16:31:28.333" endtime="20240606 16:31:32.350"/>
+<msg timestamp="20240606 17:01:27.931" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20240606 17:01:23.926" endtime="20240606 17:01:27.931"/>
 </kw>
-<status status="PASS" starttime="20240606 16:31:27.475" endtime="20240606 16:31:32.351"/>
+<status status="PASS" starttime="20240606 17:01:23.864" endtime="20240606 17:01:27.931"/>
 </kw>
-<kw name="Click on Edit Role Button" library="Keyword_ResetChanges">
+<kw name="Click on Edit Role Button" library="Keyword_SaveEdit">
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${role_btn_editRole}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240606 16:31:32.351" level="INFO">Clicking element '//*[@id="role_btn_editRole"]'.</msg>
-<status status="PASS" starttime="20240606 16:31:32.351" endtime="20240606 16:31:33.155"/>
+<msg timestamp="20240606 17:01:27.931" level="INFO">Clicking element '//*[@id="role_btn_editRole"]'.</msg>
+<status status="PASS" starttime="20240606 17:01:27.931" endtime="20240606 17:01:28.050"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20240606 16:31:36.170" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20240606 16:31:33.155" endtime="20240606 16:31:36.171"/>
+<msg timestamp="20240606 17:01:31.065" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20240606 17:01:28.050" endtime="20240606 17:01:31.066"/>
 </kw>
-<status status="PASS" starttime="20240606 16:31:32.351" endtime="20240606 16:31:36.172"/>
+<status status="PASS" starttime="20240606 17:01:27.931" endtime="20240606 17:01:31.066"/>
 </kw>
-<kw name="Click on Geospatial_Model_Button" library="Keyword_ResetChanges">
+<kw name="Click on Geospatial_Model_Button" library="Keyword_SaveEdit">
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${Geo_button}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240606 16:31:36.172" level="INFO">Clicking element '//*[@id="role_ddl_mapServicesList_0"]/button'.</msg>
-<msg timestamp="20240606 16:31:37.500" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-185.png"&gt;&lt;img src="selenium-screenshot-185.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg timestamp="20240606 16:31:37.517" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button class="border-0 bg-transparent text-left w-100 text_overflow_hidden text_gray-50" mattooltipposition="right" type="button" ng-reflect-position="right" ng-reflect-message="Geospatial Interactive Service" aria-describedby="cdk-describedby-message-49" cdk-describedby-host="" style="touch-action: none; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"&gt;...&lt;/button&gt; is not clickable at point (600, 413). Other element would receive the click: &lt;div _ngcontent-wcd-c3="" class="overlay ng-tns-c3-0 ng-trigger ng-trigger-fadeIn ng-star-inserted" style="background-color: rgba(51, 51, 51, 0.8); z-index: 99999; position: fixed; opacity: 1;"&gt;...&lt;/div&gt;
-  (Session info: chrome=125.0.6422.113)
-Stacktrace:
-	GetHandleVerifier [0x00007FF6102F1F22+60322]
-	(No symbol) [0x00007FF61026CE99]
-	(No symbol) [0x00007FF610127EBA]
-	(No symbol) [0x00007FF61017F32E]
-	(No symbol) [0x00007FF61017CCF2]
-	(No symbol) [0x00007FF61017A18B]
-	(No symbol) [0x00007FF610179356]
-	(No symbol) [0x00007FF61016B491]
-	(No symbol) [0x00007FF61019C21A]
-	(No symbol) [0x00007FF61016ADB6]
-	(No symbol) [0x00007FF61019C430]
-	(No symbol) [0x00007FF6101BBC80]
-	(No symbol) [0x00007FF61019BFC3]
-	(No symbol) [0x00007FF610169617]
-	(No symbol) [0x00007FF61016A211]
-	GetHandleVerifier [0x00007FF61060946D+3301613]
-	GetHandleVerifier [0x00007FF610653693+3605267]
-	GetHandleVerifier [0x00007FF610649410+3563664]
-	GetHandleVerifier [0x00007FF6103A42F6+790390]
-	(No symbol) [0x00007FF6102774DF]
-	(No symbol) [0x00007FF6102733D4]
-	(No symbol) [0x00007FF610273562]
-	(No symbol) [0x00007FF610262F6F]
-	BaseThreadInitThunk [0x00007FFFA537257D+29]
-	RtlUserThreadStart [0x00007FFFA654AA48+40]
-</msg>
-<status status="FAIL" starttime="20240606 16:31:36.172" endtime="20240606 16:31:37.517"/>
+<msg timestamp="20240606 17:01:31.066" level="INFO">Clicking element '//*[@id="role_ddl_mapServicesList_0"]/button'.</msg>
+<status status="PASS" starttime="20240606 17:01:31.066" endtime="20240606 17:01:31.125"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" starttime="20240606 16:31:37.517" endtime="20240606 16:31:37.517"/>
+<msg timestamp="20240606 17:01:34.134" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20240606 17:01:31.125" endtime="20240606 17:01:34.134"/>
 </kw>
-<status status="FAIL" starttime="20240606 16:31:36.172" endtime="20240606 16:31:37.517"/>
+<status status="PASS" starttime="20240606 17:01:31.066" endtime="20240606 17:01:34.134"/>
 </kw>
-<kw name="Check if Reset Button is Visable" library="Keyword_ResetChanges">
-<status status="NOT RUN" starttime="20240606 16:31:37.517" endtime="20240606 16:31:37.517"/>
+<kw name="Check the Select all Checkbox" library="Keyword_SaveEdit">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Select_all_CheckBox}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240606 17:01:34.134" level="INFO">Clicking element '//*[@id="role_checkbox_selectAllFunctions"]/label/div'.</msg>
+<status status="PASS" starttime="20240606 17:01:34.134" endtime="20240606 17:01:34.264"/>
 </kw>
-<kw name="Check the Select all Checkbox" library="Keyword_ResetChanges">
-<status status="NOT RUN" starttime="20240606 16:31:37.517" endtime="20240606 16:31:37.517"/>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240606 17:01:37.276" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20240606 17:01:34.266" endtime="20240606 17:01:37.276"/>
 </kw>
-<kw name="Check the StoryMap Checkbox" library="Keyword_ResetChanges">
-<status status="NOT RUN" starttime="20240606 16:31:37.517" endtime="20240606 16:31:37.517"/>
+<status status="PASS" starttime="20240606 17:01:34.134" endtime="20240606 17:01:37.276"/>
 </kw>
-<kw name="Click on Reset Button" library="Keyword_ResetChanges">
-<status status="NOT RUN" starttime="20240606 16:31:37.517" endtime="20240606 16:31:37.517"/>
+<kw name="Check the StoryMap Checkbox" library="Keyword_SaveEdit">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${StoryMap-CheckBox}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240606 17:01:37.276" level="INFO">Clicking element '//*[@id="mat-checkbox-2"]/label'.</msg>
+<status status="PASS" starttime="20240606 17:01:37.276" endtime="20240606 17:01:37.363"/>
 </kw>
-<kw name="Click on Yes Button" library="Keyword_ResetChanges">
-<status status="NOT RUN" starttime="20240606 16:31:37.517" endtime="20240606 16:31:37.517"/>
+<status status="PASS" starttime="20240606 17:01:37.276" endtime="20240606 17:01:37.365"/>
 </kw>
-<kw name="Check that CheckBox is Reseted" library="Keyword_ResetChanges">
-<status status="NOT RUN" starttime="20240606 16:31:37.517" endtime="20240606 16:31:37.517"/>
+<kw name="Check if CheckBox is Checked" library="Keyword_SaveEdit">
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${status}</var>
+<arg>${Dashboard_CheckBox}</arg>
+<arg>checked</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20240606 17:01:37.384" level="INFO">${status} = None</msg>
+<status status="PASS" starttime="20240606 17:01:37.365" endtime="20240606 17:01:37.384"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${status}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240606 17:01:37.384" level="INFO">None</msg>
+<status status="PASS" starttime="20240606 17:01:37.384" endtime="20240606 17:01:37.384"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${status}" != "true"</arg>
+<arg>Log</arg>
+<arg>"ResetButton Working successfully "</arg>
+<arg>ELSE</arg>
+<arg>Fail</arg>
+<arg>"Reset Button Not working"</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Log" library="BuiltIn">
+<arg>"ResetButton Working successfully "</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240606 17:01:37.384" level="INFO">"ResetButton Working successfully "</msg>
+<status status="PASS" starttime="20240606 17:01:37.384" endtime="20240606 17:01:37.384"/>
+</kw>
+<status status="PASS" starttime="20240606 17:01:37.384" endtime="20240606 17:01:37.384"/>
+</kw>
+<status status="PASS" starttime="20240606 17:01:37.365" endtime="20240606 17:01:37.384"/>
+</kw>
+<kw name="Click on Save Button" library="Keyword_SaveEdit">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${saveUpdateRole_Button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20240606 17:01:37.384" level="INFO">Clicking button '//*[@id="role_btn_save"]'.</msg>
+<status status="PASS" starttime="20240606 17:01:37.384" endtime="20240606 17:01:37.455"/>
+</kw>
+<status status="PASS" starttime="20240606 17:01:37.384" endtime="20240606 17:01:37.455"/>
+</kw>
+<kw name="Click on Ok" library="Keyword_SaveEdit">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${saveUpdateRole_ok}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240606 17:01:37.455" level="INFO">Clicking element '//*[@id="id_btn_saveUpdateRole_ok"]'.</msg>
+<status status="PASS" starttime="20240606 17:01:37.455" endtime="20240606 17:01:37.520"/>
+</kw>
+<status status="PASS" starttime="20240606 17:01:37.455" endtime="20240606 17:01:37.520"/>
+</kw>
+<kw name="Verify if it saved" library="Keyword_SaveEdit">
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${SaveConfirmationMsg}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20240606 17:01:37.868" level="INFO">Current page contains element '//*[@id="toast-container"]/div'.</msg>
+<status status="PASS" starttime="20240606 17:01:37.520" endtime="20240606 17:01:37.868"/>
+</kw>
+<status status="PASS" starttime="20240606 17:01:37.520" endtime="20240606 17:01:37.868"/>
 </kw>
 <kw name="Close_Chrome" library="Common" type="TEARDOWN">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20240606 16:31:37.517" endtime="20240606 16:31:40.112"/>
+<status status="PASS" starttime="20240606 17:01:37.869" endtime="20240606 17:01:40.056"/>
 </kw>
-<status status="PASS" starttime="20240606 16:31:37.517" endtime="20240606 16:31:40.112"/>
+<status status="PASS" starttime="20240606 17:01:37.869" endtime="20240606 17:01:40.056"/>
 </kw>
-<tag>Rsest_button</tag>
-<status status="FAIL" starttime="20240606 16:31:08.629" endtime="20240606 16:31:40.112">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button class="border-0 bg-transparent text-left w-100 text_overflow_hidden text_gray-50" mattooltipposition="right" type="button" ng-reflect-position="right" ng-reflect-message="Geospatial Interactive Service" aria-describedby="cdk-describedby-message-49" cdk-describedby-host="" style="touch-action: none; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"&gt;...&lt;/button&gt; is not clickable at point (600, 413). Other element would receive the click: &lt;div _ngcontent-wcd-c3="" class="overlay ng-tns-c3-0 ng-trigger ng-trigger-fadeIn ng-star-inserted" style="background-color: rgba(51, 51, 51, 0.8); z-index: 99999; position: fixed; opacity: 1;"&gt;...&lt;/div&gt;
-  (Session info: chrome=125.0.6422.113)
-Stacktrace:
-	GetHandleVerifier [0x00007FF6102F1F22+60322]
-	(No symbol) [0x00007FF61026CE99]
-	(No symbol) [0x00007FF610127EBA]
-	(No symbol) [0x00007FF61017F32E]
-	(No symbol) [0x00007FF61017CCF2]
-	(No symbol) [0x00007FF61017A18B]
-	(No symbol) [0x00007FF610179356]
-	(No symbol) [0x00007FF61016B491]
-	(No symbol) [0x00007FF61019C21A]
-	(No symbol) [0x00007FF61016ADB6]
-	(No symbol) [0x00007FF61019C430]
-	(No symbol) [0x00007FF6101BBC80]
-	(No symbol) [0x00007FF61019BFC3]
-	(No symbol) [0x00007FF610169617]
-	(No symbol) [0x00007FF61016A211]
-	GetHandleVerifier [0x00007FF61060946D+3301613]
-	GetHandleVerifier [0x00007FF610653693+3605267]
-	GetHandleVerifier [0x00007FF610649410+3563664]
-	GetHandleVerifier [0x00007FF6103A42F6+790390]
-	(No symbol) [0x00007FF6102774DF]
-	(No symbol) [0x00007FF6102733D4]
-	(No symbol) [0x00007FF610273562]
-	(No symbol) [0x00007FF610262F6F]
-	BaseThreadInitThunk [0x00007FFFA537257D+29]
-	RtlUserThreadStart [0x00007FFFA654AA48+40]
-</status>
+<tag>Save_Edit_button</tag>
+<status status="PASS" starttime="20240606 17:01:05.549" endtime="20240606 17:01:40.056"/>
 </test>
-<status status="FAIL" starttime="20240606 16:30:37.635" endtime="20240606 16:31:40.112"/>
+<status status="PASS" starttime="20240606 17:00:47.597" endtime="20240606 17:01:40.056"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="0" fail="1" skip="0">Rsest_button</stat>
+<stat pass="1" fail="0" skip="0">Save_Edit_button</stat>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="Reset Changes">Reset Changes</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="SaveEdit">SaveEdit</stat>
 </suite>
 </statistics>
 <errors>
