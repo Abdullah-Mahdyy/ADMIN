@@ -19,7 +19,7 @@ Test Teardown   Close_Chrome
 
 
 *** Test cases ***
-User Test Case
+Check Functionality of No Filter
     [tags]         NoFilter
     Click on the User Managment Button
     Click on the User Menu Button
@@ -27,6 +27,7 @@ User Test Case
     Check the State and Uncheck it If the Checkbox is Checked
     Check Unretired Checkbox Is Present
     Check the State and Check it If the Checkbox is Unchecked
+    Check If the Button Retuired is Checked
 ##Check Retired Checkbox Is Present
 #    Element Should Be Visible        ${UnCheck_btn_Retired}
 
