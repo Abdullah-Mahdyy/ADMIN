@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.3 (Python 3.10.6 on win32)" generated="20240605 19:06:13.264" rpa="false" schemaversion="2">
+<robot generator="Robot 4.1.3 (Python 3.10.6 on win32)" generated="20240606 00:19:04.422" rpa="false" schemaversion="2">
 <suite id="s1" name="Tests" source="D:\Work\Intellij\Admin Mahmoud\Tests">
 <suite id="s1-s1" name="UserMangment" source="D:\Work\Intellij\Admin Mahmoud\Tests\UserMangment">
-<suite id="s1-s1-s1" name="Delete User Management" source="D:\Work\Intellij\Admin Mahmoud\Tests\UserMangment\Delete_User_Management.robot">
+<suite id="s1-s1-s1" name="NoFilter" source="D:\Work\Intellij\Admin Mahmoud\Tests\UserMangment\NoFilter.robot">
 <kw name="Run Keywords" library="BuiltIn" type="SETUP">
 <arg>Open_Chrome</arg>
 <arg>Login_Successfully</arg>
@@ -11,153 +11,166 @@
 <kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
 <arg>5</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20240605 19:06:13.421" endtime="20240605 19:06:13.421"/>
+<status status="PASS" starttime="20240606 00:19:04.624" endtime="20240606 00:19:04.624"/>
 </kw>
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>https://dgdadevnew.eastus.cloudapp.azure.com/DGDAAdminFront/#/login</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20240605 19:06:13.422" level="INFO">Opening browser 'chrome' to base url 'https://dgdadevnew.eastus.cloudapp.azure.com/DGDAAdminFront/#/login'.</msg>
-<status status="PASS" starttime="20240605 19:06:13.421" endtime="20240605 19:06:17.915"/>
+<msg timestamp="20240606 00:19:04.624" level="INFO">Opening browser 'chrome' to base url 'https://dgdadevnew.eastus.cloudapp.azure.com/DGDAAdminFront/#/login'.</msg>
+<status status="PASS" starttime="20240606 00:19:04.624" endtime="20240606 00:19:43.251"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20240605 19:06:17.915" endtime="20240605 19:06:17.948"/>
+<msg timestamp="20240606 00:19:43.260" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=125.0.6422.142)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6F4731F22+60322]
+	(No symbol) [0x00007FF6F46ACE99]
+	(No symbol) [0x00007FF6F4567EBA]
+	(No symbol) [0x00007FF6F453D5A5]
+	(No symbol) [0x00007FF6F45E36B7]
+	(No symbol) [0x00007FF6F45FB331]
+	(No symbol) [0x00007FF6F45DBFC3]
+	(No symbol) [0x00007FF6F45A9617]
+	(No symbol) [0x00007FF6F45AA211]
+	GetHandleVerifier [0x00007FF6F4A4946D+3301613]
+	GetHandleVerifier [0x00007FF6F4A93693+3605267]
+	GetHandleVerifier [0x00007FF6F4A89410+3563664]
+	GetHandleVerifier [0x00007FF6F47E42F6+790390]
+	(No symbol) [0x00007FF6F46B74DF]
+	(No symbol) [0x00007FF6F46B33D4]
+	(No symbol) [0x00007FF6F46B3562]
+	(No symbol) [0x00007FF6F46A2F6F]
+	BaseThreadInitThunk [0x00007FFD283F257D+29]
+	RtlUserThreadStart [0x00007FFD29C8AA58+40]
+</msg>
+<msg timestamp="20240606 00:19:43.260" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=125.0.6422.142)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6F4731F22+60322]
+	(No symbol) [0x00007FF6F46ACE99]
+	(No symbol) [0x00007FF6F4567EBA]
+	(No symbol) [0x00007FF6F453D5A5]
+	(No symbol) [0x00007FF6F45E36B7]
+	(No symbol) [0x00007FF6F45FB331]
+	(No symbol) [0x00007FF6F45DBFC3]
+	(No symbol) [0x00007FF6F45A9617]
+	(No symbol) [0x00007FF6F45AA211]
+	GetHandleVerifier [0x00007FF6F4A4946D+3301613]
+	GetHandleVerifier [0x00007FF6F4A93693+3605267]
+	GetHandleVerifier [0x00007FF6F4A89410+3563664]
+	GetHandleVerifier [0x00007FF6F47E42F6+790390]
+	(No symbol) [0x00007FF6F46B74DF]
+	(No symbol) [0x00007FF6F46B33D4]
+	(No symbol) [0x00007FF6F46B3562]
+	(No symbol) [0x00007FF6F46A2F6F]
+	BaseThreadInitThunk [0x00007FFD283F257D+29]
+	RtlUserThreadStart [0x00007FFD29C8AA58+40]
+</msg>
+<status status="FAIL" starttime="20240606 00:19:43.251" endtime="20240606 00:19:43.260"/>
 </kw>
-<status status="PASS" starttime="20240605 19:06:13.421" endtime="20240605 19:06:17.948"/>
+<status status="FAIL" starttime="20240606 00:19:04.624" endtime="20240606 00:19:43.260"/>
 </kw>
-<kw name="Login_Successfully" library="Common">
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${Username_Text}</arg>
-<arg>Admin</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240605 19:06:17.949" level="INFO">Typing text 'Admin' into text field '//*[@id="login_input_username"]'.</msg>
-<status status="PASS" starttime="20240605 19:06:17.949" endtime="20240605 19:06:18.238"/>
+<status status="FAIL" starttime="20240606 00:19:04.623" endtime="20240606 00:19:43.267"/>
 </kw>
-<kw name="Input Password" library="SeleniumLibrary">
-<arg>${Password_Text}</arg>
-<arg>123456</arg>
-<doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20240605 19:06:18.239" level="INFO">Typing password into text field '//*[@id="login_input_password"]'.</msg>
-<msg timestamp="20240605 19:06:18.278" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20240605 19:06:18.332" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20240605 19:06:18.238" endtime="20240605 19:06:18.332"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${Login_btn}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240605 19:06:18.332" level="INFO">Clicking element '//*[@id="login_btn_login"]'.</msg>
-<status status="PASS" starttime="20240605 19:06:18.332" endtime="20240605 19:06:18.372"/>
-</kw>
-<status status="PASS" starttime="20240605 19:06:17.948" endtime="20240605 19:06:18.372"/>
-</kw>
-<status status="PASS" starttime="20240605 19:06:13.421" endtime="20240605 19:06:18.372"/>
-</kw>
-<test id="s1-s1-s1-t1" name="Check Functionality of Delete User">
-<kw name="Click on the User Managment Button" library="Keyword_Delete_User_Management">
-<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
-<arg>5</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20240605 19:06:18.373" endtime="20240605 19:06:18.374"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${User_Managment_Button}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240605 19:06:18.374" level="INFO">Clicking element '//*[@id="1"]/i'.</msg>
-<status status="PASS" starttime="20240605 19:06:18.374" endtime="20240605 19:06:19.423"/>
-</kw>
-<status status="PASS" starttime="20240605 19:06:18.373" endtime="20240605 19:06:19.423"/>
-</kw>
-<kw name="Insert Data in the Search Text Box" library="Keyword_Delete_User_Management">
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${Search_TextBox}</arg>
-<arg>weaam</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240605 19:06:19.425" level="INFO">Typing text 'weaam' into text field '//*[@id="users_input_filterUsers"]'.</msg>
-<status status="PASS" starttime="20240605 19:06:19.425" endtime="20240605 19:06:19.485"/>
-</kw>
-<status status="PASS" starttime="20240605 19:06:19.423" endtime="20240605 19:06:19.485"/>
-</kw>
-<kw name="Click on the User" library="Keyword_Delete_User_Management">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${Select_User}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240605 19:06:19.486" level="INFO">Clicking element '//*[@id="users_ddl_usersList_0"]/button'.</msg>
-<status status="PASS" starttime="20240605 19:06:19.485" endtime="20240605 19:06:21.340"/>
-</kw>
-<status status="PASS" starttime="20240605 19:06:19.485" endtime="20240605 19:06:21.340"/>
-</kw>
-<kw name="Page Should Contain" library="SeleniumLibrary">
-<arg>Requester</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<msg timestamp="20240605 19:06:21.535" level="INFO">Current page contains text 'Requester'.</msg>
-<status status="PASS" starttime="20240605 19:06:21.340" endtime="20240605 19:06:21.535"/>
-</kw>
-<kw name="Click on the Delete Button" library="Keyword_Delete_User_Management">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${Delete_Button}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240605 19:06:21.535" level="INFO">Clicking element '//*[@id="users_btn_delete"]'.</msg>
-<status status="PASS" starttime="20240605 19:06:21.535" endtime="20240605 19:06:21.573"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>3</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20240605 19:06:24.587" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20240605 19:06:21.574" endtime="20240605 19:06:24.587"/>
-</kw>
-<status status="PASS" starttime="20240605 19:06:21.535" endtime="20240605 19:06:24.587"/>
-</kw>
-<kw name="Page Should Contain" library="SeleniumLibrary">
-<arg>Are you sure you want delete this user ?</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<msg timestamp="20240605 19:06:24.657" level="INFO">Current page contains text 'Are you sure you want delete this user ?'.</msg>
-<status status="PASS" starttime="20240605 19:06:24.587" endtime="20240605 19:06:24.657"/>
-</kw>
-<kw name="Click on No at the Confirmation Message" library="Keyword_Delete_User_Management">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>//*[@id="id_btn_msg_cancel"]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240605 19:06:24.658" level="INFO">Clicking element '//*[@id="id_btn_msg_cancel"]'.</msg>
-<status status="PASS" starttime="20240605 19:06:24.657" endtime="20240605 19:06:24.693"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>3</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20240605 19:06:27.708" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20240605 19:06:24.694" endtime="20240605 19:06:27.708"/>
-</kw>
-<status status="PASS" starttime="20240605 19:06:24.657" endtime="20240605 19:06:27.708"/>
-</kw>
-<kw name="Close_Chrome" library="Common" type="TEARDOWN">
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20240605 19:06:27.709" endtime="20240605 19:06:29.812"/>
-</kw>
-<status status="PASS" starttime="20240605 19:06:27.708" endtime="20240605 19:06:29.813"/>
-</kw>
-<tag>User_Management_Delete</tag>
-<status status="PASS" starttime="20240605 19:06:18.372" endtime="20240605 19:06:29.813"/>
+<test id="s1-s1-s1-t1" name="User Test Case">
+<tag>NoFilter</tag>
+<status status="FAIL" starttime="20240606 00:19:43.267" endtime="20240606 00:19:43.267">Parent suite setup failed:
+NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=125.0.6422.142)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6F4731F22+60322]
+	(No symbol) [0x00007FF6F46ACE99]
+	(No symbol) [0x00007FF6F4567EBA]
+	(No symbol) [0x00007FF6F453D5A5]
+	(No symbol) [0x00007FF6F45E36B7]
+	(No symbol) [0x00007FF6F45FB331]
+	(No symbol) [0x00007FF6F45DBFC3]
+	(No symbol) [0x00007FF6F45A9617]
+	(No symbol) [0x00007FF6F45AA211]
+	GetHandleVerifier [0x00007FF6F4A4946D+3301613]
+	GetHandleVerifier [0x00007FF6F4A93693+3605267]
+	GetHandleVerifier [0x00007FF6F4A89410+3563664]
+	GetHandleVerifier [0x00007FF6F47E42F6+790390]
+	(No symbol) [0x00007FF6F46B74DF]
+	(No symbol) [0x00007FF6F46B33D4]
+	(No symbol) [0x00007FF6F46B3562]
+	(No symbol) [0x00007FF6F46A2F6F]
+	BaseThreadInitThunk [0x00007FFD283F257D+29]
+	RtlUserThreadStart [0x00007FFD29C8AA58+40]
+</status>
 </test>
-<status status="PASS" starttime="20240605 19:06:13.283" endtime="20240605 19:06:29.814"/>
+<status status="FAIL" starttime="20240606 00:19:04.441" endtime="20240606 00:19:43.267">Suite setup failed:
+NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=125.0.6422.142)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6F4731F22+60322]
+	(No symbol) [0x00007FF6F46ACE99]
+	(No symbol) [0x00007FF6F4567EBA]
+	(No symbol) [0x00007FF6F453D5A5]
+	(No symbol) [0x00007FF6F45E36B7]
+	(No symbol) [0x00007FF6F45FB331]
+	(No symbol) [0x00007FF6F45DBFC3]
+	(No symbol) [0x00007FF6F45A9617]
+	(No symbol) [0x00007FF6F45AA211]
+	GetHandleVerifier [0x00007FF6F4A4946D+3301613]
+	GetHandleVerifier [0x00007FF6F4A93693+3605267]
+	GetHandleVerifier [0x00007FF6F4A89410+3563664]
+	GetHandleVerifier [0x00007FF6F47E42F6+790390]
+	(No symbol) [0x00007FF6F46B74DF]
+	(No symbol) [0x00007FF6F46B33D4]
+	(No symbol) [0x00007FF6F46B3562]
+	(No symbol) [0x00007FF6F46A2F6F]
+	BaseThreadInitThunk [0x00007FFD283F257D+29]
+	RtlUserThreadStart [0x00007FFD29C8AA58+40]
+</status>
 </suite>
-<status status="PASS" starttime="20240605 19:06:13.281" endtime="20240605 19:06:29.815"/>
+<status status="FAIL" starttime="20240606 00:19:04.439" endtime="20240606 00:19:43.267"/>
 </suite>
-<status status="PASS" starttime="20240605 19:06:13.265" endtime="20240605 19:06:29.815"/>
+<status status="FAIL" starttime="20240606 00:19:04.423" endtime="20240606 00:19:43.267"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">User_Management_Delete</stat>
+<stat pass="0" fail="1" skip="0">NoFilter</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1" name="UserMangment">Tests.UserMangment</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="Delete User Management">Tests.UserMangment.Delete User Management</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="UserMangment">Tests.UserMangment</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="NoFilter">Tests.UserMangment.NoFilter</stat>
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20240606 00:19:43.260" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=125.0.6422.142)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6F4731F22+60322]
+	(No symbol) [0x00007FF6F46ACE99]
+	(No symbol) [0x00007FF6F4567EBA]
+	(No symbol) [0x00007FF6F453D5A5]
+	(No symbol) [0x00007FF6F45E36B7]
+	(No symbol) [0x00007FF6F45FB331]
+	(No symbol) [0x00007FF6F45DBFC3]
+	(No symbol) [0x00007FF6F45A9617]
+	(No symbol) [0x00007FF6F45AA211]
+	GetHandleVerifier [0x00007FF6F4A4946D+3301613]
+	GetHandleVerifier [0x00007FF6F4A93693+3605267]
+	GetHandleVerifier [0x00007FF6F4A89410+3563664]
+	GetHandleVerifier [0x00007FF6F47E42F6+790390]
+	(No symbol) [0x00007FF6F46B74DF]
+	(No symbol) [0x00007FF6F46B33D4]
+	(No symbol) [0x00007FF6F46B3562]
+	(No symbol) [0x00007FF6F46A2F6F]
+	BaseThreadInitThunk [0x00007FFD283F257D+29]
+	RtlUserThreadStart [0x00007FFD29C8AA58+40]
+</msg>
 </errors>
 </robot>
