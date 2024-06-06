@@ -13,14 +13,14 @@ ${Recheck_btn_Unretired}         //*[@id="users_btn_Unretired"]/label/div
 
 *** Test cases ***
 
-Check Functionality of Retired Test Case
-    [tags]              Retired_user
+Check Functionality of UnRetired Test Case
+    [tags]              UnRetired_user
 
 #check Functionality of Retired Checkbox
     Click Element    ${Users_Mangment_Button}
     Sleep    5
     Click Element           ${Users_btn_menu}
-#Check Retired Checkbox Is Present
+#Check UnRetired Checkbox Is Present
     Element Should Be Visible        ${UnCheck_btn_Unretired}
 
 
