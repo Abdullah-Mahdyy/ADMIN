@@ -2,6 +2,8 @@
 
 Library     SeleniumLibrary
 Resource    ../../Resources/Common.robot
+Resource    ../../Resources/Assignments_Keywords/Keyword_CancelResetChanges.robot
+
 Suite Setup    Run Keywords   Open_Chrome   Login_Successfully
 Test Teardown   Close_Chrome
 
@@ -23,35 +25,22 @@ ${Cancel_Button}                   //*[@id="id_btn_resetFunctions_cancel"]
 *** Test cases ***
 Check functionality of Cancel_Reset_Button
     [Tags]          Cancel_Reset_Button
-    Click Button    ${Assginment_Button}
-    Sleep    4s
-    Click Element    ${Requester_Button}
-    Sleep    4s
-    Click Button    ${Inspection_Button}
-    Sleep    4s
-    Click Button    ${Inspection1_button}
-    Sleep    4s
-     Click Button    ${Inspection1_button1}
-    Sleep    4s
-    Click Element    ${role_btn_editRole}
-    Sleep    3s
-    Click Element    ${Geo_button}
-    Sleep    3s
-
-    Click Element    ${Select_all_CheckBox}
-    Sleep    3s
-    Click Element    ${StoryMap-CheckBox}
+     Click on Assignments Button
+     Click On Requester Button
+     Click On UMA-Inspection Button
+     Click on UMA_Inspetion1 Button
+     Click on Internal_UMA_Inspection1 Button
+     Click on Edit Role Button
+     Click on Geospatial_Model_Button
+     Check the Select all Checkbox
+     Check the StoryMap Checkbox
+     Click on Reset Button
+     Click on Cancel Button
+     Check that CheckBox is Reseted
 
 
-    Click Element    ${Reset_Button}
-    Click Element    ${Cancel_Button}
-    Sleep    2s
-    ${status}=    Get Element Attribute     ${Dashboard_CheckBox}    checked
-          Log      ${status}
 
 
-#if Status = True its checked
-    Run Keyword If    "${status}" != "true"     Log    "ResetButton Working successfully "    ELSE    Fail    "Reset Button Not working""
 
 
 
