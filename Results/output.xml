@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.10.6 on win32)" generated="20240606 13:49:19.299" rpa="false" schemaversion="4">
+<suite id="s1" name="Tests" source="C:\Users\abdullah.ahmed\IdeaProjects\Admin QSIT\Tests">
+<suite id="s1-s1" name="UserMangment" source="C:\Users\abdullah.ahmed\IdeaProjects\Admin QSIT\Tests\UserMangment">
+<suite id="s1-s1-s1" name="NoFilter" source="C:\Users\abdullah.ahmed\IdeaProjects\Admin QSIT\Tests\UserMangment\NoFilter.robot">
+<kw name="Run Keywords" library="BuiltIn" type="SETUP">
+<arg>Open_Chrome</arg>
+<arg>Login_Successfully</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Open_Chrome" library="Common">
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>5</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20240606 13:49:19.734" endtime="20240606 13:49:19.734"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://dgdadevnew.eastus.cloudapp.azure.com/DGDAAdminFront/#/login</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240606 13:49:19.734" level="INFO">Opening browser 'chrome' to base url 'https://dgdadevnew.eastus.cloudapp.azure.com/DGDAAdminFront/#/login'.</msg>
+<status status="PASS" starttime="20240606 13:49:19.734" endtime="20240606 13:50:06.952"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20240606 13:50:06.953" endtime="20240606 13:50:06.977"/>
+</kw>
+<status status="PASS" starttime="20240606 13:49:19.734" endtime="20240606 13:50:06.977"/>
+</kw>
+<kw name="Login_Successfully" library="Common">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Username_Text}</arg>
+<arg>Admin</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240606 13:50:06.982" level="INFO">Typing text 'Admin' into text field '//*[@id="login_input_username"]'.</msg>
+<msg timestamp="20240606 13:50:06.991" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=125.0.6422.113)
+Stacktrace:
+	GetHandleVerifier [0x00007FF768631F22+60322]
+	(No symbol) [0x00007FF7685ACE99]
+	(No symbol) [0x00007FF768467EBA]
+	(No symbol) [0x00007FF76843D5A5]
+	(No symbol) [0x00007FF7684E36B7]
+	(No symbol) [0x00007FF7684FB331]
+	(No symbol) [0x00007FF7684DBFC3]
+	(No symbol) [0x00007FF7684A9617]
+	(No symbol) [0x00007FF7684AA211]
+	GetHandleVerifier [0x00007FF76894946D+3301613]
+	GetHandleVerifier [0x00007FF768993693+3605267]
+	GetHandleVerifier [0x00007FF768989410+3563664]
+	GetHandleVerifier [0x00007FF7686E42F6+790390]
+	(No symbol) [0x00007FF7685B74DF]
+	(No symbol) [0x00007FF7685B33D4]
+	(No symbol) [0x00007FF7685B3562]
+	(No symbol) [0x00007FF7685A2F6F]
+	BaseThreadInitThunk [0x00007FFFA537257D+29]
+	RtlUserThreadStart [0x00007FFFA654AA48+40]
+</msg>
+<msg timestamp="20240606 13:50:06.993" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=125.0.6422.113)
+Stacktrace:
+	GetHandleVerifier [0x00007FF768631F22+60322]
+	(No symbol) [0x00007FF7685ACE99]
+	(No symbol) [0x00007FF768467EBA]
+	(No symbol) [0x00007FF76843D5A5]
+	(No symbol) [0x00007FF7684E36B7]
+	(No symbol) [0x00007FF7684FB331]
+	(No symbol) [0x00007FF7684DBFC3]
+	(No symbol) [0x00007FF7684A9617]
+	(No symbol) [0x00007FF7684AA211]
+	GetHandleVerifier [0x00007FF76894946D+3301613]
+	GetHandleVerifier [0x00007FF768993693+3605267]
+	GetHandleVerifier [0x00007FF768989410+3563664]
+	GetHandleVerifier [0x00007FF7686E42F6+790390]
+	(No symbol) [0x00007FF7685B74DF]
+	(No symbol) [0x00007FF7685B33D4]
+	(No symbol) [0x00007FF7685B3562]
+	(No symbol) [0x00007FF7685A2F6F]
+	BaseThreadInitThunk [0x00007FFFA537257D+29]
+	RtlUserThreadStart [0x00007FFFA654AA48+40]
+</msg>
+<status status="FAIL" starttime="20240606 13:50:06.979" endtime="20240606 13:50:07.138"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${Password_Text}</arg>
+<arg>123456</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240606 13:50:07.139" endtime="20240606 13:50:07.139"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Login_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240606 13:50:07.139" endtime="20240606 13:50:07.139"/>
+</kw>
+<status status="FAIL" starttime="20240606 13:50:06.978" endtime="20240606 13:50:07.139"/>
+</kw>
+<status status="FAIL" starttime="20240606 13:49:19.733" endtime="20240606 13:50:07.139"/>
+</kw>
+<test id="s1-s1-s1-t1" name="Check Functionality of No Filter" line="22">
+<tag>NoFilter</tag>
+<status status="FAIL" starttime="20240606 13:50:07.139" endtime="20240606 13:50:07.141">Parent suite setup failed:
+NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=125.0.6422.113)
+Stacktrace:
+	GetHandleVerifier [0x00007FF768631F22+60322]
+	(No symbol) [0x00007FF7685ACE99]
+	(No symbol) [0x00007FF768467EBA]
+	(No symbol) [0x00007FF76843D5A5]
+	(No symbol) [0x00007FF7684E36B7]
+	(No symbol) [0x00007FF7684FB331]
+	(No symbol) [0x00007FF7684DBFC3]
+	(No symbol) [0x00007FF7684A9617]
+	(No symbol) [0x00007FF7684AA211]
+	GetHandleVerifier [0x00007FF76894946D+3301613]
+	GetHandleVerifier [0x00007FF768993693+3605267]
+	GetHandleVerifier [0x00007FF768989410+3563664]
+	GetHandleVerifier [0x00007FF7686E42F6+790390]
+	(No symbol) [0x00007FF7685B74DF]
+	(No symbol) [0x00007FF7685B33D4]
+	(No symbol) [0x00007FF7685B3562]
+	(No symbol) [0x00007FF7685A2F6F]
+	BaseThreadInitThunk [0x00007FFFA537257D+29]
+	RtlUserThreadStart [0x00007FFFA654AA48+40]
+</status>
+</test>
+<status status="FAIL" starttime="20240606 13:49:19.334" endtime="20240606 13:50:07.148">Suite setup failed:
+NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=125.0.6422.113)
+Stacktrace:
+	GetHandleVerifier [0x00007FF768631F22+60322]
+	(No symbol) [0x00007FF7685ACE99]
+	(No symbol) [0x00007FF768467EBA]
+	(No symbol) [0x00007FF76843D5A5]
+	(No symbol) [0x00007FF7684E36B7]
+	(No symbol) [0x00007FF7684FB331]
+	(No symbol) [0x00007FF7684DBFC3]
+	(No symbol) [0x00007FF7684A9617]
+	(No symbol) [0x00007FF7684AA211]
+	GetHandleVerifier [0x00007FF76894946D+3301613]
+	GetHandleVerifier [0x00007FF768993693+3605267]
+	GetHandleVerifier [0x00007FF768989410+3563664]
+	GetHandleVerifier [0x00007FF7686E42F6+790390]
+	(No symbol) [0x00007FF7685B74DF]
+	(No symbol) [0x00007FF7685B33D4]
+	(No symbol) [0x00007FF7685B3562]
+	(No symbol) [0x00007FF7685A2F6F]
+	BaseThreadInitThunk [0x00007FFFA537257D+29]
+	RtlUserThreadStart [0x00007FFFA654AA48+40]
+</status>
+</suite>
+<status status="FAIL" starttime="20240606 13:49:19.332" endtime="20240606 13:50:07.157"/>
+</suite>
+<status status="FAIL" starttime="20240606 13:49:19.301" endtime="20240606 13:50:07.162"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">NoFilter</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="UserMangment">Tests.UserMangment</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="NoFilter">Tests.UserMangment.NoFilter</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20240606 13:50:06.991" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=125.0.6422.113)
+Stacktrace:
+	GetHandleVerifier [0x00007FF768631F22+60322]
+	(No symbol) [0x00007FF7685ACE99]
+	(No symbol) [0x00007FF768467EBA]
+	(No symbol) [0x00007FF76843D5A5]
+	(No symbol) [0x00007FF7684E36B7]
+	(No symbol) [0x00007FF7684FB331]
+	(No symbol) [0x00007FF7684DBFC3]
+	(No symbol) [0x00007FF7684A9617]
+	(No symbol) [0x00007FF7684AA211]
+	GetHandleVerifier [0x00007FF76894946D+3301613]
+	GetHandleVerifier [0x00007FF768993693+3605267]
+	GetHandleVerifier [0x00007FF768989410+3563664]
+	GetHandleVerifier [0x00007FF7686E42F6+790390]
+	(No symbol) [0x00007FF7685B74DF]
+	(No symbol) [0x00007FF7685B33D4]
+	(No symbol) [0x00007FF7685B3562]
+	(No symbol) [0x00007FF7685A2F6F]
+	BaseThreadInitThunk [0x00007FFFA537257D+29]
+	RtlUserThreadStart [0x00007FFFA654AA48+40]
+</msg>
+</errors>
+</robot>

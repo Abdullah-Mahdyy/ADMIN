@@ -16,10 +16,10 @@ ${Verify_No_Result_Found}        //*[@id="users_p_noResult"]
 *** Keywords ***
 Click on the User Managment Button
     Click Element    ${Users_Mangment_Button}
-    Sleep    5
+    Sleep    12
 Click on the User Menu Button
     Click Element           ${Users_btn_menu}
-    Sleep    2
+    Sleep    8
 Check Retired Checkbox Is Present
     Element Should Be Visible        ${UnCheck_btn_Retired}
 Check the State and Uncheck it If the Checkbox is Checked
@@ -29,40 +29,25 @@ Check the State and Uncheck it If the Checkbox is Checked
     Click Element    ${Users_btn_menu}
     ${is_checked1}=    Get Element Attribute    ${Recheck_btn_Retired}    checked
     Run Keyword If    ${is_checked1} == None    Log    "Checkbox is now unchecked"          ELSE    Fail    "Checkbox should be unchecked"
-    Sleep    1s
+    Sleep    8
 Check Unretired Checkbox Is Present
     Element Should Be Visible        ${UnCheck_btn_Unretired}
 Check the State and Check it If the Checkbox is Unchecked
     ${is_checked}=    Get Element Attribute    ${UnCheck_btn_Unretired}     checked
     Run Keyword If    ${is_checked} == None    Log    "Checkbox is initially checked"    ELSE    Log  "Checkbox is initially unchecked"
     Run Keyword If    ${is_checked} == None    Click Element    ${UnCheck_btn_Unretired}
-    Sleep    3s
+    Sleep    8
     Click Element    ${Users_btn_menu}
     ${is_checked}=    Get Element Attribute    ${Recheck_btn_Unretired}    checked
     Run Keyword If    ${is_checked} == None    Log    "Checkbox is now unchecked"    ELSE    Fail    "Checkbox should be unchecked"
-#    Page Should Contain Element    ${Verify_No_Result_Found}
 
 Check If the Button Retuired is Checked
     ${is_checked1}=    Get Element Attribute    ${UnCheck_btn_Retired}     checked
-#    Run Keyword If    ${is_checked1} == None    Log    "Checkbox is initially checked"      ELSE    Log     "Checkbox is initially unchecked"
-#    Run Keyword If    ${is_checked1} == None    #Click Element    ${UnCheck_btn_Retired}
-    Click Element    ${Users_btn_menu}
-#    ${is_checked1}=    Get Element Attribute    ${Recheck_btn_Retired}    checked
-#    Run Keyword If    ${is_checked1} == None    Log    "Checkbox is now unchecked"          ELSE    Log    "Checkbox should be unchecked"
-    Sleep    2
+    Sleep    8
     ${is_checked}=    Get Element Attribute    ${UnCheck_btn_Unretired}     checked
-#    Run Keyword If    ${is_checked} == None    Log    "Checkbox is initially checked"       ELSE    Log  "Checkbox is initially unchecked"
-#    Run Keyword If    ${is_checked} == None    #Click Element    ${UnCheck_btn_Unretired}
-#    Sleep    3
-#    Click Element    ${Users_btn_menu}
-#    ${is_checked}=    Get Element Attribute    ${Recheck_btn_Unretired}    checked
-#    Run Keyword If    ${is_checked} == None    Log    "Checkbox is now unchecked"    ELSE    Log    "Checkbox should be unchecked"
-    Sleep    3
-    Click Element    ${Users_btn_menu}
-    Sleep    3
+    Sleep    7
     IF    ${is_checked} == ${is_checked1}
     Page Should Contain Element    ${Verify_No_Result_Found}
-
     ELSE
     Log To Console    "Theres a Bug"
 

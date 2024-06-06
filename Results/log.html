@@ -5,7 +5,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="-1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta content="Robot Framework 4.1.3 (Python 3.10.6 on win32)" name="Generator">
+<meta content="Robot Framework 6.1.1 (Python 3.10.6 on win32)" name="Generator">
 <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKcAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAqAAAAAAAAAAAAAAAAAAAALIAAAD/AAAA4AAAANwAAADcAAAA3AAAANwAAADcAAAA3AAAANwAAADcAAAA4AAAAP8AAACxAAAAAAAAAKYAAAD/AAAAuwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC/AAAA/wAAAKkAAAD6AAAAzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN8AAAD/AAAA+gAAAMMAAAAAAAAAAgAAAGsAAABrAAAAawAAAGsAAABrAAAAawAAAGsAAABrAAAADAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAIsAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAANEAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAAAAAAAAMgAAADIAAAAyAAAAMgAAADIAAAAyAAAAMgAAADIAAAAFAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAADwAAAB8AAAAAAAAAGAAAABcAAAAAAAAAH8AAABKAAAAAAAAAAAAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAADCAAAA/wAAACkAAADqAAAA4QAAAAAAAAD7AAAA/wAAALAAAAAGAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAIwAAAP4AAAD/AAAA/wAAAGAAAAAAAAAAAAAAAMkAAAD/AAAAigAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAAAAAAAIAAAAcAAAABkAAAAAAAAAAAAAAAAAAAAAAAAAEgAAAAAAAAAAAAAA2gAAAP8AAAD7AAAAywAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN4AAAD/AAAAqwAAAP8AAACvAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALIAAAD/AAAAsgAAAAAAAAC5AAAA/wAAAMoAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMkAAAD/AAAAvAAAAAAAAAAAAAAAAAAAAKwAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAArQAAAAAAAAAAwAMAAIABAAAf+AAAP/wAAD/8AAAgBAAAP/wAAD/8AAA//AAAJIwAADHEAAA//AAAP/wAAB/4AACAAQAAwAMAAA==">
 <style media="all" type="text/css">
 /* Generic and misc styles */
@@ -319,6 +319,9 @@ th.stats-col-graph:hover {
     padding: 3px;
     cursor: default;
 }
+.element-header .label {
+    margin-right: 0.5em;
+}
 .name {
     font-weight: bold;
 }
@@ -557,6 +560,9 @@ function toggleSuite(suiteId) {
 }
 function toggleTest(testId) {
     toggleElement(testId, ['keyword']);
+    var test = window.testdata.findLoaded(testId);
+    if (test.status == "FAIL" || test.status == "SKIP")
+        expandFailed(test);
 }
 function toggleKeyword(kwId) {
     toggleElement(kwId, ['keyword']);
@@ -620,7 +626,7 @@ function loadAndExpandElementIds(ids) {
     }
 }
 function expandFailed(element) {
-    if (element.status == "FAIL") {
+    if (element.status == "FAIL" || (element.type == "test" && element.status == "SKIP")) {
         window.elementsToExpand = [element];
         window.expandDecider = function (e) {
             return e.status == "FAIL";
@@ -966,6 +972,7 @@ window.model = (function () {
     }
     function Keyword(data) {
         var kw = createModelObject(data);
+        var flatTypes = ['RETURN', 'BREAK', 'CONTINUE'];
         kw.libname = data.libname;
         kw.fullName = (kw.libname ? kw.libname + '.' : '') + kw.name;
         kw.type = data.type;
@@ -1350,8 +1357,8 @@ window.testdata = function () {
     var _statistics = null;
     var LEVELS = ['TRACE', 'DEBUG', 'INFO', 'WARN', 'ERROR', 'FAIL', 'SKIP'];
     var STATUSES = ['FAIL', 'PASS', 'SKIP', 'NOT RUN'];
-    var KEYWORD_TYPES = ['KEYWORD', 'SETUP', 'TEARDOWN', 'FOR', 'VAR', 'IF', 'ELSE IF', 'ELSE'];
-    var MESSAGE_TYPE = 8;
+    var KEYWORD_TYPES = ['KEYWORD', 'SETUP', 'TEARDOWN', 'FOR', 'ITERATION', 'IF', 'ELSE IF', 'ELSE', 'RETURN',
+                         'TRY', 'EXCEPT', 'FINALLY', 'WHILE', 'CONTINUE', 'BREAK', 'ERROR'];
     function addElement(elem) {
         if (!elem.id)
             elem.id = uniqueId();
@@ -1372,10 +1379,10 @@ window.testdata = function () {
                 elapsed];
     }
     function createMessage(element, strings) {
-        return model.Message(LEVELS[element[2]],
-                             util.timestamp(element[1]),
-                             strings.get(element[3]),
-                             strings.get(element[4]));
+        return model.Message(LEVELS[element[1]],
+                             util.timestamp(element[0]),
+                             strings.get(element[2]),
+                             strings.get(element[3]));
     }
     function parseStatus(stats) {
         return STATUSES[stats[0]];
@@ -1386,7 +1393,7 @@ window.testdata = function () {
         };
     }
     function createBodyItem(parent, element, strings, index) {
-        if (element[0] == MESSAGE_TYPE)
+        if (element.length < 5)
             return createMessage(element, strings);
         var messages = util.filter(parent.children(), function (child) {
             return child.type == 'message';
@@ -1799,25 +1806,25 @@ function stopPropagation(event) {
 window.output = {};
 </script>
 <script type="text/javascript">
-window.output["suite"] = [1,2,3,0,[],[0,0,100750],[[4,5,6,0,[],[0,16,100733],[[7,8,9,0,[],[0,17,100731,10],[],[[11,0,0,[7],[0,100746,1,12],[]]],[[1,13,14,0,15,16,0,0,[0,165,100581],[[0,17,18,0,0,0,0,0,[0,165,100581],[[0,19,20,0,21,22,0,0,[1,165,1],[]],[0,23,20,0,24,25,0,0,[1,166,100568],[[8,166,2,26]]],[0,27,20,0,28,0,0,0,[0,100734,11],[[8,100740,3,30],[8,100745,5,31]]]]]]]],[1,0,1,0]]],[],[],[1,0,1,0]]],[],[],[1,0,1,0]];
+window.output["suite"] = [1,2,3,0,[],[0,0,47861],[[4,5,6,0,[],[0,31,47825],[[7,8,9,0,[],[0,33,47814,10],[],[[11,0,0,[7],[0,47838,2,12],[]]],[[1,13,14,0,15,16,0,0,[0,432,47406],[[0,17,18,0,0,0,0,0,[1,433,47243],[[0,19,20,0,21,22,0,0,[1,433,0],[]],[0,23,20,0,24,25,0,0,[1,433,47218],[[433,2,26]]],[0,27,20,0,28,0,0,0,[1,47652,24],[]]]],[0,29,18,0,0,0,0,0,[0,47677,161],[[0,30,20,0,31,32,0,0,[0,47678,159],[[47681,2,33],[47690,3,35],[47692,5,36]]],[0,37,20,0,38,39,0,0,[3,47838,0],[]],[0,40,20,0,41,42,0,0,[3,47838,0],[]]]]]]],[1,0,1,0]]],[],[],[1,0,1,0]]],[],[],[1,0,1,0]];
 </script>
 <script type="text/javascript">
 window.output["strings"] = [];
 </script>
 <script type="text/javascript">
-window.output["strings"] = window.output["strings"].concat(["*","*Tests","*D:\\Work\\Intellij\\Admin Mahmoud\\Tests","*../Tests","*UserMangment","*D:\\Work\\Intellij\\Admin Mahmoud\\Tests\\UserMangment","*../Tests/UserMangment","*NoFilter","*D:\\Work\\Intellij\\Admin Mahmoud\\Tests\\UserMangment\\NoFilter.robot","*../Tests/UserMangment/NoFilter.robot","eNqN0j1v1DAYB/C5+RTP2CrSye+5RGJILhdgoANXYEAMbvKkZzW1K8ch7bfHBwzA4ODN0s/+++V/WkxAmDEszzBqM+FQZbfutPTnL8YObj2+9PgcjLMVfMB51g9YgXUwRwDrT1FB0P4Bw+8p6MmjHl6hn9yMQzZ69wSLfbRutYDeO1/Bivfw3eAadwowusUOGcD1Ke4fg8DY0VXQn+NCfEOZ3JGdEoztqGA32Sno/jF43WOVXb3F8E7bYcLP6M1o0MNX8kLiKLpOcUYb2jGWK8IZ+5ZdXd/Gc78+3bvp5h/HDseyTAjaHYtjUydF08paplKI4qopkqJoOKdJIZvuwJOClYqmU1jN6CVl4/XEoRSqzTknVFG+7SXlquQ5V0QyVfyHJ6WgJOcyvosS257FEnQqL0rCS5L8Tl6ItksLzluxIaTaKE08zSWl0TPenS+df29NuDvHrv8hW7bnHZNFm7NLwz6G6dOM/pePXfbhL1se9nUt97mIF/wBXz4GZw==","*Check Functionality of No Filter","eNqN0stunDAUBuB1eIqzTIQ08p0xUhcwDG0XjapM2i6qLhw4BBRiR8aU5O3rabtosoB6Z+mzf1/+z8ajDTDNQ0CYMMxP0JlhxDZPrt1pbvpvg23dcnxu8CkMzubwCafJ3GMO1sVlTQ/Lb5FDMP4ew98pmNGjaV+gGd2EbdJ59wizfbBusYDeO5/Dgnfwc8Al7hSgc7NtE4DLU9w/BsFgO5dD08eF+I4yuSM7JRjbUcGuklMwzUPwpsE8uXiP4YOx7Yhf0Q/dgB6+k2cSR1bXijNa0pqxVBHO2I/k4vI6nvvl8c6NV28cOxy1XhG0PmbHslgVZSULuZZCFFdltiqyknO6KmRZH/iqYFrR9RRWMHpO2Xg9cdBCVSnnhCrKt72kXGmeckUkU9l/eKIFJSmX8V2U2PYslqBWaaYJ12T1O3kmqnpdcF6JDSHVRmniac4ppZnwtj93/qMdwm0fu/6PrNie10xmVcrODbsJ45cJ/R8fu+zDK6sP+6KQ+1TEC/4CArUJEQ==","*Run Keywords","*BuiltIn","*<p>Executes all the given keywords in a sequence.\x3c/p>","*Open_Chrome, Login_Successfully","*Open_Chrome","*Common","*Set Selenium Implicit Wait","*SeleniumLibrary","*<p>Sets the implicit wait value used by Selenium.\x3c/p>","*5","*Open Browser","*<p>Opens a new browser instance to the optional <code>url\x3c/code>.\x3c/p>","eNqtzNsJgDAMAMBVpP5K8y8qFETnCE20QtuUPhSc3iW8AW7CzmU+ZuVqTWUEoJOQ+I78aMZSW9HWSyNMSePbMmsrAdZ9NYbCFbcssUIPXs4rquWHZAJchs66LIE/hWU4ag==","eNqtzEEKwyAQAMCvLOnBm95LGgiE9tg3bHSrgtmVVRPo6/uJzgPmXYkzR9hVrkYKxieVgwx0gR0bwdACZkZISp/HlHqv7e5ciAEDnUyXJWx9NOuLjIC1WvwOJevlcNtrW9dwZH6qcHc3VyRmnpY/JLPDxdgfKPJDTQ==","*Maximize Browser Window","*<p>Maximizes current browser window.\x3c/p>","*s1-s1-s1-k1-k1-k3","eNqN0stunDAUBuB1eIqzSyKkke8MSFlwGdqqalV10myiLDxwCCjErowpnbevp+2i7QLqHfJn/oP53+N5sa6F61J/9bND+KSfEY6NQzRTb/01NHYeWzDWwwnBzQasgU4PY8AZfMBpCgeysA/T3PSwDKa1SwZeu2f0vx9Bjw51e4ZmtBO2UefsK8zmxdjFADpnXQYLnuDbgMvPpM7Opo0Abo7h/UMIHExnM2j6cBDvKJM7slOCsR0V7DY6et28eKcbzKKrN+jfatOO+IBu6AZ08Ei+k7CSulac0YLWjMWKcMaeoqubj2Hu8+vJjrf/OFYe0nRF0PqQHIp8VRSVzOVaClFcFcmqSArO6aqQRV3yVcFSRddTWM7oJWXj9kSZClXFnBOqKN/2knKV8pgrIplK/sOTVFAScxnuRYltz0IJahUnKeEpWf2dPBFVvS44r8SGkGqjNGGaS0qhJ7zvL51/ZwZ/34eu/yErtuc1k0kVs0vDPvvxy4Tulw9ddv4vm5b7PJf7WIQP/AHwygzX","eNqN0j9v1DAYBvC5+RTv2CrSyX5f2zlHYkguF2CgA1dgQAxp4utFTW3k+Ej77fEVBmBw8GbpZz/+89y6w7k/fRnt4Jb9c2++h9HZEj6Yee4eTAnWwRwBLK+ihND5BxN+T6GbvOmGF+gnN5shO3r3BGf7aN1iwXjvfAmLuYcfo1niTgGO7myHDOD6EPePQTDaoyuhP8WF5g1HuWEbJRA3XOBNdghd/xh815syu3prwrvODpP5bPx4HI2Hr+yZxVG0rSLkNW8Rc8UI8Vt2dX0bz/3ydO+mm38c7vZaJwRv98W+rpKibmQlUylMkaqLpChqIp4Usm53lBSoFU+nYIX8krLyemKnhWpyIsYVp3UvOSlNOSkmURX/4ZkWnOUk47sose4xlqBVeaEZaZb8TipE06YFUSNWhFQrpYmnuaTU3WzuTpfOv7djuDvFrv8hG9xSi7Jocrw07GOYPs3G//Kxyz78ZfVuW1Vym4t4wZ/lUv80"]);
+window.output["strings"] = window.output["strings"].concat(["*","*Tests","*C:\\Users\\abdullah.ahmed\\IdeaProjects\\Admin QSIT\\Tests","*../Tests","*UserMangment","*C:\\Users\\abdullah.ahmed\\IdeaProjects\\Admin QSIT\\Tests\\UserMangment","*../Tests/UserMangment","*NoFilter","*C:\\Users\\abdullah.ahmed\\IdeaProjects\\Admin QSIT\\Tests\\UserMangment\\NoFilter.robot","*../Tests/UserMangment/NoFilter.robot","eNqN0j1vnTAUBuA5/IozJkK6wj72ISB1gABth2boTZOh6kDgkItC7MiYkvz7+qYdmoUbb5Ye+/XHu19GzzCzX55haMeJ+zy6tvulO9yNprdr/dLxsx+tyeEbz3P7wDkYC3MAsL6JHHzrHtj/m0I7OW77V+gmO3MfDc4+wWIejV0NsHPW5bDyPfweeQ07eRjsYvoI4Hwf9g9BMJrB5tAdwkL+JKTeJTtSUu6EwIto79vu0bu24zw6+8z+S2v6iW/ZjcPIDn4mL0kYadOkdEkoGiljSlDKX9HZ+XU49+vTvZ0u3jtdXNVZtiUUpXVZbAqsdKE3RY1UppuiKRHFpqjK5go3RZGR2E4pCimOKSdeL1OZoipGTAQJ/IDPkDKMkRItKf2ADwkiiVETEqnTnmolG4rTLMEs2fzOMlVVsy0QK3VCaDpRmnCaY0rZznxzOHb+qxn9zSF0/T/ZFBpTqdMqlseGfffTj5ndXx+67Pw7Szr8jrqMVbjgH+ZpB54=","*Check Functionality of No Filter","eNqN0j1P3TAUBuCZ/AqPoEhXsY99QiIxJCShHYqqXmiHqoNJTkhEsJHjNPDv61sYYMnFm6XHfv3xfteOjGfzMnpiM/nlifV6nKjLo2u7X9rh12g6u9bPLT350ZqcfaN51veUM2PDsnZg63+RM6/dPfm3KdOTI929sHayM3VR7+wjW8yDsath5Jx1OVvpjv0daQ07edbbxXQRY6f7sH8IYqPpbc7aISykCy7ULtmhFGLHOZxFe6/bB+90S3l0ckX+izbdRD/Jjf1Ijv1OnpMw0qZJ8RyBN0LEmIAQf6KT0+tw7pfHOzudfXSquKyzbEtITOuy2BRQqUJtihqwTDdFUwLwTVGVzSVsiiJDvp1SFIIfUo68XiYziVUMkHDk8AmfAWYQAyZKYPoJHxJ4EoNCQJTHPdZSNBinWQJZsvmdZSqrZlsAVPKIUHikNOE0h5RSz3QzHDr/1Yz+ZghdfyebQkEqVFrF4tCwH366ncm9+tBl5z9YVOF35HkswwX/AYngCkg=","*Run Keywords","*BuiltIn","*<p>Executes all the given keywords in a sequence.\x3c/p>","*Open_Chrome, Login_Successfully","*Open_Chrome","*Common","*Set Selenium Implicit Wait","*SeleniumLibrary","*<p>Sets the implicit wait value used by Selenium.\x3c/p>","*5","*Open Browser","*<p>Opens a new browser instance to the optional <code>url\x3c/code>.\x3c/p>","eNqtzNsJgDAMAMBVpP5K8y8qFETnCE20QtuUPhSc3iW8AW7CzmU+ZuVqTWUEoJOQ+I78aMZSW9HWSyNMSePbMmsrAdZ9NYbCFbcssUIPXs4rquWHZAJchs66LIE/hWU4ag==","eNqtzEEKwyAQAMCvLOnBm95LGgiE9tg3bHSrgtmVVRPo6/uJzgPmXYkzR9hVrkYKxieVgwx0gR0bwdACZkZISp/HlHqv7e5ciAEDnUyXJWx9NOuLjIC1WvwOJevlcNtrW9dwZH6qcHc3VyRmnpY/JLPDxdgfKPJDTQ==","*Maximize Browser Window","*<p>Maximizes current browser window.\x3c/p>","*Login_Successfully","*Input Text","*<p>Types the given <code>text\x3c/code> into the text field identified by <code>locator\x3c/code>.\x3c/p>","*${Username_Text}, Admin","*Typing text 'Admin' into text field '//*[@id=\"login_input_username\"]'.","*s1-s1-s1-k1-k2-k1","eNqN0sFunDAQBuBzeIq5JRHSCntsE5BygGVpq6pR1U17qXLwwhBQiF0ZU7pvH2/aQ3Nh4xvyZ/4B/5/puFjXwuVW//KzI/iqHwn2jSMyU2/9JTR2Hlsw1sOBwM0GrIFOD2PAOXyhaQoH8rAP09z0sAymtUsOXrtH8v8eQY+OdHuEZrQTtVHn7DPM5snYxQA5Z10OCx3g90DLa1JnZ9NGAFf78P4hBA6mszk0fThIt4zLTbJRgvMNY3gd7b1unrzTDeXRxQfyH7VpR/pBbugGcvAz+ZOEldZ1qm4UsprzWCXI+UN0cXUX5j4+H+x4/dbJYrvLsjUhVLori1WBlSzkqtihKtNVUZeIbFVUZb3FVVFkiq2nFAVnp5Qzfy8TmVBVjJgwxfAdPkOVYYwqkVyl7/AhgSUxSoVKifNe7QSvVZxmCWbJ6nWWqajqdYFYiTNCqjOlCdOcUko90X1/6vwnM/j7PnT9P1kXElMu0yrmp4Z98+P3idxfH7rs/BurZLgdcROL8IEveAQODg==","eNqN0k9P5CAYBvCz/RQcNU0mwAsvQxMPrW3Vw3rYcXcPGw+1ZZzGCoYyW/32y6gHvTByI/nBw5/nxm32/e7PaAe3NC+9eQ6jswX5Yea5ezAFsY7MEZDlTRQkdP7BhI8p6SZvuuGV9JObzZBtvXsie/to3WKJ8d75gizmnvwbzRJ3CmTr9nbICDndxP1jEBnt1hWk38WF5pxxuaIrFJyvGIOzbBO6/jH4rjdFdnJpwlVnh8n8Nn7cjsaTv/SFxqHaVuEagbWc50iB87vs5PQmnvv16d5NZ1+dLC8arVNCoGqqMimglqVMigawUknRVgAsKeqqvYCkKDWydEpZcnZIOfJ6WmiBdQ5AGTL4hteAGnJAKjmqb/iYwGgOEgFRHPfYCN5irjQFTZPfWSlRt2kBUIsjQuKR0sTTHFKqbja3u0Pnr+0Ybnex659kW0pQXKo654eG/QzTr9n4dx+77MMXizL+jljnIl7wP2yMAHo=","*Input Password","*<p>Types the given password into the text field identified by <code>locator\x3c/code>.\x3c/p>","*${Password_Text}, 123456","*Click Element","*<p>Click the element identified by <code>locator\x3c/code>.\x3c/p>","*${Login_btn}"]);
 </script>
 <script type="text/javascript">
-window.output["stats"] = [[{"elapsed":"00:00:00","fail":1,"label":"All Tests","pass":0,"skip":0}],[{"elapsed":"00:00:00","fail":1,"label":"NoFilter","pass":0,"skip":0}],[{"elapsed":"00:01:41","fail":1,"id":"s1","label":"Tests","name":"Tests","pass":0,"skip":0},{"elapsed":"00:01:41","fail":1,"id":"s1-s1","label":"Tests.UserMangment","name":"UserMangment","pass":0,"skip":0},{"elapsed":"00:01:41","fail":1,"id":"s1-s1-s1","label":"Tests.UserMangment.NoFilter","name":"NoFilter","pass":0,"skip":0}]];
+window.output["stats"] = [[{"elapsed":"00:00:00","fail":1,"label":"All Tests","pass":0,"skip":0}],[{"elapsed":"00:00:00","fail":1,"label":"NoFilter","pass":0,"skip":0}],[{"elapsed":"00:00:48","fail":1,"id":"s1","label":"Tests","name":"Tests","pass":0,"skip":0},{"elapsed":"00:00:48","fail":1,"id":"s1-s1","label":"Tests.UserMangment","name":"UserMangment","pass":0,"skip":0},{"elapsed":"00:00:48","fail":1,"id":"s1-s1-s1","label":"Tests.UserMangment.NoFilter","name":"NoFilter","pass":0,"skip":0}]];
 </script>
 <script type="text/javascript">
-window.output["errors"] = [[8,100740,3,30,29]];
+window.output["errors"] = [[47690,3,35,34]];
 </script>
 <script type="text/javascript">
-window.output["baseMillis"] = 1717670393257;
+window.output["baseMillis"] = 1717670959301;
 </script>
 <script type="text/javascript">
-window.output["generated"] = 100758;
+window.output["generated"] = 47941;
 </script>
 <script type="text/javascript">
 window.output["expand_keywords"] = null;
@@ -1924,8 +1931,8 @@ function makeElementVisible(id) {
         util.map(ids, expandElementWithId);
         if (ids.length) {
             expandFailed(window.testdata.findLoaded(util.last(ids)));
-            window.location.hash = '';
             window.location.hash = id;
+            document.getElementById(id).scrollIntoView();
             highlightLinkTarget();
         }
     });
@@ -2123,7 +2130,7 @@ function addExecutionLog(main) {
     <div class="element-header closed" onclick="toggleKeyword('${id}')">
       <div class="element-header-left" title="${type}  {{if name}}{{html fullName}}  {{/if}}[${status}]">
         <span class="elapsed" title="Elapsed time">${times.elapsedTime}</span>
-        <span class="label keyword ${status.toLowerCase()}">${type}</span>
+        <span class="label ${status.toLowerCase()}">${type}</span>
         <span>{{html assign}}</span>
         <span class="name"><span class="parent-name">{{html libname}}{{if libname}} . {{/if}}</span>{{html name}}</span>
         <span class="arg">{{html arguments}}</span>
@@ -2131,7 +2138,7 @@ function addExecutionLog(main) {
       <div class="element-header-right" onclick="stopPropagation(event)">
         <a class="expand" title="Expand all" href="javascript:expandAll('${id}')"></a>
         <a class="collapse" title="Collapse all" href="javascript:collapseAll('${id}')"></a>
-        <a class="link" title="Link to this keyword" href="#${id}" onclick="makeElementVisible('${id}')"></a>
+        <a class="link" title="Link to this item" href="#${id}" onclick="makeElementVisible('${id}')"></a>
       </div>
       <div class="element-header-toggle" title="Toggle visibility"></div>
     </div>
