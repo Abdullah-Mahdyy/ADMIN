@@ -5,7 +5,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="-1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta content="Robot Framework 6.1.1 (Python 3.10.6 on win32)" name="Generator">
+<meta content="Robot Framework 4.1.3 (Python 3.10.6 on win32)" name="Generator">
 <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKcAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAqAAAAAAAAAAAAAAAAAAAALIAAAD/AAAA4AAAANwAAADcAAAA3AAAANwAAADcAAAA3AAAANwAAADcAAAA4AAAAP8AAACxAAAAAAAAAKYAAAD/AAAAuwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC/AAAA/wAAAKkAAAD6AAAAzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN8AAAD/AAAA+gAAAMMAAAAAAAAAAgAAAGsAAABrAAAAawAAAGsAAABrAAAAawAAAGsAAABrAAAADAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAIsAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAANEAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAAAAAAAAMgAAADIAAAAyAAAAMgAAADIAAAAyAAAAMgAAADIAAAAFAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAADwAAAB8AAAAAAAAAGAAAABcAAAAAAAAAH8AAABKAAAAAAAAAAAAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAADCAAAA/wAAACkAAADqAAAA4QAAAAAAAAD7AAAA/wAAALAAAAAGAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAIwAAAP4AAAD/AAAA/wAAAGAAAAAAAAAAAAAAAMkAAAD/AAAAigAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAAAAAAAIAAAAcAAAABkAAAAAAAAAAAAAAAAAAAAAAAAAEgAAAAAAAAAAAAAA2gAAAP8AAAD7AAAAywAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN4AAAD/AAAAqwAAAP8AAACvAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALIAAAD/AAAAsgAAAAAAAAC5AAAA/wAAAMoAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMkAAAD/AAAAvAAAAAAAAAAAAAAAAAAAAKwAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAArQAAAAAAAAAAwAMAAIABAAAf+AAAP/wAAD/8AAAgBAAAP/wAAD/8AAA//AAAJIwAADHEAAA//AAAP/wAAB/4AACAAQAAwAMAAA==">
 <style media="all" type="text/css">
 /* Generic and misc styles */
@@ -764,7 +764,6 @@ window.model = (function () {
     }
     function Keyword(data) {
         var kw = createModelObject(data);
-        var flatTypes = ['RETURN', 'BREAK', 'CONTINUE'];
         kw.libname = data.libname;
         kw.fullName = (kw.libname ? kw.libname + '.' : '') + kw.name;
         kw.type = data.type;
@@ -1149,8 +1148,8 @@ window.testdata = function () {
     var _statistics = null;
     var LEVELS = ['TRACE', 'DEBUG', 'INFO', 'WARN', 'ERROR', 'FAIL', 'SKIP'];
     var STATUSES = ['FAIL', 'PASS', 'SKIP', 'NOT RUN'];
-    var KEYWORD_TYPES = ['KEYWORD', 'SETUP', 'TEARDOWN', 'FOR', 'ITERATION', 'IF', 'ELSE IF', 'ELSE', 'RETURN',
-                         'TRY', 'EXCEPT', 'FINALLY', 'WHILE', 'CONTINUE', 'BREAK', 'ERROR'];
+    var KEYWORD_TYPES = ['KEYWORD', 'SETUP', 'TEARDOWN', 'FOR', 'VAR', 'IF', 'ELSE IF', 'ELSE'];
+    var MESSAGE_TYPE = 8;
     function addElement(elem) {
         if (!elem.id)
             elem.id = uniqueId();
@@ -1171,10 +1170,10 @@ window.testdata = function () {
                 elapsed];
     }
     function createMessage(element, strings) {
-        return model.Message(LEVELS[element[1]],
-                             util.timestamp(element[0]),
-                             strings.get(element[2]),
-                             strings.get(element[3]));
+        return model.Message(LEVELS[element[2]],
+                             util.timestamp(element[1]),
+                             strings.get(element[3]),
+                             strings.get(element[4]));
     }
     function parseStatus(stats) {
         return STATUSES[stats[0]];
@@ -1185,7 +1184,7 @@ window.testdata = function () {
         };
     }
     function createBodyItem(parent, element, strings, index) {
-        if (element.length < 5)
+        if (element[0] == MESSAGE_TYPE)
             return createMessage(element, strings);
         var messages = util.filter(parent.children(), function (child) {
             return child.type == 'message';
@@ -1629,22 +1628,22 @@ storage = function () {
 window.output = {};
 </script>
 <script type="text/javascript">
-window.output["suite"] = [1,2,3,0,[],[0,0,47861],[[4,5,6,0,[],[0,31,47825],[[7,8,9,0,[],[0,33,47814,10],[],[[11,0,0,[7],[0,47838,2,12],[]]],[],[1,0,1,0]]],[],[],[1,0,1,0]]],[],[],[1,0,1,0]];
+window.output["suite"] = [1,2,3,0,[],[1,0,37488],[[4,5,6,0,[],[1,31,37457],[[7,8,9,0,[],[1,31,37457],[],[[10,0,0,[11],[1,12426,25062],[]]],[],[1,1,0,0]]],[],[],[1,1,0,0]]],[],[],[1,1,0,0]];
 </script>
 <script type="text/javascript">
 window.output["strings"] = [];
 </script>
 <script type="text/javascript">
-window.output["strings"] = window.output["strings"].concat(["*","*Tests","*C:\\Users\\abdullah.ahmed\\IdeaProjects\\Admin QSIT\\Tests","*../Tests","*UserMangment","*C:\\Users\\abdullah.ahmed\\IdeaProjects\\Admin QSIT\\Tests\\UserMangment","*../Tests/UserMangment","*NoFilter","*C:\\Users\\abdullah.ahmed\\IdeaProjects\\Admin QSIT\\Tests\\UserMangment\\NoFilter.robot","*../Tests/UserMangment/NoFilter.robot","eNqN0j1vnTAUBuA5/IozJkK6wj72ISB1gABth2boTZOh6kDgkItC7MiYkvz7+qYdmoUbb5Ye+/XHu19GzzCzX55haMeJ+zy6tvulO9yNprdr/dLxsx+tyeEbz3P7wDkYC3MAsL6JHHzrHtj/m0I7OW77V+gmO3MfDc4+wWIejV0NsHPW5bDyPfweeQ07eRjsYvoI4Hwf9g9BMJrB5tAdwkL+JKTeJTtSUu6EwIto79vu0bu24zw6+8z+S2v6iW/ZjcPIDn4mL0kYadOkdEkoGiljSlDKX9HZ+XU49+vTvZ0u3jtdXNVZtiUUpXVZbAqsdKE3RY1UppuiKRHFpqjK5go3RZGR2E4pCimOKSdeL1OZoipGTAQJ/IDPkDKMkRItKf2ADwkiiVETEqnTnmolG4rTLMEs2fzOMlVVsy0QK3VCaDpRmnCaY0rZznxzOHb+qxn9zSF0/T/ZFBpTqdMqlseGfffTj5ndXx+67Pw7Szr8jrqMVbjgH+ZpB54=","*Check Functionality of No Filter","eNqN0j1P3TAUBuCZ/AqPoEhXsY99QiIxJCShHYqqXmiHqoNJTkhEsJHjNPDv61sYYMnFm6XHfv3xfteOjGfzMnpiM/nlifV6nKjLo2u7X9rh12g6u9bPLT350ZqcfaN51veUM2PDsnZg63+RM6/dPfm3KdOTI929sHayM3VR7+wjW8yDsath5Jx1OVvpjv0daQ07edbbxXQRY6f7sH8IYqPpbc7aISykCy7ULtmhFGLHOZxFe6/bB+90S3l0ckX+izbdRD/Jjf1Ijv1OnpMw0qZJ8RyBN0LEmIAQf6KT0+tw7pfHOzudfXSquKyzbEtITOuy2BRQqUJtihqwTDdFUwLwTVGVzSVsiiJDvp1SFIIfUo68XiYziVUMkHDk8AmfAWYQAyZKYPoJHxJ4EoNCQJTHPdZSNBinWQJZsvmdZSqrZlsAVPKIUHikNOE0h5RSz3QzHDr/1Yz+ZghdfyebQkEqVFrF4tCwH366ncm9+tBl5z9YVOF35HkswwX/AYngCkg="]);
+window.output["strings"] = window.output["strings"].concat(["*","*Tests","*D:\\Work\\Intellij\\Admin Mahmoud\\Tests","*../Tests","*Assignments","*D:\\Work\\Intellij\\Admin Mahmoud\\Tests\\Assignments","*../Tests/Assignments","*CancelEdit","*D:\\Work\\Intellij\\Admin Mahmoud\\Tests\\Assignments\\CancelEdit.robot","*../Tests/Assignments/CancelEdit.robot","*Check functionality of Reset Button","*Cancel_Edit_button"]);
 </script>
 <script type="text/javascript">
-window.output["stats"] = [[{"elapsed":"00:00:00","fail":1,"label":"All Tests","pass":0,"skip":0}],[{"elapsed":"00:00:00","fail":1,"label":"NoFilter","pass":0,"skip":0}],[{"elapsed":"00:00:48","fail":1,"id":"s1","label":"Tests","name":"Tests","pass":0,"skip":0},{"elapsed":"00:00:48","fail":1,"id":"s1-s1","label":"Tests.UserMangment","name":"UserMangment","pass":0,"skip":0},{"elapsed":"00:00:48","fail":1,"id":"s1-s1-s1","label":"Tests.UserMangment.NoFilter","name":"NoFilter","pass":0,"skip":0}]];
+window.output["stats"] = [[{"elapsed":"00:00:25","fail":0,"label":"All Tests","pass":1,"skip":0}],[{"elapsed":"00:00:25","fail":0,"label":"Cancel_Edit_button","pass":1,"skip":0}],[{"elapsed":"00:00:37","fail":0,"id":"s1","label":"Tests","name":"Tests","pass":1,"skip":0},{"elapsed":"00:00:37","fail":0,"id":"s1-s1","label":"Tests.Assignments","name":"Assignments","pass":1,"skip":0},{"elapsed":"00:00:37","fail":0,"id":"s1-s1-s1","label":"Tests.Assignments.CancelEdit","name":"CancelEdit","pass":1,"skip":0}]];
 </script>
 <script type="text/javascript">
-window.output["baseMillis"] = 1717670959301;
+window.output["baseMillis"] = 1717872390002;
 </script>
 <script type="text/javascript">
-window.output["generated"] = 47941;
+window.output["generated"] = 37488;
 </script>
 <script type="text/javascript">
 window.output["expand_keywords"] = null;
@@ -1894,8 +1893,8 @@ function searchTests(suitePattern, testPattern, includePattern, excludePattern) 
 function scrollToSelector(base, query) {
     $('#test-details-container').css('min-height', $(window).height());
     var anchor = query ? base + '?' + encodeURIComponent(query) : base;
+    window.location.hash = '';
     window.location.hash = window.prevLocationHash = anchor;
-    document.getElementById('test-details-container').scrollIntoView();
 }
 
 function renderSelector(args, template, stats) {

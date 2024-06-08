@@ -1,32 +1,27 @@
-# robot  -d   Results   -i   Add_User   Tests
+ robot  -d   Results   -i   Add_User   Tests
 ###################### Command #############################
 *** Settings ***
 Library     SeleniumLibrary
 Library     String
 Resource    ../../Resources/Common.robot
+Resource    ../../Resources/Assignments_Keywords/Keyword_AddUser.robot
 Suite Setup    Run Keywords   Open_Chrome  Login_Successfully
 Test Teardown   Close_Chrome
-*** Variables ***
-${Role_Name}                    //*[@id="role_input_roleName"]
+
 *** Test Cases ***
 Check Functionality of Add_User
     [tags]                      Add_User
-    Set Selenium Implicit Wait  5
-    Click Element           //*[@id="4"]
-    Click Element           //*[@id="application_ddl_applications8"]/label
-    Click Element           //*[@id="group_ddl_groups5"]/button
-    Click Element           //*[@id="role_btn_addRole"]/i
-    Click Element           //*[@id="role_ddl_roleroleList_0"]/button
-    Sleep    8
-    Click Element           //*[@id="role_btn_editRole"]
-    Sleep    8
-    Click Element           //*[@id="mat-tab-label-0-2"]
-    Double Click Element    //*[@id="mat-tab-label-0-2"]
-    Click Element           //*[@id="role_ddl_searchUsers"]/div/div[1]/span
-    Click Element           //*[@id="role_ddl_Users_0"]/mat-pseudo-checkbox
-    Double Click Element    //*[@id="mat-tab-label-0-2"]
-    Click Element           //*[@id="role_btn_addUsers"]/i
-    Click Element           //*[@id="role_btn_save"]
-    Click Element           //*[@id="id_btn_saveUpdateRole_ok"]
+    Click on Assignments Button
+    Click On Requester Button
+    Click on Specific Group
+    Click on Specific Role
+    Click on Edit Button
+    Click on User Button
+    Re-Click on User Button
+    Click on Search Text Box
+    Select Specifc Role
+    Click on User Button again
+    Click on Add User Button
+    Click on Save
+    Click on Yes at the Confirmation Message
     Page Should Contain     Role data saved successfully
-    Sleep    5
