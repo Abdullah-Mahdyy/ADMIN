@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.3 (Python 3.10.6 on win32)" generated="20240609 12:05:10.779" rpa="false" schemaversion="2">
+<robot generator="Robot 4.1.3 (Python 3.10.6 on win32)" generated="20240609 12:10:51.029" rpa="false" schemaversion="2">
 <suite id="s1" name="Tests" source="D:\Work\Intellij\Admin Mahmoud\Tests">
 <suite id="s1-s1" name="Logs" source="D:\Work\Intellij\Admin Mahmoud\Tests\Logs">
-<suite id="s1-s1-s1" name="Clear Changes" source="D:\Work\Intellij\Admin Mahmoud\Tests\Logs\Clear Changes.robot">
+<suite id="s1-s1-s1" name="Clear Changes" source="D:\Work\Intellij\Admin Mahmoud\Tests\Logs\Clear_Changes.robot">
 <kw name="Run Keywords" library="BuiltIn" type="SETUP">
 <arg>Open_Chrome</arg>
 <arg>Login_Successfully</arg>
@@ -11,109 +11,109 @@
 <kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
 <arg>5</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20240609 12:05:10.992" endtime="20240609 12:05:10.999"/>
+<status status="PASS" starttime="20240609 12:10:51.272" endtime="20240609 12:10:51.272"/>
 </kw>
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>https://dgdadevnew.eastus.cloudapp.azure.com/DGDAAdminFront/#/login</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20240609 12:05:10.999" level="INFO">Opening browser 'chrome' to base url 'https://dgdadevnew.eastus.cloudapp.azure.com/DGDAAdminFront/#/login'.</msg>
-<status status="PASS" starttime="20240609 12:05:10.999" endtime="20240609 12:05:24.625"/>
+<msg timestamp="20240609 12:10:51.273" level="INFO">Opening browser 'chrome' to base url 'https://dgdadevnew.eastus.cloudapp.azure.com/DGDAAdminFront/#/login'.</msg>
+<status status="PASS" starttime="20240609 12:10:51.272" endtime="20240609 12:11:03.277"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20240609 12:05:24.625" endtime="20240609 12:05:24.645"/>
+<status status="PASS" starttime="20240609 12:11:03.278" endtime="20240609 12:11:03.297"/>
 </kw>
-<status status="PASS" starttime="20240609 12:05:10.992" endtime="20240609 12:05:24.645"/>
+<status status="PASS" starttime="20240609 12:10:51.272" endtime="20240609 12:11:03.297"/>
 </kw>
 <kw name="Login_Successfully" library="Common">
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${Username_Text}</arg>
 <arg>Admin</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240609 12:05:24.645" level="INFO">Typing text 'Admin' into text field '//*[@id="login_input_username"]'.</msg>
-<status status="PASS" starttime="20240609 12:05:24.645" endtime="20240609 12:05:24.878"/>
+<msg timestamp="20240609 12:11:03.297" level="INFO">Typing text 'Admin' into text field '//*[@id="login_input_username"]'.</msg>
+<status status="PASS" starttime="20240609 12:11:03.297" endtime="20240609 12:11:03.730"/>
 </kw>
 <kw name="Input Password" library="SeleniumLibrary">
 <arg>${Password_Text}</arg>
 <arg>123456</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20240609 12:05:24.878" level="INFO">Typing password into text field '//*[@id="login_input_password"]'.</msg>
-<msg timestamp="20240609 12:05:24.910" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20240609 12:05:24.961" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20240609 12:05:24.878" endtime="20240609 12:05:24.961"/>
+<msg timestamp="20240609 12:11:03.730" level="INFO">Typing password into text field '//*[@id="login_input_password"]'.</msg>
+<msg timestamp="20240609 12:11:03.760" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20240609 12:11:03.820" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20240609 12:11:03.730" endtime="20240609 12:11:03.820"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${Login_btn}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240609 12:05:24.961" level="INFO">Clicking element '//*[@id="login_btn_login"]'.</msg>
-<status status="PASS" starttime="20240609 12:05:24.961" endtime="20240609 12:05:24.989"/>
+<msg timestamp="20240609 12:11:03.820" level="INFO">Clicking element '//*[@id="login_btn_login"]'.</msg>
+<status status="PASS" starttime="20240609 12:11:03.820" endtime="20240609 12:11:03.861"/>
 </kw>
-<status status="PASS" starttime="20240609 12:05:24.645" endtime="20240609 12:05:24.989"/>
+<status status="PASS" starttime="20240609 12:11:03.297" endtime="20240609 12:11:03.861"/>
 </kw>
-<status status="PASS" starttime="20240609 12:05:10.992" endtime="20240609 12:05:24.989"/>
+<status status="PASS" starttime="20240609 12:10:51.272" endtime="20240609 12:11:03.861"/>
 </kw>
 <test id="s1-s1-s1-t1" name="Check functionality of Reset_Changes">
 <kw name="Click on Log Button" library="Keyword_Clear_Changes">
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>${logs_Button}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20240609 12:05:24.989" level="INFO">Clicking button 'xpath=/html/body/app-root/div/div/div[1]/app-side-navigation/div/ul/li[6]/button'.</msg>
-<status status="PASS" starttime="20240609 12:05:24.989" endtime="20240609 12:05:25.853"/>
+<msg timestamp="20240609 12:11:03.861" level="INFO">Clicking button 'xpath=/html/body/app-root/div/div/div[1]/app-side-navigation/div/ul/li[6]/button'.</msg>
+<status status="PASS" starttime="20240609 12:11:03.861" endtime="20240609 12:11:04.532"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20240609 12:05:27.860" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20240609 12:05:25.853" endtime="20240609 12:05:27.860"/>
+<msg timestamp="20240609 12:11:06.536" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20240609 12:11:04.532" endtime="20240609 12:11:06.536"/>
 </kw>
-<status status="PASS" starttime="20240609 12:05:24.989" endtime="20240609 12:05:27.860"/>
+<status status="PASS" starttime="20240609 12:11:03.861" endtime="20240609 12:11:06.536"/>
 </kw>
 <kw name="Open the Calender" library="Keyword_Clear_Changes">
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${Open_calender_From}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240609 12:05:27.860" level="INFO">Clicking element '//*[@id="logs_toggle_LogFrom"]/button'.</msg>
-<status status="PASS" starttime="20240609 12:05:27.860" endtime="20240609 12:05:27.975"/>
+<msg timestamp="20240609 12:11:06.536" level="INFO">Clicking element '//*[@id="logs_toggle_LogFrom"]/button'.</msg>
+<status status="PASS" starttime="20240609 12:11:06.536" endtime="20240609 12:11:06.714"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20240609 12:05:29.978" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20240609 12:05:27.975" endtime="20240609 12:05:29.978"/>
+<msg timestamp="20240609 12:11:08.716" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20240609 12:11:06.714" endtime="20240609 12:11:08.716"/>
 </kw>
-<status status="PASS" starttime="20240609 12:05:27.860" endtime="20240609 12:05:29.978"/>
+<status status="PASS" starttime="20240609 12:11:06.536" endtime="20240609 12:11:08.716"/>
 </kw>
 <kw name="Select From_Date" library="Keyword_Clear_Changes">
 <arg>${From_Date}</arg>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>xpath://*[@aria-label='${Date_from}']</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240609 12:05:29.978" level="INFO">Clicking element 'xpath://*[@aria-label='June 1, 2024']'.</msg>
-<status status="PASS" starttime="20240609 12:05:29.978" endtime="20240609 12:05:30.048"/>
+<msg timestamp="20240609 12:11:08.717" level="INFO">Clicking element 'xpath://*[@aria-label='June 1, 2024']'.</msg>
+<status status="PASS" starttime="20240609 12:11:08.717" endtime="20240609 12:11:08.787"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20240609 12:05:32.062" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20240609 12:05:30.048" endtime="20240609 12:05:32.062"/>
+<msg timestamp="20240609 12:11:10.799" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20240609 12:11:08.787" endtime="20240609 12:11:10.799"/>
 </kw>
-<status status="PASS" starttime="20240609 12:05:29.978" endtime="20240609 12:05:32.062"/>
+<status status="PASS" starttime="20240609 12:11:08.716" endtime="20240609 12:11:10.799"/>
 </kw>
 <kw name="Open the Calender again" library="Keyword_Clear_Changes">
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${Open_calender_To}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240609 12:05:32.063" level="INFO">Clicking element '//*[@id="logs_toggle_LogTo"]/button'.</msg>
-<status status="PASS" starttime="20240609 12:05:32.063" endtime="20240609 12:05:32.168"/>
+<msg timestamp="20240609 12:11:10.800" level="INFO">Clicking element '//*[@id="logs_toggle_LogTo"]/button'.</msg>
+<status status="PASS" starttime="20240609 12:11:10.799" endtime="20240609 12:11:10.869"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20240609 12:05:34.182" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20240609 12:05:32.168" endtime="20240609 12:05:34.182"/>
+<msg timestamp="20240609 12:11:12.871" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20240609 12:11:10.869" endtime="20240609 12:11:12.871"/>
 </kw>
-<status status="PASS" starttime="20240609 12:05:32.063" endtime="20240609 12:05:34.182"/>
+<status status="PASS" starttime="20240609 12:11:10.799" endtime="20240609 12:11:12.871"/>
 </kw>
 <kw name="Select To_Date" library="Keyword_Clear_Changes">
 <var>${Todate}</var>
@@ -122,93 +122,103 @@
 <var>${Today_date_inToDate}</var>
 <arg>result_format=%B %#d, %Y</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<msg timestamp="20240609 12:05:34.183" level="INFO">${Today_date_inToDate} = June 9, 2024</msg>
-<status status="PASS" starttime="20240609 12:05:34.183" endtime="20240609 12:05:34.183"/>
+<msg timestamp="20240609 12:11:12.871" level="INFO">${Today_date_inToDate} = June 9, 2024</msg>
+<status status="PASS" starttime="20240609 12:11:12.871" endtime="20240609 12:11:12.871"/>
 </kw>
 <kw name="Log" library="BuiltIn">
 <arg>${Today_date_inToDate}</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20240609 12:05:34.183" level="INFO">June 9, 2024</msg>
-<status status="PASS" starttime="20240609 12:05:34.183" endtime="20240609 12:05:34.183"/>
+<msg timestamp="20240609 12:11:12.871" level="INFO">June 9, 2024</msg>
+<status status="PASS" starttime="20240609 12:11:12.871" endtime="20240609 12:11:12.871"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>xpath://*[@aria-label='${Today_date_inToDate}']</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240609 12:05:34.183" level="INFO">Clicking element 'xpath://*[@aria-label='June 9, 2024']'.</msg>
-<status status="PASS" starttime="20240609 12:05:34.183" endtime="20240609 12:05:34.236"/>
+<msg timestamp="20240609 12:11:12.871" level="INFO">Clicking element 'xpath://*[@aria-label='June 9, 2024']'.</msg>
+<status status="PASS" starttime="20240609 12:11:12.871" endtime="20240609 12:11:12.922"/>
 </kw>
-<msg timestamp="20240609 12:05:34.236" level="INFO">${Todate} = June 9, 2024</msg>
-<status status="PASS" starttime="20240609 12:05:34.183" endtime="20240609 12:05:34.236"/>
+<msg timestamp="20240609 12:11:12.922" level="INFO">${Todate} = June 9, 2024</msg>
+<status status="PASS" starttime="20240609 12:11:12.871" endtime="20240609 12:11:12.922"/>
 </kw>
+<kw name="Check the State of Start date and End date" library="Keyword_Clear_Changes">
+<arg>${Todate}</arg>
 <kw name="Run Keyword If" library="BuiltIn">
 <arg>'${From_Date}' &gt; '${Todate}'</arg>
 <arg>Page Should Contain Element</arg>
 <arg>${Validate_Date}</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" starttime="20240609 12:05:34.236" endtime="20240609 12:05:34.248"/>
+<status status="PASS" starttime="20240609 12:11:12.922" endtime="20240609 12:11:12.936"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240609 12:11:15.939" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20240609 12:11:12.936" endtime="20240609 12:11:15.939"/>
+</kw>
+<status status="PASS" starttime="20240609 12:11:12.922" endtime="20240609 12:11:15.939"/>
 </kw>
 <kw name="Validate Reset Button" library="Keyword_Clear_Changes">
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>${Clear_Button}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20240609 12:05:34.249" level="INFO">Clicking button '//*[@id="logs_btn_Reset"]'.</msg>
-<status status="PASS" starttime="20240609 12:05:34.249" endtime="20240609 12:05:34.301"/>
+<msg timestamp="20240609 12:11:15.941" level="INFO">Clicking button '//*[@id="logs_btn_Reset"]'.</msg>
+<status status="PASS" starttime="20240609 12:11:15.940" endtime="20240609 12:11:15.992"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>5s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20240609 12:05:39.309" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20240609 12:05:34.301" endtime="20240609 12:05:39.309"/>
+<msg timestamp="20240609 12:11:21.000" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20240609 12:11:15.992" endtime="20240609 12:11:21.000"/>
 </kw>
 <kw name="Get Value" library="SeleniumLibrary">
 <var>${LogFrom}</var>
 <arg>id=logs_input_LogFrom</arg>
 <doc>Returns the value attribute of the element identified by ``locator``.</doc>
-<msg timestamp="20240609 12:05:39.325" level="INFO">${LogFrom} = </msg>
-<status status="PASS" starttime="20240609 12:05:39.309" endtime="20240609 12:05:39.325"/>
+<msg timestamp="20240609 12:11:21.016" level="INFO">${LogFrom} = </msg>
+<status status="PASS" starttime="20240609 12:11:21.000" endtime="20240609 12:11:21.016"/>
 </kw>
 <kw name="Should Be Empty" library="BuiltIn">
 <arg>${LogFrom}</arg>
 <doc>Verifies that the given item is empty.</doc>
-<msg timestamp="20240609 12:05:39.325" level="INFO">Length is 0</msg>
-<status status="PASS" starttime="20240609 12:05:39.325" endtime="20240609 12:05:39.325"/>
+<msg timestamp="20240609 12:11:21.016" level="INFO">Length is 0</msg>
+<status status="PASS" starttime="20240609 12:11:21.016" endtime="20240609 12:11:21.016"/>
 </kw>
 <kw name="Get Value" library="SeleniumLibrary">
 <var>${LogTo}</var>
 <arg>id=logs_input_LogTo</arg>
 <doc>Returns the value attribute of the element identified by ``locator``.</doc>
-<msg timestamp="20240609 12:05:39.325" level="INFO">${LogTo} = </msg>
-<status status="PASS" starttime="20240609 12:05:39.325" endtime="20240609 12:05:39.325"/>
+<msg timestamp="20240609 12:11:21.024" level="INFO">${LogTo} = </msg>
+<status status="PASS" starttime="20240609 12:11:21.016" endtime="20240609 12:11:21.024"/>
 </kw>
 <kw name="Should Be Empty" library="BuiltIn">
 <arg>${LogTo}</arg>
 <doc>Verifies that the given item is empty.</doc>
-<msg timestamp="20240609 12:05:39.325" level="INFO">Length is 0</msg>
-<status status="PASS" starttime="20240609 12:05:39.325" endtime="20240609 12:05:39.325"/>
+<msg timestamp="20240609 12:11:21.024" level="INFO">Length is 0</msg>
+<status status="PASS" starttime="20240609 12:11:21.024" endtime="20240609 12:11:21.024"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20240609 12:05:44.328" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20240609 12:05:39.325" endtime="20240609 12:05:44.328"/>
+<msg timestamp="20240609 12:11:26.035" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20240609 12:11:21.024" endtime="20240609 12:11:26.035"/>
 </kw>
-<status status="PASS" starttime="20240609 12:05:34.248" endtime="20240609 12:05:44.328"/>
+<status status="PASS" starttime="20240609 12:11:15.940" endtime="20240609 12:11:26.035"/>
 </kw>
 <kw name="Close_Chrome" library="Common" type="TEARDOWN">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20240609 12:05:44.328" endtime="20240609 12:05:46.436"/>
+<status status="PASS" starttime="20240609 12:11:26.035" endtime="20240609 12:11:28.160"/>
 </kw>
-<status status="PASS" starttime="20240609 12:05:44.328" endtime="20240609 12:05:46.436"/>
+<status status="PASS" starttime="20240609 12:11:26.035" endtime="20240609 12:11:28.160"/>
 </kw>
 <tag>Clear_Changes</tag>
-<status status="PASS" starttime="20240609 12:05:24.989" endtime="20240609 12:05:46.436"/>
+<status status="PASS" starttime="20240609 12:11:03.861" endtime="20240609 12:11:28.160"/>
 </test>
-<status status="PASS" starttime="20240609 12:05:10.795" endtime="20240609 12:05:46.436"/>
+<status status="PASS" starttime="20240609 12:10:51.050" endtime="20240609 12:11:28.160"/>
 </suite>
-<status status="PASS" starttime="20240609 12:05:10.795" endtime="20240609 12:05:46.436"/>
+<status status="PASS" starttime="20240609 12:10:51.050" endtime="20240609 12:11:28.160"/>
 </suite>
-<status status="PASS" starttime="20240609 12:05:10.779" endtime="20240609 12:05:46.436"/>
+<status status="PASS" starttime="20240609 12:10:51.029" endtime="20240609 12:11:28.160"/>
 </suite>
 <statistics>
 <total>
