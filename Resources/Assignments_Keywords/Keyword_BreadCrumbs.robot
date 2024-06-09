@@ -1,8 +1,6 @@
 *** Settings ***
-
 Library     SeleniumLibrary
 Resource    ../../Resources/Common.robot
-
 Suite Setup    Run Keywords   Open_Chrome   Login_Successfully
 Test Teardown   Close_Chrome
 
@@ -18,6 +16,7 @@ ${UMA-Inspection1_Link}         //*[@id="role_li_breadcrumbRoleGroup"]/a
 ${UMA-Inspection1_li}           //*[@id="role_li_breadcrumbRoleGroup"]
 ${Assignments_li}               //*[@id="application_div_breadcrumb"]/nav/ol/li
 ${Assignments_Link}             //*[@id="group_div_breadcrumb"]/nav/ol/li[1]/a
+
 *** Keywords ***
 Click on Assignments Button
     Click Button    ${Assginment_Button}
