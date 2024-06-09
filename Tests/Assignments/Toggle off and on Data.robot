@@ -1,11 +1,11 @@
-# robot  -d   Results   -i   Toggle_button_Data   Tests
+ robot  -d   Results   -i   Toggle_button_Data   Tests
 ###################### Command #############################
 *** Settings ***
-
 Library     SeleniumLibrary
 Library     RequestsLibrary
 Library     String
 Resource    ../../Resources/Common.robot
+Resource    ../../Resources/Assignments_Keywords/Keyword_Toggle off and on Data.robot
 Suite Setup    Run Keywords   Open_Chrome  Login_Successfully
 Test Teardown   Close_Chrome
 
@@ -23,50 +23,17 @@ ${Toggle1_Input}                //*[@id="role_checkbox_selectAllMap-input"]
 ${Toggle1_Checked}              //*[@id="role_toggle_mapServicesList_0"]/label/div/div/div[1]
 ${Toggle1_Input1}               //*[@id="role_toggle_mapServicesList_0-input"]
 
-*** Keywords ***
-Check Toggle Button Status
-    [tags]                      Toggle_off_and_on_Data
-
-  [Arguments]    ${Toggle1_Input}
-     ${status}=    Get Element Attribute    ${Toggle1_Input}   aria-checked
-     Log    ${status}
-     [Return]    ${status}
-
-Check If UnChecked
-  [Arguments]    ${Toggle1_Input}
-    ${status}=    Check Toggle Button Status    ${Toggle1_Input}
-    Run Keyword If    "${status}" == "false"    Click Element    ${Toggle1_Checked}
-
-Verify that All Toggles is Checked
-    [Arguments]    ${Toggle1_Input1}
-    ${status1}=    Get Element Attribute    ${Toggle1_Input1}   aria-checked
-    Log    ${status1}
-    [Return]    ${status1}
-
 *** Test cases ***
 Check functionality of Toggle_button
     [Tags]          Toggle_button_Data
-    Set Selenium Implicit Wait    5
-    Click Button                           ${Assginment_Button}
-    Click Element                          ${Requester_Button}
-    Click Button                           ${Inspection_Button}
-    Click Button                           ${Inspection1_button}
-    Sleep    4
-    Click Element                           ${Edit_Button}
-    Sleep    4
-    Click Element                           ${First_CLlick_Data}
-    Double Click Element                    ${Double_CLlick_Data}
-    Sleep    4
+    Click on Assignments Button
+    Click On Requester Button
+    Click on Specific Group
+    Click on Specific Role
+    Click on Edit Button
+    Click on Data Button
+    Re-Click on Data Button
     Check Toggle Button Status              ${Toggle1_Input}
-    Sleep    4
-    ${toggle_status}=    Check Toggle Button Status    ${Toggle1_Input}
-       Run Keyword If    "${toggle_status}" == "false"    Click Element    ${Toggle1_Checked}
-    ${toggle_status1}=    Check Toggle Button Status    ${Toggle1_Input}
-       Run Keyword If    "${toggle_status}" == "true"    Log    "Toggle button is checked"
-    ${toggle_status2}=    Verify that All Toggles is Checked     ${Toggle1_Input1}
-       Run Keyword If    "${toggle_status}" == "true"    Log    "All Toggle button is checked"
-
-    Run Keyword If   "${toggle_status1}" == "${toggle_status2}"
-    ...    Log    "Run Successfully"
-    ...  ELSE
-    ...    Log    "Error"
+    Check If Toggle is UnChecked            ${Toggle1_Input}
+    Verify that All Toggles is Checked      ${Toggle1_Input1}
+    Verify that the main Toggle state is equal for all Toggles state

@@ -1,5 +1,4 @@
 *** Settings ***
-
 Library     SeleniumLibrary
 Library     Screenshot
 Library     String
@@ -20,6 +19,7 @@ ${Reset_Button}                 //*[@id="role_btn_resetFunctions"]
 ${StoryMap-CheckBox}            //*[@id="mat-checkbox-2"]/label
 ${Dashboard_CheckBox}           //*[@id="mat-checkbox-4"]/label
 ${Yes_Button}                   //*[@id="id_btn_resetFunctions_ok"]
+
 *** Keywords ***
 Check functionality of Reset Button
 Click on Assignments Button

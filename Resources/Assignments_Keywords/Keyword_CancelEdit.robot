@@ -1,5 +1,4 @@
 *** Settings ***
-
 Library     SeleniumLibrary
 Library     Screenshot
 Library     String

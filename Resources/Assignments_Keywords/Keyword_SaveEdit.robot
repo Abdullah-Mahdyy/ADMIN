@@ -4,6 +4,7 @@ Library     Screenshot
 Library     String
 Library     DateTime
 Resource    ../../Resources/Common.robot
+
 *** Variables ***
 ${Assginment_Button}             //*[@id="4"]
 ${Requester_Button}             //*[@id="application_ddl_applications8"]
@@ -20,6 +21,7 @@ ${Dashboard_CheckBox}           //*[@id="mat-checkbox-4"]/label
 ${saveUpdateRole_Button}              //*[@id="role_btn_save"]
 ${saveUpdateRole_ok}               //*[@id="id_btn_saveUpdateRole_ok"]
 ${SaveConfirmationMsg}              //*[@id="toast-container"]/div
+
 *** Keywords ***
 Click on Assignments Button
          Click Button    ${Assginment_Button}
