@@ -4,7 +4,7 @@
 Library     SeleniumLibrary
 Library     String
 Resource    ../../Resources/Common.robot
-Resource    ../../Resources/Keyword_Reset_User_Management.robot
+Resource    ../../Resources/UserMangment_Keywords/Keyword_Reset_User_Management.robot
 Suite Setup    Run Keywords   Open_Chrome  Login_Successfully
 Test Teardown   Close_Chrome
 

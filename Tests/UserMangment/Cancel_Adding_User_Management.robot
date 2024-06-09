@@ -4,7 +4,7 @@
 Library     SeleniumLibrary
 Library     String
 Resource    ../../Resources/Common.robot
-Resource    ../../Resources/Keyword_Cancel_Adding_User_Management.robot
+Resource    ../../Resources/UserMangment_Keywords/Keyword_Cancel_Adding_User_Management.robot
 Suite Setup    Run Keywords   Open_Chrome  Login_Successfully
 Test Teardown   Close_Chrome
 

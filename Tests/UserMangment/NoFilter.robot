@@ -5,7 +5,7 @@ Library         SeleniumLibrary
 Library         Process
 Library         String
 Resource        ../../Resources/Common.robot
-Resource        ../../Resources/Keyword_NoFilter.robot
+Resource        ../../Resources/UserMangment_Keywords/Keyword_NoFilter.robot
 Suite Setup    Run Keywords   Open_Chrome  Login_Successfully
 Test Teardown   Close_Chrome
 
