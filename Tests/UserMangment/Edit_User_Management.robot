@@ -6,7 +6,6 @@ Library     String
 Resource    ../../Resources/Common.robot
 Resource    ../../Resources/UserMangment_Keywords/Keyword_Edit_User_Mangement.robot
 Suite Setup    Run Keywords   Open_Chrome  Login_Successfully
-#Test Teardown   Close_Chrome
 
 *** Test Cases ***
 Check Functionality of Edit User
@@ -22,7 +21,6 @@ Check Functionality of Edit User
     Page Should Contain         Are you sure you want to save changes ?
     Click on Yes at the Confirmation Message
     Page Should Contain         User saved successfully
-    Sleep    5
 
 Check Functionality of Edit User with Leaving Mandatory Fields Empty
     [tags]                      User_Management_Edit
@@ -38,6 +36,5 @@ Check Functionality of Edit User with Leaving Mandatory Fields Empty
     Page Should Contain         Are you sure you want to save changes ?
     Click on Save
     Page Should Contain         Please fill all required fields
-    Sleep    3
 
 Close the Browser
