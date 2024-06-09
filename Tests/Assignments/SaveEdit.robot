@@ -23,7 +23,7 @@ ${saveUpdateRole_Button}              //*[@id="role_btn_save"]
 ${saveUpdateRole_ok}               //*[@id="id_btn_saveUpdateRole_ok"]
 ${SaveConfirmationMsg}              //*[@id="toast-container"]/div
 *** Test cases ***
-Check functionality of Save_Edit_button
+Check Functionality of Save Edit button
     [Tags]          Save_Edit_button
 
        Click on Assignments Button

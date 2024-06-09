@@ -9,7 +9,7 @@ Suite Setup    Run Keywords   Open_Chrome  Login_Successfully
 Test Teardown   Close_Chrome
 
 *** Test Cases ***
-Check Functionality of Add_Group
+Check Functionality of Add Group
     [tags]                      Add_Group_on_EditUser
     Click on Assignments Button
     Click On Requester Button

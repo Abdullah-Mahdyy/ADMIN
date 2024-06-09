@@ -9,7 +9,7 @@ Suite Setup    Run Keywords   Open_Chrome  Login_Successfully
 Test Teardown   Close_Chrome
 
 *** Test Cases ***
-Check Functionality of Add_User
+Check Functionality of Add User
     [tags]                      Add_User
     Click on Assignments Button
     Click On Requester Button

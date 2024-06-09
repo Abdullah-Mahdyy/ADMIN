@@ -24,7 +24,7 @@ ${Toggle1_Checked}              //*[@id="role_toggle_mapServicesList_0"]/label/d
 ${Toggle1_Input1}               //*[@id="role_toggle_mapServicesList_0-input"]
 
 *** Test cases ***
-Check functionality of Toggle_button
+Check Functionality of Toggle button
     [Tags]          Toggle_button_Data
     Click on Assignments Button
     Click On Requester Button

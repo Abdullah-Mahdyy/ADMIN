@@ -22,7 +22,7 @@ ${StoryMap-CheckBox}            //*[@id="mat-checkbox-2"]/label
 ${Dashboard_CheckBox}           //*[@id="mat-checkbox-4"]/label
 ${Yes_Button}                   //*[@id="id_btn_resetFunctions_ok"]
 *** Test cases ***
-Check functionality of Reset Button
+Check Functionality of Reset Button
     [Tags]          Rsest_button
     Click on Assignments Button
     Click On Requester Button

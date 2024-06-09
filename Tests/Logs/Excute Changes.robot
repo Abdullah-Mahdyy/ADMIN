@@ -12,7 +12,7 @@ Suite Setup    Run Keywords   Open_Chrome   Login_Successfully
 Test Teardown   Close_Chrome
 
 *** Test cases ***
-Check Functionality of Excute_Changes
+Check Functionality of Excute Changes
     [Tags]              Excecute_Changes
     Click on Log Button
     Open the Calender

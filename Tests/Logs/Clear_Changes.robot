@@ -12,7 +12,7 @@ Suite Setup    Run Keywords   Open_Chrome   Login_Successfully
 Test Teardown   Close_Chrome
 
 *** Test cases ***
-Check functionality of Reset_Changes
+Check Functionality of Reset Changes
     [Tags]            Clear_Changes
     Click on Log Button
     Open the Calender

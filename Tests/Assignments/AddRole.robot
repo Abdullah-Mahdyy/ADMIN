@@ -9,7 +9,7 @@ Suite Setup    Run Keywords   Open_Chrome  Login_Successfully
 Test Teardown   Close_Chrome
 
 *** Test Cases ***
-Check Functionality of Add_Role
+Check Functionality of Add Role
     [tags]                      Add_Role_on_EditUser
     Click on Assignments Button
     Click On Requester Button

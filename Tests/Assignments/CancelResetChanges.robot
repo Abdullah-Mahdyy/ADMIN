@@ -23,7 +23,7 @@ ${StoryMap-CheckBox}            //*[@id="mat-checkbox-2"]/label
 ${Dashboard_CheckBox}           //*[@id="mat-checkbox-4"]/label
 ${Cancel_Button}                   //*[@id="id_btn_resetFunctions_cancel"]
 *** Test cases ***
-Check functionality of Cancel_Reset_Button
+Check Functionality of Cancel Reset Button
     [Tags]          Cancel_Reset_Button
      Click on Assignments Button
      Click On Requester Button

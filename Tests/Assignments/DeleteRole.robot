@@ -9,7 +9,7 @@ Suite Setup    Run Keywords   Open_Chrome  Login_Successfully
 Test Teardown   Close_Chrome
 
 *** Test Cases ***
-Check Functionality of Delete_Role
+Check Functionality of Delete Role
     [tags]                      Delete_Role
     Click on Assignments Button
     Click On Requester Button

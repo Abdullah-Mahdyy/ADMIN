@@ -12,7 +12,7 @@ Test Teardown   Close_Chrome
 
 
 *** Test cases ***
-Check functionality of Bread_Crumbs
+Check Functionality of Bread Crumbs
     [Tags]            Bread_crumbs
     Click on Assignments Button
     Click On Requester Button
