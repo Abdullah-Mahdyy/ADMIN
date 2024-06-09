@@ -3,7 +3,7 @@ Library     SeleniumLibrary
 Library     Screenshot
 Library     String
 Library     DateTime
-Resource    ../Resources/Common.robot
+Resource    ../../Resources/Common.robot
 
 *** Variables ***
 ${UnCheck_btn_Retired}         //*[@id="users_btn_Retired"]/label

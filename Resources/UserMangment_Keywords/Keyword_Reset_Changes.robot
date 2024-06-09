@@ -3,7 +3,7 @@ Library     SeleniumLibrary
 Library     Screenshot
 Library     String
 Library     DateTime
-Resource    ../Resources/Common.robot
+Resource    ../../Resources/Common.robot
 
 *** Variables ***
 ${logs_Button}                       xpath=/html/body/app-root/div/div/div[1]/app-side-navigation/div/ul/li[6]/button

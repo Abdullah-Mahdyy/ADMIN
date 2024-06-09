@@ -1,7 +1,7 @@
 *** Settings ***
 Library     SeleniumLibrary
 Library     String
-Resource    ../Resources/Common.robot
+Resource    ../../Resources/Common.robot
 
 *** Variables ***
 ${Email}                    //*[@id="users_input_email"]

@@ -2,7 +2,7 @@
 Library     SeleniumLibrary
 Library    Process
 Library     String
-Resource    ../Resources/Common.robot
+Resource    ../../Resources/Common.robot
 
 *** Variables ***
 ${Users_Mangment_Button}         //*[@id="1"]
